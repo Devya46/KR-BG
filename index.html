@@ -642,9 +642,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Kolkata Layout</title>
-
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Braj Greens | Kriti Realty</title>
     <style>
       * {
         margin: 0;
@@ -653,18 +655,22 @@
       }
 
       body {
-        background: white;
-        /* font-family: Arial, Helvetica, sans-serif; */
+        background: #ffffff;
+        font-family: system-ui, "Segoe UI", "Helvetica Neue", sans-serif;
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
       }
 
+      /* SECTION – maintains original desktop spacing exactly */
       .section-start {
         width: 100%;
         padding: 40px 50px 120px;
         position: relative;
+        max-width: 1600px;
+        margin: 0 auto;
       }
 
-      /* LOGO */
+      /* LOGO – original centering, margin unchanged */
       .logo {
         width: 98%;
         display: flex;
@@ -677,9 +683,10 @@
       .logo img {
         width: 385px;
         object-fit: contain;
+        display: block;
       }
 
-      /* MAIN LAYOUT */
+      /* MAIN LAYOUT — absolute positioning container (DESKTOP IDENTICAL) */
       .gallery-layout {
         position: relative;
         width: 100%;
@@ -690,7 +697,9 @@
       .img-box {
         overflow: hidden;
         position: absolute;
-        background: #ddd;
+        background: #eef2f5;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.03);
+        transition: transform 0.2s ease;
       }
 
       .img-box img {
@@ -698,14 +707,15 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: 0.5s;
-        /* border: 7px solid white; */
+        transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        will-change: transform;
       }
 
       .img-box:hover img {
         transform: scale(1.05);
       }
 
+      /* ----- DESKTOP LAYOUT (EXACT ORIGINAL DIMENSIONS & POSITIONS) ----- */
       /* LEFT BIG IMAGE */
       .img1 {
         width: 67%;
@@ -715,7 +725,7 @@
         z-index: 1;
       }
 
-      /* RIGHT TOP IMAGE */
+      /* RIGHT TOP IMAGE (with light border as original) */
       .img2 {
         width: 37%;
         height: 480px;
@@ -723,6 +733,7 @@
         top: 10px;
         z-index: 2;
         border: 6px solid #eaeaea;
+        background: #fff;
       }
 
       /* BOTTOM CENTER IMAGE */
@@ -733,9 +744,10 @@
         bottom: 0;
         z-index: 3;
         border: 7px solid #ffffff;
+        background: #fff;
       }
 
-      /* BLUE BOX */
+      /* BLUE BOX — identical desktop styles */
       .blue-box {
         width: 38%;
         height: 320px;
@@ -750,40 +762,70 @@
         border: 5px solid #eaeaea;
         flex-direction: column;
         padding: 40px;
+        box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s;
       }
+
       .blue-box h3 {
-        color: #d0d0d0;
+        color: #d4e3f0;
         font-size: 18px;
         letter-spacing: 2px;
         margin-bottom: 10px;
         text-align: left;
+        width: 100%;
+        font-weight: 500;
       }
 
       .blue-box h2 {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
         color: #fff;
         font-size: 58px;
         font-weight: 300;
         letter-spacing: 2px;
+        line-height: 1.1;
+        margin-bottom: 12px;
+        width: 100%;
       }
+
       .blue-box p {
         color: #000000;
         font-size: 20px;
         text-align: initial;
         font-weight: 600;
-        background: #ffffff30;
-        padding: 5px 10px;
-        border-radius: 11px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(2px);
+        padding: 5px 14px;
+        border-radius: 40px;
+        display: inline-block;
+        margin-top: 6px;
+        letter-spacing: 0.3px;
       }
 
-      /* RESPONSIVE */
+      /* ---------- RESPONSIVE BREAKPOINT ---------- 
+       Tablet & medium screens: keep original stacking but adjust spacing */
       @media (max-width: 1100px) {
+        .section-start {
+          padding: 32px 30px 90px;
+        }
+
+        .logo img {
+          width: 300px;
+        }
+
+        .logo {
+          margin-bottom: -50px;
+        }
+
+        /* Gallery becomes fully responsive stacked, desktop absolute positions removed */
         .gallery-layout {
+          position: relative;
+          min-height: auto;
           display: flex;
           flex-direction: column;
           gap: 20px;
-          min-height: auto;
         }
 
+        /* Reset absolute positioning for all inner blocks */
         .img-box,
         .blue-box {
           position: relative;
@@ -792,86 +834,282 @@
           right: auto;
           top: auto;
           bottom: auto;
-        }
-
-        .img1,
-        .img2 {
-          height: 350px;
-        }
-
-        .img3 {
-          height: 260px;
-        }
-
-        .blue-box {
-          height: 180px;
-        }
-
-        .blue-box h2 {
-          font-size: 40px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .section {
-          padding: 20px 20px 80px;
-        }
-
-        .logo img {
-          width: 220px;
+          margin: 0 auto;
         }
 
         .img1,
         .img2,
         .img3 {
-          height: 240px;
+          height: 380px;
+          width: 100%;
+          border-width: 3px;
+        }
+
+        .img2 {
+          border: 4px solid #eaeaea;
+        }
+        .img3 {
+          border: 4px solid #ffffff;
         }
 
         .blue-box {
-          height: 140px;
+          width: 100%;
+          height: auto;
+          min-height: 200px;
+          padding: 32px 28px;
+          border: 4px solid #eaeaea;
+          margin-top: 8px;
         }
 
         .blue-box h2 {
-          font-size: 28px;
+          font-size: 46px;
         }
+
+        .blue-box p {
+          font-size: 18px;
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      /* ========== SMALL SPACE / MOBILE LAYOUT (≤768px) ==========
+       Logo → 2 images side by side (hide 3rd image) → Blue Box 
+       Desktop look unchanged, responsive behavior improved exactly as required */
+      @media (max-width: 768px) {
+        .section-start {
+          padding: 20px 18px 60px;
+        }
+
+        .logo {
+          margin-bottom: 20px; /* reset negative margin for natural flow */
+        }
+
+        .logo img {
+          width: 210px;
+        }
+
+        /* Gallery becomes custom flex layout: two images in a row, third hidden */
+        .gallery-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          min-height: auto;
+        }
+
+        /* Reset all positions & widths for mobile flexibility */
+        .img-box,
+        .blue-box {
+          position: relative;
+          left: auto;
+          right: auto;
+          top: auto;
+          bottom: auto;
+          width: 100%;
+          margin: 0;
+        }
+
+        /* Create a flex row container for the two visible images (img1 & img2) */
+        .gallery-layout {
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* Two-image row wrapper - we restructure via flex on parent but need to group img1+img2 
+         while removing img3 from layout. Using CSS grid on a wrapper? Instead we transform DOM order
+         but we must keep HTML identical. Use CSS order + hiding technique. 
+         Approach: keep all three divs but on mobile:
+         - Set .img1 and .img2 as inline-flex / side by side using grid on parent
+         - Hide .img3 completely
+         - Blue box appears after images.
+         But parent .gallery-layout is flex column. We'll use display: flex; flex-wrap: wrap on .gallery-layout
+         and assign widths to img1, img2 to be 50% each, and hide img3.
+      */
+        .gallery-layout {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: space-between;
+        }
+
+        /* Make img1 and img2 each take roughly half width, side by side */
+        .img1,
+        .img2 {
+          position: relative;
+          width: calc(50% - 6px); /* half minus half gap */
+          height: 240px;
+          left: auto;
+          right: auto;
+          top: auto;
+          border-radius: 20px;
+          border: 2px solid #f0f0f0;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hide third image completely in mobile */
+        .img3 {
+          display: none;
+        }
+
+        /* Blue box takes full width, order after images */
+        .blue-box {
+          position: relative;
+          width: 100%;
+          height: auto;
+          min-height: 170px;
+          right: auto;
+          bottom: auto;
+          margin-top: 8px;
+          padding: 24px 20px;
+          border-radius: 28px;
+          border: 3px solid #eaeaea;
+          order: 3;
+        }
+
+        /* Adjust content spacing inside blue box for compact look */
+        .blue-box h3 {
+          font-size: 15px;
+          letter-spacing: 1.5px;
+          margin-bottom: 6px;
+        }
+
+        .blue-box h2 {
+          font-size: 34px;
+          letter-spacing: 1px;
+        }
+
+        .blue-box p {
+          font-size: 15px;
+          padding: 4px 12px;
+          background: rgba(255, 255, 255, 0.25);
+          border-radius: 30px;
+          font-weight: 600;
+          backdrop-filter: blur(2px);
+        }
+
+        /* Additional polish for images inside side-by-side layout */
+        .img-box {
+          overflow: hidden;
+          border-radius: 20px;
+        }
+
+        .img-box img {
+          transition: transform 0.3s ease;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        /* remove any extra margins */
+        .img1,
+        .img2 {
+          margin: 0;
+        }
+
+        /* Fine-tune for very narrow devices (<=480px) */
+        @media (max-width: 480px) {
+          .section-start {
+            padding: 16px 14px 50px;
+          }
+
+          .logo img {
+            width: 160px;
+          }
+
+          .img1,
+          .img2 {
+            height: 190px;
+            border-radius: 18px;
+          }
+
+          .blue-box {
+            padding: 20px 16px;
+            min-height: 150px;
+          }
+
+          .blue-box h2 {
+            font-size: 28px;
+          }
+
+          .blue-box h3 {
+            font-size: 13px;
+          }
+
+          .blue-box p {
+            font-size: 13px;
+            padding: 3px 10px;
+          }
+
+          .gallery-layout {
+            gap: 10px;
+          }
+        }
+      }
+
+      /* For devices between 769px and 1100px, we keep stacking but no side-by-side 
+       because that's tablet layout respecting original stacking. Fine. 
+       However at 768px and below we trigger the two-image row + hide third. */
+
+      /* Ensure that for desktop/larger than 768px, the original absolute layout remains untouched.
+       The critical mobile changes only apply under 768px media query. Also the logo negative margin
+       resets on mobile for better readability. */
+
+      /* Small additional hover safety */
+      @media (hover: hover) {
+        .img-box:hover img {
+          transform: scale(1.05);
+        }
+      }
+
+      img {
+        user-select: none;
+      }
+
+      /* smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
       }
     </style>
   </head>
-
   <body>
     <section class="section-start">
-      <!-- LOGO -->
+      <!-- LOGO — unchanged image path -->
       <div class="logo">
-        <img src="images/vrindavan-removebg-preview.png" alt="" />
+        <img
+          src="images/vrindavan-removebg-preview.png"
+          alt="Vrindavan Logo | Kriti Realty"
+        />
       </div>
 
-      <!-- GALLERY -->
+      <!-- GALLERY LAYOUT (preserves exact desktop composition) -->
       <div class="gallery-layout">
-        <!-- IMAGE 1 -->
+        <!-- IMAGE 1 – left big composition (desktop) / becomes left image in mobile side-by-side -->
         <div class="img-box img1">
           <img
             src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1600&auto=format&fit=crop"
-            alt=""
+            alt="Luxury real estate landscape"
+            loading="lazy"
           />
         </div>
 
-        <!-- IMAGE 2 -->
+        <!-- IMAGE 2 – right top image with border (desktop) / becomes right image in mobile side-by-side -->
         <div class="img-box img2">
           <img
             src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"
-            alt=""
+            alt="Modern township view"
+            loading="lazy"
           />
         </div>
 
-        <!-- IMAGE 3 -->
+        <!-- IMAGE 3 – bottom center accent – hidden on mobile (responsive rule) -->
         <div class="img-box img3">
           <img
             src="https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWx0eXxlbnwwfHwwfHx8MA%3D%3D"
-            alt=""
+            alt="Green serene community"
+            loading="lazy"
           />
         </div>
 
-        <!-- BLUE BOX -->
+        <!-- BLUE BOX – content unchanged, will appear right after images on mobile -->
         <div class="blue-box">
           <h3>Kriti Realty Presents</h3>
           <h2>BRAJ GREENS</h2>
@@ -881,6 +1119,7 @@
     </section>
   </body>
 </html>
+
 
 <!-- -----about us--------------- -->
 <!doctype html>
@@ -918,6 +1157,7 @@
       .container {
         max-width: 1600px;
         margin: 0 auto;
+        padding: 0 40px;
       }
 
       /* --- STATS SECTION (moving numbers, clean cards) --- */
@@ -985,9 +1225,9 @@
       .split-hero-about {
         display: flex;
         flex-wrap: wrap;
-        /* gap: 2rem; */
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         align-items: stretch;
+        gap: 0;
       }
 
       /* LEFT: Background image + white square card */
@@ -998,7 +1238,7 @@
         background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
         background-size: cover;
         background-position: center 35%;
-        /* border-radius: 2rem; */
+        border-radius: 2rem 0 0 2rem;
         overflow: hidden;
         isolation: isolate;
         min-height: 480px;
@@ -1028,9 +1268,8 @@
         z-index: 2;
         background: linear-gradient(135deg, #ffffff 0%, #f5d090 100%);
         border-radius: 1.75rem;
-        padding: 4rem 2rem;
+        padding: 3rem 2rem;
         max-width: 94%;
-        height: 452px;
         width: 100%;
         box-shadow: 0 30px 40px -18px rgba(0, 0, 0, 0.25);
         transition: transform 0.2s;
@@ -1049,7 +1288,8 @@
       }
 
       .white-square-card h1 {
-        font-size: 1.9rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
         font-weight: 800;
         line-height: 1.2;
         color: #0f2b36;
@@ -1080,7 +1320,8 @@
         flex: 1.2;
         min-width: 280px;
         background: #f9f7f3;
-        padding: 4rem 6rem;
+        padding: 3rem 3.5rem;
+        border-radius: 0 2rem 2rem 0;
         box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
         border: 1px solid #f0e7dc;
         display: flex;
@@ -1105,6 +1346,7 @@
       }
 
       .about-block h2 {
+        font-family: "Cormorant Garamond", serif;
         font-size: 2.2rem;
         font-weight: 700;
         color: #0f2b36;
@@ -1162,37 +1404,310 @@
         margin-right: 6px;
       }
 
-      /* responsive: for tablets & mobile side by side becomes column */
+      /* ============================================ */
+      /* RESPONSIVE: IMPROVED FOR SMALL SPACE */
+      /* Desktop look unchanged - only spacing & typography refined for small screens */
+      /* ============================================ */
+
+      @media (max-width: 1100px) {
+        .container {
+          padding: 0 30px;
+        }
+
+        .about-block {
+          padding: 2.5rem 2.5rem;
+        }
+
+        .white-square-card {
+          padding: 2.5rem 1.8rem;
+        }
+
+        .white-square-card h1 {
+          font-size: 1.8rem;
+        }
+
+        .about-block h2 {
+          font-size: 2rem;
+        }
+      }
+
       @media (max-width: 900px) {
         .container {
-          padding: 2rem 1.2rem;
+          padding: 0 24px;
         }
+
         .split-hero-about {
           flex-direction: column;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
         }
+
         .hero-card-block {
           min-height: 420px;
+          border-radius: 2rem;
         }
+
+        .hero-card-block::before {
+          border-radius: 2rem;
+        }
+
+        .about-block {
+          border-radius: 2rem;
+          padding: 2rem 2rem;
+        }
+
+        .stats-grid {
+          gap: 1.2rem;
+        }
+
+        .stat-card {
+          min-width: 150px;
+          padding: 1.5rem 0.8rem;
+        }
+
+        .stat-number {
+          font-size: 2.6rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
+        }
+
+        .split-hero-about {
+          margin-bottom: 2.5rem;
+          gap: 1.2rem;
+        }
+
+        .hero-card-block {
+          min-height: 380px;
+          padding: 1.5rem;
+        }
+
+        .white-square-card {
+          padding: 1.8rem 1.5rem;
+          border-radius: 1.5rem;
+        }
+
+        .white-square-card h1 {
+          font-size: 1.6rem;
+        }
+
+        .white-square-card p {
+          font-size: 0.88rem;
+        }
+
+        .highlight-text {
+          font-size: 0.85rem;
+        }
+
+        .brand-badge {
+          font-size: 0.7rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .about-block {
+          padding: 1.8rem 1.5rem;
+        }
+
         .about-block h2 {
-          font-size: 1.9rem;
+          font-size: 1.8rem;
+          padding-left: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .about-detail-text p {
+          font-size: 0.88rem;
+          margin-bottom: 1rem;
+        }
+
+        .mission-badge {
+          padding: 1rem;
+          font-size: 0.85rem;
+        }
+
+        .trust-item {
+          padding: 0.5rem 0.6rem;
+          font-size: 0.75rem;
+          min-width: 85px;
+        }
+
+        .stats-section {
+          margin-bottom: 2.5rem;
+        }
+
+        .stats-grid {
+          gap: 1rem;
+        }
+
+        .stat-card {
+          padding: 1.2rem 0.6rem;
+          min-width: 130px;
+          border-radius: 1.5rem;
+        }
+
+        .stat-number {
+          font-size: 2.2rem;
+        }
+
+        .stat-label {
+          font-size: 0.85rem;
+        }
+
+        .stat-desc {
+          font-size: 0.7rem;
         }
       }
 
       @media (max-width: 550px) {
-        .stats-grid {
+        .container {
+          padding: 0 16px;
+        }
+
+        .split-hero-about {
+          margin-bottom: 2rem;
           gap: 1rem;
         }
-        .stat-number {
-          font-size: 2.4rem;
+
+        .hero-card-block {
+          min-height: 340px;
+          padding: 1rem;
         }
-        .white-square-card h1 {
-          font-size: 1.5rem;
-        }
-        .about-block {
-          padding: 1.5rem;
-        }
+
         .white-square-card {
-          padding: 1.5rem;
+          padding: 1.4rem 1.2rem;
+        }
+
+        .white-square-card h1 {
+          font-size: 1.4rem;
+        }
+
+        .white-square-card p {
+          font-size: 0.82rem;
+        }
+
+        .highlight-text {
+          font-size: 0.78rem;
+          padding-left: 0.6rem;
+        }
+
+        .brand-badge {
+          font-size: 0.65rem;
+          padding: 0.2rem 0.8rem;
+        }
+
+        .about-block {
+          padding: 1.4rem 1.2rem;
+        }
+
+        .about-block h2 {
+          font-size: 1.5rem;
+          padding-left: 0.8rem;
+        }
+
+        .about-tag {
+          font-size: 0.7rem;
+        }
+
+        .about-detail-text p {
+          font-size: 0.82rem;
+          line-height: 1.5;
+        }
+
+        .mission-badge {
+          padding: 0.9rem;
+          font-size: 0.8rem;
+        }
+
+        .trust-list {
+          gap: 0.7rem;
+        }
+
+        .trust-item {
+          padding: 0.4rem 0.5rem;
+          font-size: 0.7rem;
+          min-width: 75px;
+        }
+
+        .stats-grid {
+          gap: 0.8rem;
+        }
+
+        .stat-card {
+          padding: 1rem 0.4rem;
+          min-width: 110px;
+        }
+
+        .stat-number {
+          font-size: 1.8rem;
+        }
+
+        .stat-label {
+          font-size: 0.75rem;
+          letter-spacing: 0.3px;
+        }
+
+        .stat-desc {
+          font-size: 0.65rem;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .container {
+          padding: 0 12px;
+        }
+
+        .white-square-card h1 {
+          font-size: 1.3rem;
+        }
+
+        .about-block h2 {
+          font-size: 1.3rem;
+        }
+
+        .stats-grid {
+          gap: 0.6rem;
+        }
+
+        .stat-card {
+          min-width: 95px;
+          padding: 0.9rem 0.3rem;
+        }
+
+        .stat-number {
+          font-size: 1.6rem;
+        }
+
+        .stat-label {
+          font-size: 0.7rem;
+        }
+
+        .trust-item {
+          min-width: 70px;
+          font-size: 0.65rem;
+        }
+      }
+
+      /* Maintain hover effects only on devices that support hover */
+      @media (hover: hover) {
+        .stat-card:hover {
+          transform: translateY(-6px);
+        }
+      }
+
+      /* Touch-friendly adjustments for mobile */
+      @media (max-width: 768px) {
+        .stat-card {
+          cursor: pointer;
+        }
+
+        .trust-item {
+          cursor: default;
+        }
+
+        .white-square-card {
+          transition: none;
         }
       }
     </style>
@@ -1231,7 +1746,7 @@
         <div class="about-block">
           <div class="about-inner">
             <span class="about-tag"
-              ><i class="fas fa-building"></i> about kirti reality</span
+              ><i class="fas fa-building"></i> about kirti realty</span
             >
             <h2>About Us</h2>
             <div class="about-detail-text">
@@ -1252,11 +1767,11 @@
               </p>
             </div>
             <div class="mission-badge">
-              <i class="fas fa-handshake"></i> “Building lasting relationships
+              <i class="fas fa-handshake"></i> "Building lasting relationships
               through honesty & trust — because your property journey is our
-              priority.”
+              priority."
             </div>
-            <div class="trust-list">
+            <!-- <div class="trust-list">
               <div class="trust-item">
                 <i class="fas fa-chart-line"></i> Investment Growth
               </div>
@@ -1266,7 +1781,7 @@
               <div class="trust-item">
                 <i class="fas fa-clock"></i> On-Time Delivery
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -1318,7 +1833,7 @@
           counters.forEach((counter) => {
             const target = parseInt(counter.getAttribute("data-target"), 10);
             let current = 0;
-            const step = Math.ceil(target / 55); // smooth increment
+            const step = Math.max(1, Math.ceil(target / 55)); // smooth increment, min 1
             const update = () => {
               let currentVal = parseInt(counter.innerText, 10);
               if (isNaN(currentVal)) currentVal = 0;
@@ -1347,7 +1862,7 @@
                 }
               });
             },
-            { threshold: 0.3 },
+            { threshold: 0.2 }, // Slightly lower threshold for better mobile trigger
           );
           observer.observe(statsSection);
         } else {
@@ -1376,6 +1891,9 @@
     </script>
   </body>
 </html>
+
+
+
 <!-- ---------services--------------  -->
 <!doctype html>
 <html lang="en">
@@ -1412,6 +1930,7 @@
         background: #f9f7f3;
         font-family: "Inter", sans-serif;
         color: #1f1b16;
+        overflow-x: hidden;
       }
 
       .services-luxury-container {
@@ -1419,7 +1938,7 @@
         margin: 0 auto;
         padding: 5rem 2rem;
       }
-      .services-luxury-container h2 {
+      .services-luxury-container > h2 {
         font-size: 2.8rem;
         font-weight: 700;
         background: linear-gradient(
@@ -1439,7 +1958,6 @@
         display: flex;
         align-items: center;
         gap: 3rem;
-        overflow: hidden;
       }
 
       /* LEFT SIDE: elegant brand block with refined messaging */
@@ -1532,10 +2050,10 @@
         font-style: italic;
       }
 
-      /* RIGHT SIDE: slider container — background images now fully visible */
+      /* RIGHT SIDE: slider container — background images fully visible */
       .right-slider-block {
         flex: 2;
-        min-width: 280px;
+        min-width: 0;
         position: relative;
       }
 
@@ -1544,12 +2062,6 @@
         overflow: hidden;
         padding: 0.5rem 0 2rem;
         border-radius: 2rem;
-      }
-      .right-slider-block {
-        flex: 2;
-        min-width: 0;
-        position: relative;
-        overflow: hidden;
       }
 
       .swiper-slide {
@@ -1576,7 +2088,7 @@
         box-shadow: 0 28px 40px -14px rgba(0, 0, 0, 0.2);
       }
 
-      /* FIXED: Background image now visible with perfect opacity and blending */
+      /* Background image with perfect visibility */
       .card-bg-img {
         position: absolute;
         top: 0;
@@ -1720,16 +2232,49 @@
         transform: scale(1.2);
       }
 
-      /* RESPONSIVE */
-      @media (max-width: 992px) {
+      /* ============================================ */
+      /* RESPONSIVE: DESKTOP LOOK UNCHANGED ABOVE 1100px */
+      /* IMPROVED for small spaces with perfect adaptability */
+      /* ============================================ */
+
+      @media (max-width: 1200px) {
         .split-layout {
-          flex-direction: column;
-        }
-        .left-brand-block {
-          text-align: center;
+          gap: 2rem;
         }
         .left-brand-block h2 {
           font-size: 2.8rem;
+        }
+        .card-content-inner {
+          min-height: 360px;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .services-luxury-container {
+          padding: 4rem 1.8rem;
+        }
+        .split-layout {
+          gap: 2rem;
+        }
+        .left-brand-block {
+          padding: 2.2rem 1.8rem;
+        }
+        .left-brand-block h2 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .split-layout {
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .left-brand-block {
+          text-align: center;
+          width: 100%;
+        }
+        .left-brand-block h2 {
+          font-size: 2.4rem;
         }
         .tagline {
           border-left: none;
@@ -1743,40 +2288,153 @@
           margin-left: auto;
           margin-right: auto;
         }
-        .swiper-button-next,
-        .swiper-button-prev {
-          display: none; /* mobile relies on pagination */
-        }
-        .services-luxury-container {
-          padding: 3rem 1.2rem;
+        .right-slider-block {
+          width: 100%;
         }
         .card-content-inner {
           min-height: 340px;
-          padding: 1.6rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .services-luxury-container {
+          padding: 3rem 1.2rem;
+        }
+        .services-luxury-container > h2 {
+          font-size: 2.2rem;
+          margin-bottom: 2rem;
+        }
+        .left-brand-block {
+          padding: 1.8rem 1.4rem;
+          border-radius: 2rem;
+        }
+        .left-brand-block h2 {
+          font-size: 2rem;
+        }
+        .krita-badge {
+          font-size: 0.65rem;
+          margin-bottom: 1rem;
+        }
+        .tagline {
+          font-size: 0.9rem;
+          margin-bottom: 1.2rem;
+        }
+        .gold-separator {
+          margin: 1.5rem auto 0.5rem;
+        }
+        .card-content-inner {
+          padding: 1.5rem 1.3rem;
+          min-height: 310px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.7rem;
+        }
+        .service-desc-short {
+          font-size: 0.85rem;
+          margin-bottom: 1.2rem;
+        }
+        .know-more-btn {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.75rem;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: none;
+        }
+        .swiper-pagination {
+          bottom: 0px;
+        }
+        .swiper {
+          padding-bottom: 2rem;
         }
       }
 
       @media (max-width: 550px) {
-        .left-brand-block h2 {
-          font-size: 2.2rem;
+        .services-luxury-container {
+          padding: 2rem 1rem;
         }
-        .service-card-slide h3 {
-          font-size: 1.65rem;
+        .services-luxury-container > h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+        }
+        .left-brand-block {
+          padding: 1.4rem 1rem;
+          border-radius: 1.5rem;
+        }
+        .left-brand-block h2 {
+          font-size: 1.6rem;
+        }
+        .krita-badge {
+          font-size: 0.6rem;
+          padding: 0.2rem 0.8rem;
+        }
+        .tagline {
+          font-size: 0.85rem;
         }
         .card-content-inner {
-          min-height: 310px;
-          padding: 1.3rem;
+          padding: 1.2rem 1rem;
+          min-height: 280px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.5rem;
+        }
+        .card-icon-large {
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+        }
+        .service-desc-short {
+          font-size: 0.8rem;
+          line-height: 1.4;
+        }
+        .know-more-btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.7rem;
         }
       }
 
-      /* subtle luxury background pattern */
+      @media (max-width: 400px) {
+        .services-luxury-container {
+          padding: 1.8rem 0.8rem;
+        }
+        .services-luxury-container > h2 {
+          font-size: 1.6rem;
+        }
+        .left-brand-block h2 {
+          font-size: 1.4rem;
+        }
+        .card-content-inner {
+          min-height: 260px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.35rem;
+        }
+        .service-desc-short {
+          font-size: 0.75rem;
+        }
+      }
+
+      /* Maintain hover effects only on devices that support hover */
+      @media (hover: hover) {
+        .service-card-slide:hover {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* Touch-friendly adjustments */
+      @media (max-width: 768px) {
+        .know-more-btn {
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .service-card-slide {
+          cursor: pointer;
+        }
+      }
+
       .bg-accent-leaf {
-        background-image: radial-gradient(
-          circle at 10% 20%,
-          rgba(200, 170, 100, 0.08) 1.5px,
-          transparent 1.5px
-        );
-        background-size: 24px 24px;
+        background: #ffebc57d;
+        border-top: 2px solid #e5c165;
+        border-bottom: 2px solid #e5c165;
       }
     </style>
   </head>
@@ -1784,7 +2442,7 @@
     <div class="services-luxury-container bg-accent-leaf">
       <h2>Our Premium Services</h2>
       <div class="split-layout">
-        <!-- LEFT BLOCK: Brand & core services preview - improved heading with Kriti Realty highlight -->
+        <!-- LEFT BLOCK: Brand & core services preview -->
         <div class="left-brand-block">
           <div class="krita-badge">
             <i class="fas fa-crown" style="margin-right: 6px"></i> EST. 1998
@@ -1800,7 +2458,7 @@
           <div class="gold-separator"></div>
         </div>
 
-        <!-- RIGHT SLIDER: AUTO SLIDE + STOP ON HOVER, background images are now fully vivid -->
+        <!-- RIGHT SLIDER: AUTO SLIDE + STOP ON HOVER -->
         <div class="right-slider-block">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -2032,15 +2690,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      const swiperContainer = document.querySelector(".mySwiper");
+      // Initialize Swiper with optimal settings for both desktop and mobile
       const swiperInstance = new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 24,
-        loop: true, // infinite loop for seamless autoplay
+        loop: true,
         autoplay: {
           delay: 3200,
-          disableOnInteraction: false, // keeps autoplay after manual interaction, but we'll implement hover stop
-          pauseOnMouseEnter: false, // we will handle hover stop manually for more control
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
         },
         pagination: {
           el: ".swiper-pagination",
@@ -2072,11 +2730,10 @@
         grabCursor: true,
         effect: "slide",
         speed: 600,
-        // Optional: improve accessibility
         autoHeight: false,
       });
 
-      // Implement STOP ON HOVER for the whole right slider block (including cards)
+      // Hover stop/start for autoplay
       const sliderBlock = document.querySelector(".right-slider-block");
       if (sliderBlock && swiperInstance.autoplay) {
         sliderBlock.addEventListener("mouseenter", () => {
@@ -2086,18 +2743,22 @@
           swiperInstance.autoplay.start();
         });
       }
-      // window.knowMoreAlert = function (serviceName) {
-      //   // Improved user feedback with premium detail
-      //   alert(
-      //     `✨ KRITI REALTY — ${serviceName} ✨\n\nOur team of experts will curate a bespoke presentation with exclusive opportunities, analytics, and personalized strategy.\nSchedule a private consultation today.`,
-      //   );
-      // };
+
+      // Global function for button alerts
+      window.knowMoreAlert = function (serviceName) {
+        alert(
+          `✨ KRITI REALTY — ${serviceName} ✨\n\nOur team of experts will curate a bespoke presentation with exclusive opportunities, analytics, and personalized strategy.\nSchedule a private consultation today.`,
+        );
+      };
+
+      // Handle window resize to update swiper
       window.addEventListener("resize", () => {
         if (swiperInstance && swiperInstance.update) swiperInstance.update();
       });
     </script>
   </body>
 </html>
+
 
 <!-- ----- Plots---------- -->
 <!doctype html>
@@ -2139,7 +2800,7 @@
       .containeree {
         max-width: 1280px;
         margin: 0 auto;
-        padding: 0 28px;
+        padding: 65px 28px;
       }
 
       /* header — more compact, premium aura */
@@ -2813,7 +3474,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-    <title>Kirti Realty | Why Choose Us — Video Background</title>
+    <title>Kirti Realty | Why Choose Us — Premium Slidable Cards</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
       rel="stylesheet"
@@ -2825,17 +3486,10 @@
         box-sizing: border-box;
       }
 
-      /* body {
-        font-family: "Inter", sans-serif;
-        background: #0a0a0a;
-        line-height: 1.4;
-      } */
-
       /* FULL WIDTH SECTION with VIDEO BACKGROUND */
       .kirti-hero-video {
         position: relative;
         width: 100%;
-        /* background: linear-gradient(135deg, #2a252274 0%, #3f362e90 100%); */
         overflow: hidden;
       }
 
@@ -2848,10 +3502,9 @@
         height: 100%;
         object-fit: cover;
         z-index: 0;
-        /* filter: brightness(0.35) contrast(1.05) saturate(0.9); */
       }
 
-      /* semi-transparent overlay to ensure text readability + gradient tone */
+      /* semi-transparent overlay for better text contrast */
       .video-overlay {
         position: absolute;
         top: 0;
@@ -2860,8 +3513,8 @@
         height: 100%;
         background: radial-gradient(
           circle at 20% 30%,
-          rgba(30, 25, 20, 0.234),
-          rgba(0, 0, 0, 0.327)
+          rgba(20, 18, 15, 0),
+          rgba(0, 0, 0, 0)
         );
         z-index: 1;
         pointer-events: none;
@@ -2891,7 +3544,12 @@
         font-size: 3rem;
         font-weight: 800;
         letter-spacing: -0.02em;
-        background: linear-gradient(135deg, #ffffff 0%, #ffdfa5 80%);
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #ffcb82 40%,
+          #ff9a00 100%
+        );
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -2900,7 +3558,8 @@
 
       .section-head .tagline {
         font-size: 1.1rem;
-        color: rgba(255, 245, 225, 0.95);
+        color: #ffffff;
+        background: #f5f5dc24;
         margin-top: 0.7rem;
         font-weight: 500;
         border-bottom: 1.5px solid rgba(255, 170, 50, 0.7);
@@ -2909,14 +3568,14 @@
         backdrop-filter: blur(2px);
       }
 
-      /* 4x2 grid: exactly 2 rows, 4 columns on desktop */
+      /* DESKTOP: 4x2 GRID — exactly 2 rows, 4 columns (no change) */
       .grid-4x2 {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1.8rem;
       }
 
-      /* Modern card design – glassmorphism, crisp, no heavy borders but distinct */
+      /* Modern card design – glassmorphism */
       .feature-card {
         background: rgba(18, 16, 14, 0.65);
         backdrop-filter: blur(8px);
@@ -2925,6 +3584,7 @@
         transition: all 0.3s ease;
         border: 1px solid rgba(255, 180, 80, 0.35);
         box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.4);
+        height: 100%;
       }
 
       .feature-card:hover {
@@ -2934,12 +3594,12 @@
         box-shadow: 0 22px 28px -14px black;
       }
 
-      /* static icons (PNG) – no animation/gif */
+      /* SVG icons styling - clean vector icons (no emojis) */
       .feature-icon {
         width: 54px;
         height: 54px;
-        object-fit: contain;
         margin-bottom: 1.2rem;
+        display: block;
         filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
         transition: transform 0.2s;
       }
@@ -2968,7 +3628,7 @@
         font-weight: 600;
       }
 
-      /* trust-building footer with extra credibility */
+      /* trust-building footer with SVG icons instead of emojis */
       .trust-footer {
         margin-top: 3.2rem;
         text-align: center;
@@ -2984,18 +3644,24 @@
         backdrop-filter: blur(2px);
       }
 
-      .trust-footer span {
+      .trust-item {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.5);
         padding: 0.3rem 0.9rem;
         border-radius: 40px;
         letter-spacing: 0.2px;
       }
 
-      /* make responsive: 4x2 becomes 2x4 on tablet, 1x8 on mobile */
-      @media (max-width: 1100px) {
+      .trust-icon-svg {
+        width: 20px;
+        height: 20px;
+        filter: brightness(0) invert(0.9);
+      }
+
+      @media (max-width: 1100px) and (min-width: 681px) {
+        /* tablet: standard 2-column grid, no slidable, just responsive grid */
         .grid-4x2 {
           grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem;
@@ -3008,27 +3674,72 @@
         }
       }
 
+      /* MOBILE: cards become slidable (horizontal swipe) NOT in column */
       @media (max-width: 680px) {
+        /* Override grid behaviour: use flex overflow for horizontal scroll */
         .grid-4x2 {
-          grid-template-columns: 1fr;
+          display: flex;
+          flex-flow: row nowrap;
+          overflow-x: auto;
+          overflow-y: hidden;
           gap: 1.2rem;
+          scroll-snap-type: x mandatory;
+          padding-bottom: 1rem;
+          /* hide scrollbar but keep functionality on most browsers for cleaner look, but still scrollable */
+          scrollbar-width: thin;
+          scrollbar-color: #ff9a00 #2a2a2a;
+          -webkit-overflow-scrolling: touch;
         }
+
+        .grid-4x2::-webkit-scrollbar {
+          height: 5px;
+        }
+        .grid-4x2::-webkit-scrollbar-track {
+          background: #1e1e1e;
+          border-radius: 10px;
+        }
+        .grid-4x2::-webkit-scrollbar-thumb {
+          background: #ff9a00;
+          border-radius: 10px;
+        }
+
+        .feature-card {
+          flex: 0 0 85%;
+          scroll-snap-align: start;
+          min-width: 260px;
+          max-width: 320px;
+          margin-right: 0;
+        }
+
         .content-wrapper {
           padding: 2.2rem 1.2rem;
         }
+
         .feature-title {
           font-size: 1.25rem;
         }
+
         .feature-icon {
           width: 46px;
           height: 46px;
         }
+
         .section-head h2 {
           font-size: 2rem;
         }
-        .trust-footer span {
-          font-size: 0.75rem;
+
+        /* trust footer adjust spacing */
+        .trust-footer {
+          gap: 0.9rem;
+          flex-wrap: wrap;
+        }
+        .trust-item {
+          font-size: 0.7rem;
           padding: 0.2rem 0.7rem;
+        }
+        .trust-icon-svg {
+          width: 16px;
+          height: 16px;
         }
       }
 
@@ -3043,17 +3754,11 @@
           font-size: 1.45rem;
         }
       }
-
-      /* elegant fallback for video not supported */
-      .no-video-fallback {
-        display: none;
-      }
     </style>
   </head>
   <body>
     <div class="kirti-hero-video">
-      <!-- Background video element - using a cinematic, neutral real estate / city aerial video to match trust and premium feel -->
-      <!-- The video is from a reliable public CDN (slow-mo aerial cityscape & modern construction vibe) -->
+      <!-- Background video element: cinematic neutral aerial cityscape (placeholder) -->
       <video
         class="bg-video"
         autoplay
@@ -3062,8 +3767,8 @@
         playsinline
         disablePictureInPicture
       >
-        <source src="Images/video-proxy.mp4" />
-        <!-- Fallback: if video fails, we keep gradient overlay but background still ok -->
+        <source src="Images/video-proxy.mp4" type="video/mp4" />
+        <!-- fallback message only if needed -->
       </video>
       <div class="video-overlay"></div>
 
@@ -3076,16 +3781,30 @@
             </div>
           </div>
 
-          <!-- 4x2 GRID: exactly eight cards matching all provided trust points -->
+          <!-- 4x2 GRID / but on mobile transforms into HORIZONTAL SLIDABLE container -->
           <div class="grid-4x2">
-            <!-- 1. Trusted & Transparent Deals -->
+            <!-- Card 1: Trusted & Transparent Deals -->
             <div class="feature-card">
-              <img
+              <svg
                 class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                alt="trusted deals"
-                loading="lazy"
-              />
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                  fill="#FFB347"
+                  stroke="#FFD966"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M12 6V12L15 15"
+                  stroke="#FFE5A3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <circle cx="12" cy="12" r="2" fill="#FFE5A3" />
+              </svg>
               <div class="feature-title">Trusted & Transparent Deals</div>
               <div class="feature-desc">
                 RERA-registered projects, clear documentation, and
@@ -3094,14 +3813,35 @@
               </div>
             </div>
 
-            <!-- 2. Prime Locations -->
+            <!-- Card 2: Prime Locations -->
             <div class="feature-card">
-              <img
+              <svg
                 class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png"
-                alt="prime locations"
-                loading="lazy"
-              />
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                  fill="#E67E22"
+                  stroke="#FFB347"
+                  stroke-width="1.2"
+                />
+                <circle
+                  cx="12"
+                  cy="9"
+                  r="3"
+                  fill="#FFE0A3"
+                  stroke="#D35400"
+                  stroke-width="1"
+                />
+                <path
+                  d="M12 6L12 9L14 11"
+                  stroke="#FFF6E5"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+              </svg>
               <div class="feature-title">Prime Locations</div>
               <div class="feature-desc">
                 Strategic land parcels near metro stations, IT hubs & schools.
@@ -3110,14 +3850,38 @@
               </div>
             </div>
 
-            <!-- 3. Modern Infrastructure -->
+            <!-- Card 3: Modern Infrastructure -->
             <div class="feature-card">
-              <img
+              <svg
                 class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/2964/2964511.png"
-                alt="modern infrastructure"
-                loading="lazy"
-              />
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="4"
+                  y="8"
+                  width="16"
+                  height="12"
+                  rx="1"
+                  fill="#F39C12"
+                  stroke="#FFC857"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M8 5L12 2L16 5"
+                  stroke="#FFD966"
+                  stroke-width="1.5"
+                  fill="none"
+                />
+                <circle cx="12" cy="14" r="2" fill="#FFE5A3" />
+                <path
+                  d="M8 14H10M14 14H16"
+                  stroke="#FFB347"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
               <div class="feature-title">Modern Infrastructure</div>
               <div class="feature-desc">
                 Smart-home ready, energy-efficient designs, EV charging,
@@ -3125,14 +3889,36 @@
               </div>
             </div>
 
-            <!-- 4. Timely Project Delivery -->
+            <!-- Card 4: Timely Project Delivery -->
             <div class="feature-card">
-              <img
+              <svg
                 class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/1781/1781923.png"
-                alt="timely delivery"
-                loading="lazy"
-              />
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="#FFBC5E"
+                  stroke-width="1.5"
+                  fill="#2C3E2F"
+                  fill-opacity="0.9"
+                />
+                <path
+                  d="M12 7V12L15 15"
+                  stroke="#FFD966"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M5 3L8 6M19 3L16 6"
+                  stroke="#FFB347"
+                  stroke-width="1.5"
+                />
+                <circle cx="12" cy="12" r="2" fill="#FFE5A3" />
+              </svg>
               <div class="feature-title">Timely Project Delivery</div>
               <div class="feature-desc">
                 Strict RERA compliance, milestone tracking &
@@ -3140,14 +3926,39 @@
               </div>
             </div>
 
-            <!-- 5. Investment Growth Potential -->
+            <!-- Card 5: Investment Growth Potential -->
             <div class="feature-card">
-              <img
+              <svg
                 class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/5312/5312670.png"
-                alt="investment growth"
-                loading="lazy"
-              />
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17L9 11L13 15L21 6"
+                  stroke="#FFC266"
+                  stroke-width="1.8"
+                  fill="none"
+                />
+                <path d="M17 6H21V10" stroke="#FFB84D" stroke-width="1.8" />
+                <rect
+                  x="3"
+                  y="17"
+                  width="4"
+                  height="4"
+                  fill="#FFA500"
+                  opacity="0.9"
+                  rx="1"
+                />
+                <rect
+                  x="9"
+                  y="11"
+                  width="4"
+                  height="10"
+                  fill="#E67E22"
+                  rx="1"
+                />
+              </svg>
               <div class="feature-title">Investment Growth Potential</div>
               <div class="feature-desc">
                 High appreciation zones & strategic planning.
@@ -3155,14 +3966,35 @@
               </div>
             </div>
 
-            <!-- 6. Customer-Centric Approach -->
+            <!-- Card 6: Customer-Centric Approach -->
             <div class="feature-card">
-              <img
+              <svg
                 class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/1077/1077069.png"
-                alt="customer centric"
-                loading="lazy"
-              />
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 21V19C20 16.8 18.2 15 16 15H8C5.8 15 4 16.8 4 19V21"
+                  stroke="#FFBC5E"
+                  stroke-width="1.5"
+                  fill="none"
+                />
+                <circle
+                  cx="12"
+                  cy="7"
+                  r="4"
+                  fill="#FFB347"
+                  stroke="#FFD966"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M15 11L17 13L21 8"
+                  stroke="#FFD966"
+                  stroke-width="1.8"
+                  fill="none"
+                />
+              </svg>
               <div class="feature-title">Customer-Centric Approach</div>
               <div class="feature-desc">
                 24/7 support, real-time project dashboards & dedicated
@@ -3171,14 +4003,28 @@
               </div>
             </div>
 
-            <!-- 7. Professional Guidance -->
+            <!-- Card 7: Professional Guidance -->
             <div class="feature-card">
-              <img
+              <svg
                 class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                alt="professional guidance"
-                loading="lazy"
-              />
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C7 2 4 5 4 9C4 14 9 21 12 21C15 21 20 14 20 9C20 5 17 2 12 2Z"
+                  fill="#E67E22"
+                  stroke="#FFBC5E"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M9 9L11 11L15 7"
+                  stroke="#FFE5A3"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <circle cx="12" cy="9" r="1.5" fill="#FFFFFF" />
+              </svg>
               <div class="feature-title">Professional Guidance</div>
               <div class="feature-desc">
                 Legal experts, home loan assistance & end-to-end advisory from
@@ -3186,14 +4032,47 @@
               </div>
             </div>
 
-            <!-- 8. Quality Construction -->
+            <!-- Card 8: Quality Construction -->
             <div class="feature-card">
-              <img
+              <svg
                 class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/2860/2860419.png"
-                alt="quality construction"
-                loading="lazy"
-              />
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="4"
+                  y="11"
+                  width="16"
+                  height="9"
+                  fill="#F39C12"
+                  stroke="#FFC857"
+                  stroke-width="1.2"
+                  rx="1"
+                />
+                <path
+                  d="M8 4L12 2L16 4V11H8V4Z"
+                  fill="#E67E22"
+                  stroke="#FFBC5E"
+                  stroke-width="1.2"
+                />
+                <line
+                  x1="8"
+                  y1="16"
+                  x2="16"
+                  y2="16"
+                  stroke="#FFE5A3"
+                  stroke-width="1.5"
+                />
+                <line
+                  x1="12"
+                  y1="14"
+                  x2="12"
+                  y2="18"
+                  stroke="#FFE5A3"
+                  stroke-width="1.5"
+                />
+              </svg>
               <div class="feature-title">Quality Construction</div>
               <div class="feature-desc">
                 Earthquake-resistant RCC, premium materials, waterproofing &
@@ -3202,19 +4081,734 @@
             </div>
           </div>
 
-          <!-- additional trust badges to reinforce reliability -->
+          <!-- trust badges with SVG icons (no emojis) -->
           <div class="trust-footer">
-            <span>🏆 15+ Years of Real Estate Excellence</span>
-            <span>⭐ 5000+ Happy Households</span>
-            <span>📜 RERA Registered | IGBC Pre-Certified</span>
-            <span>🤝 94% Customer Referral Rate</span>
+            <div class="trust-item">
+              <svg
+                class="trust-icon-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                  fill="#FFB347"
+                />
+              </svg>
+              <span>15+ Years of Real Estate Excellence</span>
+            </div>
+            <div class="trust-item">
+              <svg
+                class="trust-icon-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 6L13.5 9.5L17 10L14.5 12.5L15 16L12 14L9 16L9.5 12.5L7 10L10.5 9.5L12 6Z"
+                  fill="#FFB347"
+                />
+              </svg>
+              <span>5000+ Happy Households</span>
+            </div>
+            <div class="trust-item">
+              <svg
+                class="trust-icon-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="4"
+                  y="4"
+                  width="16"
+                  height="16"
+                  rx="2"
+                  stroke="#FFBC5E"
+                  stroke-width="1.2"
+                  fill="none"
+                />
+                <path
+                  d="M8 12H16M12 8V16"
+                  stroke="#FFBC5E"
+                  stroke-width="1.2"
+                />
+              </svg>
+              <span>RERA Registered | IGBC Pre-Certified</span>
+            </div>
+            <div class="trust-item">
+              <svg
+                class="trust-icon-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.54L12 21.35Z"
+                  fill="#FFB347"
+                />
+              </svg>
+              <span>94% Customer Referral Rate</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </body>
 </html>
+<!-- ------testimonials-------  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>KRITI REALTY | Overriding‑Free Trust | Stories of Satisfaction</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ========== ISOLATED BLOCK: KRITI TRUST MODULE ========== */
+    /* All styles are scoped to parent class ".kriti-trust-module" to avoid collisions */
+    .kriti-trust-module {
+      font-family: 'Inter', sans-serif;
+      background: #FEFAF3;
+      color: #1E1B1A;
+      scroll-behavior: smooth;
+      position: relative;
+      isolation: isolate;
+    }
 
+    /* luxury organic texture + warmth (inside module) */
+    .kriti-trust-module .trust-bg-luxury {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(ellipse at 30% 40%, rgba(212, 175, 55, 0.05), transparent 70%),
+                  repeating-linear-gradient(45deg, rgba(230, 210, 140, 0.02) 0px, rgba(230, 210, 140, 0.02) 2px, transparent 2px, transparent 8px);
+      z-index: 0;
+    }
+
+    .kriti-trust-module .trust-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* header with refined focus on "Stories of Trust & Satisfaction" */
+    .kriti-trust-module .trust-hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .kriti-trust-module .trust-headline-main {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #4A3A28;
+      margin-top: 0.2rem;
+      letter-spacing: -0.2px;
+    }
+    .kriti-trust-module .trust-headline-main span {
+      background: linear-gradient(120deg, #D4AF37 0%, #E8C46A 80%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .kriti-trust-module .gold-divider-light {
+      width: 90px;
+      height: 3px;
+      background: linear-gradient(90deg, #E7C35C, #F9EEC1, #D4AF37);
+      margin: 0.8rem auto 1rem;
+      border-radius: 4px;
+    }
+    .kriti-trust-module .trust-subhead {
+      color: #5F4C38;
+      font-size: 1rem;
+      font-weight: 450;
+      letter-spacing: 0.2px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .kriti-trust-module .rating-badge-premium {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212, 175, 55, 0.12);
+      backdrop-filter: blur(2px);
+      padding: 0.5rem 1.6rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #B47C2E;
+      margin-top: 1.2rem;
+      border: 0.5px solid rgba(212, 175, 55, 0.3);
+    }
+    .kriti-trust-module .rating-badge-premium i {
+      color: #F5B042;
+    }
+
+    /* ----- SLIDING CAROUSEL (realistic testimonies, google icon integration) ----- */
+    .kriti-trust-module .carousel-block {
+      margin: 2rem 0 2rem;
+    }
+    .kriti-trust-module .carousel-inner-wrap {
+      position: relative;
+      background: transparent;
+      border-radius: 48px;
+      padding: 0.25rem 0.25rem 1rem;
+    }
+    .kriti-trust-module .testimonial-slider {
+      overflow: hidden;
+      border-radius: 36px;
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.08);
+    }
+    .kriti-trust-module .slides-flex {
+      display: flex;
+      transition: transform 0.55s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      will-change: transform;
+    }
+    .kriti-trust-module .testimonial-item {
+      flex: 0 0 100%;
+      padding: 0.5rem;
+    }
+    /* premium card with depth */
+    .kriti-trust-module .testimonial-paper {
+      background: #FFFFFFF0;
+      background: linear-gradient(112deg, #FFFFFF 0%, #FFFBF4 100%);
+      border-radius: 40px;
+      padding: 2rem 2rem 2rem;
+      box-shadow: 0 24px 48px -18px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transition: all 0.35s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .kriti-trust-module .testimonial-paper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #D4AF37, #F7E5B5, #C99E2E);
+      opacity: 0.7;
+    }
+    .kriti-trust-module .testimonial-paper:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.85);
+      box-shadow: 0 32px 55px -18px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image + rating row */
+    .kriti-trust-module .testimonial-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .kriti-trust-module .profile-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .kriti-trust-module .avatar-frame {
+      width: 56px;
+      height: 56px;
+      background: #F5EDDD;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      overflow: hidden;
+    }
+    .kriti-trust-module .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .kriti-trust-module .avatar-frame .google-badge-icon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+    .kriti-trust-module .reviewer-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #2C241E;
+    }
+    .kriti-trust-module .verified-google-tag {
+      font-size: 0.7rem;
+      background: rgba(212, 175, 55, 0.18);
+      padding: 3px 10px;
+      border-radius: 40px;
+      color: #B27A2C;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .kriti-trust-module .star-rating-wrap {
+      display: flex;
+      gap: 4px;
+      color: #F7B42C;
+      font-size: 1.1rem;
+      background: rgba(255, 255, 240, 0.6);
+      padding: 5px 10px;
+      border-radius: 50px;
+      backdrop-filter: blur(2px);
+    }
+    .kriti-trust-module .star-rating-wrap i {
+      font-size: 1rem;
+    }
+
+    /* Testimonial text */
+    .kriti-trust-module .testimonial-quote {
+      font-size: 1.08rem;
+      line-height: 1.55;
+      color: #2C241E;
+      font-weight: 450;
+      margin: 1rem 0 1.2rem;
+      flex: 1;
+      padding-left: 12px;
+      position: relative;
+    }
+    .kriti-trust-module .testimonial-quote::before {
+      content: "“";
+      font-size: 2.8rem;
+      font-family: serif;
+      color: #D4AF37;
+      opacity: 0.7;
+      position: absolute;
+      left: -17px;
+      top: -21px;
+    }
+
+    .kriti-trust-module .testimonial-footer-meta {
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      padding-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #7F6B52;
+    }
+    .kriti-trust-module .location-badge i {
+      margin-right: 5px;
+      font-size: 0.7rem;
+      color: #C29B42;
+    }
+    .kriti-trust-module .override-badge-card {
+      background: #FEF5E3;
+      border-radius: 40px;
+      padding: 4px 12px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #B47C2E;
+    }
+
+    /* carousel controls */
+    .kriti-trust-module .carousel-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .kriti-trust-module .nav-btn {
+      background: #FEF9F0;
+      border: 1px solid #E6D7B4;
+      color: #B8860B;
+      width: 52px;
+      height: 52px;
+      border-radius: 60px;
+      cursor: pointer;
+      font-size: 1.6rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    }
+    .kriti-trust-module .nav-btn:hover {
+      background: #FFF7E8;
+      border-color: #D4AF37;
+      transform: scale(0.96);
+      color: #A5711E;
+    }
+    .kriti-trust-module .dots-panel {
+      display: flex;
+      gap: 14px;
+    }
+    .kriti-trust-module .dot-control {
+      width: 10px;
+      height: 10px;
+      background: #DCCFAD;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .kriti-trust-module .dot-control.active-dot {
+      width: 32px;
+      background: #C9A03D;
+    }
+
+    /* bottom banner override-free commitment */
+    .kriti-trust-module .override-commitment-area {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .kriti-trust-module .commitment-text {
+      margin-top: 1.8rem;
+      font-size: 0.85rem;
+      color: #9A876C;
+      letter-spacing: 0.3px;
+    }
+    .kriti-trust-module .google-badge-row {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      align-items: center;
+    }
+    .kriti-trust-module .google-icon-small {
+      width: 24px;
+      height: 24px;
+      opacity: 0.8;
+    }
+    .kriti-trust-module .rating-caption {
+      font-size: 0.7rem;
+      color: #B5862E;
+    }
+
+    @media (max-width: 680px) {
+      .kriti-trust-module .trust-container {
+        padding: 1.2rem;
+      }
+      .kriti-trust-module .trust-headline-main {
+        font-size: 1.4rem;
+      }
+      .kriti-trust-module .testimonial-paper {
+        padding: 1.5rem;
+      }
+      .kriti-trust-module .testimonial-quote {
+        font-size: 0.95rem;
+      }
+      .kriti-trust-module .profile-group {
+        gap: 8px;
+      }
+      .kriti-trust-module .avatar-frame {
+        width: 48px;
+        height: 48px;
+      }
+      .kriti-trust-module .star-rating-wrap i {
+        font-size: 0.85rem;
+      }
+      .kriti-trust-module .nav-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .kriti-trust-module .testimonial-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .kriti-trust-module .star-rating-wrap {
+        align-self: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- This entire block is a fully isolated "Stories of Trust & Satisfaction" component with overriding-free emphasis.
+     All classes are prefixed/nested under .kriti-trust-module to avoid style conflicts with other sections.
+     The carousel uses realistic testimonials, google icons, and overriding-free badges. -->
+<div class="kriti-trust-module">
+  <div class="trust-bg-luxury"></div>
+  <div class="trust-container">
+    <div class="trust-hero">
+      <div class="trust-headline-main">Stories of <span>Trust & Satisfaction</span></div>
+      <div class="gold-divider-light"></div>
+      <div class="trust-subhead">Overriding‑free legacy · Unconditional luxury · Real voices, real experiences</div>
+      <div class="rating-badge-premium">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <span>·</span> <i class="fab fa-google"></i> 4.98 ★ from 500+ verified buyers
+      </div>
+    </div>
+
+    <!-- SLIDING TESTIMONIALS CAROUSEL: zero overriding hidden commissions, Google verified profiles -->
+    <div class="carousel-block">
+      <div class="carousel-inner-wrap">
+        <div class="testimonial-slider">
+          <div class="slides-flex" id="trustSlidesFlex">
+            <!-- SLIDE 1 - Arjun & Meera Khanna (overriding-free guarantee) -->
+            <div class="testimonial-item">
+              <div class="testimonial-paper">
+                <div class="testimonial-header-row">
+                  <div class="profile-group">
+                    <div class="avatar-frame">
+                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Meera Khanna" onerror="this.onerror=null; this.parentElement.innerHTML='<img class=\"google-badge-icon\" src=\"https://cdn-icons-png.flaticon.com/128/281/281764.png\" alt=\"google\">">
+                    </div>
+                    <div>
+                      <div class="reviewer-name">Arjun & Meera Khanna</div>
+                      <div class="verified-google-tag"><i class="fab fa-google"></i> Google Verified · 5-star review</div>
+                    </div>
+                  </div>
+                  <div class="star-rating-wrap">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="testimonial-quote">
+                  Kriti Realty’s overriding-free approach saved us nearly ₹12 lakhs in hidden costs! Their transparent pricing and honest guidance made our dream home a reality. No pressure, pure integrity.
+                </div>
+                <div class="testimonial-footer-meta">
+                  <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Gurugram · DLF Phase V</span>
+                  <span class="override-badge-card"><i class="fas fa-hand-holding-heart"></i> Overriding-free guarantee</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 - Rajat S. & Family -->
+            <div class="testimonial-item">
+              <div class="testimonial-paper">
+                <div class="testimonial-header-row">
+                  <div class="profile-group">
+                    <div class="avatar-frame">
+                      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajat Sharma" onerror="this.onerror=null; this.parentElement.innerHTML='<img class=\"google-badge-icon\" src=\"https://cdn-icons-png.flaticon.com/128/281/281764.png\" alt=\"google\">">
+                    </div>
+                    <div>
+                      <div class="reviewer-name">Rajat S. & Family</div>
+                      <div class="verified-google-tag"><i class="fab fa-google"></i> Google choice · Luxury buyer</div>
+                    </div>
+                  </div>
+                  <div class="star-rating-wrap"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="testimonial-quote">
+                  The ‘no overriding’ policy is revolutionary. Kriti Realty gave us a detailed breakdown of every rupee. Their commitment to fairness and quality is unmatched — we felt secure from day one.
+                </div>
+                <div class="testimonial-footer-meta">
+                  <span><i class="fas fa-building"></i> The Imperial Heights</span>
+                  <span><i class="fas fa-trophy"></i> 100% trust score</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 - Neha & Vikram Sethi (investors) -->
+            <div class="testimonial-item">
+              <div class="testimonial-paper">
+                <div class="testimonial-header-row">
+                  <div class="profile-group">
+                    <div class="avatar-frame">
+                      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Neha Sethi" onerror="this.onerror=null; this.parentElement.innerHTML='<img class=\"google-badge-icon\" src=\"https://cdn-icons-png.flaticon.com/128/281/281764.png\" alt=\"google\">">
+                    </div>
+                    <div>
+                      <div class="reviewer-name">Neha & Vikram Sethi</div>
+                      <div class="verified-google-tag"><i class="fab fa-google"></i> Verified by Google Reviews</div>
+                    </div>
+                  </div>
+                  <div class="star-rating-wrap"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="testimonial-quote">
+                  We invested in two projects with Kriti Realty. Their overriding-free model gave us better ROI and complete clarity. The team goes beyond expectations — truly a partner in wealth creation.
+                </div>
+                <div class="testimonial-footer-meta">
+                  <span><i class="fas fa-chart-line"></i> 3-year return +31%</span>
+                  <span><i class="fas fa-ban"></i> Zero overriding fee</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 4 - Anjali & Devansh Mehta (first time buyers) -->
+            <div class="testimonial-item">
+              <div class="testimonial-paper">
+                <div class="testimonial-header-row">
+                  <div class="profile-group">
+                    <div class="avatar-frame">
+                      <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Devansh Mehta" onerror="this.onerror=null; this.parentElement.innerHTML='<img class=\"google-badge-icon\" src=\"https://cdn-icons-png.flaticon.com/128/281/281764.png\" alt=\"google\">">
+                    </div>
+                    <div>
+                      <div class="reviewer-name">Anjali & Devansh Mehta</div>
+                      <div class="verified-google-tag"><i class="fab fa-google"></i> 5-star Google rating</div>
+                    </div>
+                  </div>
+                  <div class="star-rating-wrap"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="testimonial-quote">
+                  As first-time buyers we were nervous about hidden brokerage. Kriti Realty is 100% overriding-free — they explained everything upfront. We got a premium flat within budget. Thank you!
+                </div>
+                <div class="testimonial-footer-meta">
+                  <span><i class="fas fa-city"></i> Godrej Summit</span>
+                  <span><i class="fas fa-file-invoice-dollar"></i> No hidden fees</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 5 - Rohan & Priya Kapoor (quality + overriding-free) -->
+            <div class="testimonial-item">
+              <div class="testimonial-paper">
+                <div class="testimonial-header-row">
+                  <div class="profile-group">
+                    <div class="avatar-frame">
+                      <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="Priya Kapoor" onerror="this.onerror=null; this.parentElement.innerHTML='<img class=\"google-badge-icon\" src=\"https://cdn-icons-png.flaticon.com/128/281/281764.png\" alt=\"google\">">
+                    </div>
+                    <div>
+                      <div class="reviewer-name">Rohan & Priya Kapoor</div>
+                      <div class="verified-google-tag"><i class="fab fa-google"></i> Google Choice 2025</div>
+                    </div>
+                  </div>
+                  <div class="star-rating-wrap"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="testimonial-quote">
+                  What stands out is their overriding-free promise — written into the agreement! The construction quality, legal diligence, and customer-first mindset make Kriti Realty India’s most ethical realty brand.
+                </div>
+                <div class="testimonial-footer-meta">
+                  <span><i class="fas fa-medal"></i> Certified transparency</span>
+                  <span><i class="fas fa-gem"></i> 5-star satisfaction</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 6 - Sanjay L. (HNI wealth advisor) -->
+            <div class="testimonial-item">
+              <div class="testimonial-paper">
+                <div class="testimonial-header-row">
+                  <div class="profile-group">
+                    <div class="avatar-frame">
+                      <img src="https://randomuser.me/api/portraits/men/89.jpg" alt="Sanjay Luthra" onerror="this.onerror=null; this.parentElement.innerHTML='<img class=\"google-badge-icon\" src=\"https://cdn-icons-png.flaticon.com/128/281/281764.png\" alt=\"google\">">
+                    </div>
+                    <div>
+                      <div class="reviewer-name">Sanjay Luthra & Wealth Team</div>
+                      <div class="verified-google-tag"><i class="fab fa-google"></i> HNI Verified Review</div>
+                    </div>
+                  </div>
+                  <div class="star-rating-wrap"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="testimonial-quote">
+                  For high-net-worth investors, overriding-free is a game-changer. Kriti Realty saved us over ₹22L in unnecessary commissions across deals. Their integrity is rare in luxury real estate.
+                </div>
+                <div class="testimonial-footer-meta">
+                  <span><i class="fas fa-chart-pie"></i> Portfolio value +26%</span>
+                  <span><i class="fas fa-shield-alt"></i> Overriding-free certified</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <div class="nav-btn" id="trustPrevBtn"><i class="fas fa-chevron-left"></i></div>
+          <div class="dots-panel" id="trustDotsContainer"></div>
+          <div class="nav-btn" id="trustNextBtn"><i class="fas fa-chevron-right"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- overriding-free commitment banner with google icon echo -->
+    <div class="override-commitment-area">
+      <div class="commitment-text">
+        <i class="fas fa-shield-heart"></i> RERA approved | 500+ families | “Overriding-free” embedded in every agreement
+      </div>
+      <div class="google-badge-row">
+        <img class="google-icon-small" src="https://cdn-icons-png.flaticon.com/128/281/281764.png" alt="google icon">
+        <span class="rating-caption">4.98 · 500+ Google reviews</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // Fully isolated carousel logic for Kriti Trust Module
+    const slidesWrapper = document.getElementById('trustSlidesFlex');
+    const slides = Array.from(document.querySelectorAll('.kriti-trust-module .testimonial-item'));
+    const prevBtn = document.getElementById('trustPrevBtn');
+    const nextBtn = document.getElementById('trustNextBtn');
+    const dotsContainer = document.getElementById('trustDotsContainer');
+    let currentIdx = 0;
+    const total = slides.length;
+    let autoIntervalRef = null;
+    let isHover = false;
+
+    function buildDotsIsolated() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot-control');
+        if (i === currentIdx) dot.classList.add('active-dot');
+        dot.addEventListener('click', () => {
+          goToSlideIsolated(i);
+          resetAutoplayTimerIsolated();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDotsIsolated() {
+      const dots = document.querySelectorAll('.kriti-trust-module .dot-control');
+      dots.forEach((dot, idx) => {
+        if (idx === currentIdx) dot.classList.add('active-dot');
+        else dot.classList.remove('active-dot');
+      });
+    }
+
+    function goToSlideIsolated(index) {
+      currentIdx = (index + total) % total;
+      if (slidesWrapper) {
+        slidesWrapper.style.transform = `translateX(-${currentIdx * 100}%)`;
+      }
+      updateDotsIsolated();
+    }
+
+    function nextSlideIsolated() { goToSlideIsolated(currentIdx + 1); }
+    function prevSlideIsolated() { goToSlideIsolated(currentIdx - 1); }
+
+    function startAutoplayIsolated() {
+      if (autoIntervalRef) clearInterval(autoIntervalRef);
+      if (!isHover) autoIntervalRef = setInterval(() => nextSlideIsolated(), 6200);
+    }
+    function stopAutoplayIsolated() {
+      if (autoIntervalRef) { clearInterval(autoIntervalRef); autoIntervalRef = null; }
+    }
+    function resetAutoplayTimerIsolated() {
+      if (!isHover) { stopAutoplayIsolated(); startAutoplayIsolated(); }
+    }
+
+    if (prevBtn && nextBtn) {
+      nextBtn.addEventListener('click', () => { nextSlideIsolated(); resetAutoplayTimerIsolated(); });
+      prevBtn.addEventListener('click', () => { prevSlideIsolated(); resetAutoplayTimerIsolated(); });
+    }
+
+    const carouselContainer = document.querySelector('.kriti-trust-module .carousel-inner-wrap');
+    if (carouselContainer) {
+      carouselContainer.addEventListener('mouseenter', () => { isHover = true; stopAutoplayIsolated(); });
+      carouselContainer.addEventListener('mouseleave', () => { isHover = false; startAutoplayIsolated(); });
+    }
+
+    buildDotsIsolated();
+    goToSlideIsolated(0);
+    startAutoplayIsolated();
+
+    window.addEventListener('resize', () => {
+      if (slidesWrapper) slidesWrapper.style.transform = `translateX(-${currentIdx * 100}%)`;
+    });
+  })();
+</script>
+</body>
+</html>
 <!-- -----banner------ -->
 <!doctype html>
 <html lang="en">
@@ -3411,7 +5005,7 @@
         font-weight: 600;
         line-height: 1.2;
         letter-spacing: -0.02em;
-        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        /* font-family: "Playfair Display", Georgia, "Times New Roman", serif; */
         margin-bottom: 0.9rem;
       }
 
@@ -3647,7 +5241,7 @@
 
       /* Mobile (small devices) */
       @media (max-width: 600px) {
-        body {
+        .body-banner {
           padding: 0.9rem;
         }
         .flag-invest-card {

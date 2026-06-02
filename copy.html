@@ -2,408 +2,185 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
-    <title>Kirti Realty | Why Choose Us — Video Background</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Braj Greens</title>
+
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
       }
 
       body {
-        font-family: "Inter", sans-serif;
-        background: #0a0a0a;
-        line-height: 1.4;
+        background: #fff;
       }
 
-      /* FULL WIDTH SECTION with VIDEO BACKGROUND */
-      .kirti-hero-video {
-        position: relative;
+      .story-section {
         width: 100%;
-        /* background: linear-gradient(135deg, #2a252274 0%, #3f362e90 100%); */
+        height: 540px;
+        position: relative;
         overflow: hidden;
       }
 
-      /* Background video element */
-      .bg-video {
-        position: absolute;
-        top: 0;
-        left: 0;
+      /* Background Image */
+      .story-section img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: 0;
-        /* filter: brightness(0.35) contrast(1.05) saturate(0.9); */
+        display: block;
       }
 
-      /* semi-transparent overlay to ensure text readability + gradient tone */
-      .video-overlay {
+      /* Dark Overlay */
+      .story-section::after {
+        content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          circle at 20% 30%,
-          rgba(30, 25, 20, 0.234),
-          rgba(0, 0, 0, 0.327)
-        );
-        z-index: 1;
-        pointer-events: none;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.42);
       }
 
-      /* content wrapper (relative) */
-      .content-wrapper {
-        position: relative;
+      /* Blue Content Box */
+      .story-content {
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        transform: translateY(-50%);
+        width: 720px;
+        background: rgba(0, 140, 255, 0.78);
+        padding: 48px 36px;
         z-index: 2;
-        width: 100%;
-        padding: 4rem 2rem;
-      }
-
-      .fullwidth-inner {
-        max-width: 1400px;
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      /* header styles */
-      .section-head {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .section-head h2 {
-        font-size: 3rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        background: linear-gradient(135deg, #ffffff 0%, #ffdfa5 80%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      }
-
-      .section-head .tagline {
-        font-size: 1.1rem;
-        color: rgba(255, 245, 225, 0.95);
-        margin-top: 0.7rem;
-        font-weight: 500;
-        border-bottom: 1.5px solid rgba(255, 170, 50, 0.7);
-        display: inline-block;
-        padding-bottom: 0.5rem;
         backdrop-filter: blur(2px);
       }
 
-      /* 4x2 grid: exactly 2 rows, 4 columns on desktop */
-      .grid-4x2 {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.8rem;
+      .story-content h1 {
+        color: #fff;
+        font-size: 64px;
+        font-weight: 800;
+        line-height: 1.05;
+        margin-bottom: 28px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
 
-      /* Modern card design – glassmorphism, crisp, no heavy borders but distinct */
-      .feature-card {
-        background: rgba(18, 16, 14, 0.65);
-        backdrop-filter: blur(8px);
-        border-radius: 1.75rem;
-        padding: 1.6rem 1.3rem;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 180, 80, 0.35);
-        box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.4);
+      .story-content h3 {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 24px;
       }
 
-      .feature-card:hover {
-        background: rgba(30, 26, 22, 0.8);
-        border-color: #ff9a00;
-        transform: translateY(-5px);
-        box-shadow: 0 22px 28px -14px black;
-      }
-
-      /* static icons (PNG) – no animation/gif */
-      .feature-icon {
-        width: 54px;
-        height: 54px;
-        object-fit: contain;
-        margin-bottom: 1.2rem;
-        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
-        transition: transform 0.2s;
-      }
-
-      .feature-card:hover .feature-icon {
-        transform: scale(1.02);
-      }
-
-      .feature-title {
-        font-size: 1.35rem;
-        font-weight: 700;
-        color: #ffe1b0;
-        margin-bottom: 0.65rem;
-        letter-spacing: -0.2px;
-      }
-
-      .feature-desc {
-        font-size: 0.88rem;
-        line-height: 1.45;
-        color: rgba(252, 242, 220, 0.85);
+      .story-content p {
+        color: #fff;
+        font-size: 19px;
+        line-height: 1.7;
+        max-width: 590px;
+        margin-bottom: 35px;
         font-weight: 400;
       }
 
-      .feature-desc strong {
-        color: #ffbc5e;
-        font-weight: 600;
-      }
-
-      /* trust-building footer with extra credibility */
-      .trust-footer {
-        margin-top: 3.2rem;
-        text-align: center;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(255, 154, 0, 0.5);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: #fae9ce;
-        backdrop-filter: blur(2px);
-      }
-
-      .trust-footer span {
+      /* Button */
+      .story-btn {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        background: rgba(0, 0, 0, 0.4);
-        padding: 0.3rem 0.9rem;
-        border-radius: 40px;
-        letter-spacing: 0.2px;
+        justify-content: center;
+        width: 260px;
+        height: 62px;
+        background: #6a6a6a;
+        color: #fff;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: 0.3s ease;
+        letter-spacing: 0.5px;
       }
 
-      /* make responsive: 4x2 becomes 2x4 on tablet, 1x8 on mobile */
-      @media (max-width: 1100px) {
-        .grid-4x2 {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem;
-        }
-        .content-wrapper {
-          padding: 3rem 1.8rem;
-        }
-        .section-head h2 {
-          font-size: 2.5rem;
-        }
+      .story-btn:hover {
+        background: #4f4f4f;
       }
 
-      @media (max-width: 680px) {
-        .grid-4x2 {
-          grid-template-columns: 1fr;
-          gap: 1.2rem;
-        }
-        .content-wrapper {
-          padding: 2.2rem 1.2rem;
-        }
-        .feature-title {
-          font-size: 1.25rem;
-        }
-        .feature-icon {
-          width: 46px;
-          height: 46px;
-        }
-        .section-head h2 {
-          font-size: 2rem;
-        }
-        .trust-footer span {
-          font-size: 0.75rem;
-          padding: 0.2rem 0.7rem;
-        }
-      }
+      /* Responsive */
 
-      @media (min-width: 1400px) {
-        .grid-4x2 {
-          gap: 2rem;
+      @media (max-width: 992px) {
+        .story-section {
+          height: 650px;
         }
-        .feature-card {
-          padding: 1.8rem 1.5rem;
+
+        .story-content {
+          width: 90%;
+          left: 5%;
+          padding: 38px 24px;
         }
-        .feature-title {
-          font-size: 1.45rem;
+
+        .story-content h1 {
+          font-size: 48px;
+        }
+
+        .story-content h3 {
+          font-size: 22px;
+        }
+
+        .story-content p {
+          font-size: 16px;
         }
       }
 
-      /* elegant fallback for video not supported */
-      .no-video-fallback {
-        display: none;
+      @media (max-width: 600px) {
+        .story-section {
+          height: 760px;
+        }
+
+        .story-content {
+          top: auto;
+          bottom: 35px;
+          transform: none;
+        }
+
+        .story-content h1 {
+          font-size: 34px;
+        }
+
+        .story-content h3 {
+          font-size: 18px;
+        }
+
+        .story-content p {
+          font-size: 15px;
+          line-height: 1.6;
+        }
+
+        .story-btn {
+          width: 210px;
+          height: 54px;
+          font-size: 15px;
+        }
       }
     </style>
   </head>
+
   <body>
-    <div class="kirti-hero-video">
-      <!-- Background video element - using a cinematic, neutral real estate / city aerial video to match trust and premium feel -->
-      <!-- The video is from a reliable public CDN (slow-mo aerial cityscape & modern construction vibe) -->
-      <video
-        class="bg-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        disablePictureInPicture
-      >
-        <source src="Images/video-proxy.mp4" />
-        <!-- Fallback: if video fails, we keep gradient overlay but background still ok -->
-      </video>
-      <div class="video-overlay"></div>
+    <section class="story-section">
+      <!-- Background Image -->
+      <img
+        src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGluZGlhbiUyMGZhbWlseXxlbnwwfHwwfHx8MA%3D%3D"
+        alt="Braj Greens"
+      />
 
-      <div class="content-wrapper">
-        <div class="fullwidth-inner">
-          <div class="section-head">
-            <h2>Why Choose Kirti Realty</h2>
-            <div class="tagline">
-              Vision · Integrity · Excellence — Built for Generations
-            </div>
-          </div>
+      <!-- Content Box -->
+      <div class="story-content">
+        <h1>WELCOME TO BRAJ GREENS</h1>
 
-          <!-- 4x2 GRID: exactly eight cards matching all provided trust points -->
-          <div class="grid-4x2">
-            <!-- 1. Trusted & Transparent Deals -->
-            <div class="feature-card">
-              <img
-                class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                alt="trusted deals"
-                loading="lazy"
-              />
-              <div class="feature-title">Trusted & Transparent Deals</div>
-              <div class="feature-desc">
-                RERA-registered projects, clear documentation, and
-                <strong>zero hidden charges</strong>. 2500+ families trust our
-                integrity.
-              </div>
-            </div>
+        <h3>A Premium Living Experience by Kriti Realty</h3>
 
-            <!-- 2. Prime Locations -->
-            <div class="feature-card">
-              <img
-                class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png"
-                alt="prime locations"
-                loading="lazy"
-              />
-              <div class="feature-title">Prime Locations</div>
-              <div class="feature-desc">
-                Strategic land parcels near metro stations, IT hubs & schools.
-                <strong>High growth corridors</strong> with excellent social
-                infra.
-              </div>
-            </div>
+        <p>
+          Where modern living meets trust, comfort, and timeless value. Discover
+          thoughtfully planned spaces designed for peaceful living, future
+          growth, and a better tomorrow.
+        </p>
 
-            <!-- 3. Modern Infrastructure -->
-            <div class="feature-card">
-              <img
-                class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/2964/2964511.png"
-                alt="modern infrastructure"
-                loading="lazy"
-              />
-              <div class="feature-title">Modern Infrastructure</div>
-              <div class="feature-desc">
-                Smart-home ready, energy-efficient designs, EV charging,
-                clubhouse, gym & <strong>world-class amenities</strong>.
-              </div>
-            </div>
-
-            <!-- 4. Timely Project Delivery -->
-            <div class="feature-card">
-              <img
-                class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/1781/1781923.png"
-                alt="timely delivery"
-                loading="lazy"
-              />
-              <div class="feature-title">Timely Project Delivery</div>
-              <div class="feature-desc">
-                Strict RERA compliance, milestone tracking &
-                <strong>98% on-time possession</strong>. Zero delay guarantee.
-              </div>
-            </div>
-
-            <!-- 5. Investment Growth Potential -->
-            <div class="feature-card">
-              <img
-                class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/5312/5312670.png"
-                alt="investment growth"
-                loading="lazy"
-              />
-              <div class="feature-title">Investment Growth Potential</div>
-              <div class="feature-desc">
-                High appreciation zones & strategic planning.
-                <strong>YOY returns up to 18%</strong> – ideal wealth creation.
-              </div>
-            </div>
-
-            <!-- 6. Customer-Centric Approach -->
-            <div class="feature-card">
-              <img
-                class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/1077/1077069.png"
-                alt="customer centric"
-                loading="lazy"
-              />
-              <div class="feature-title">Customer-Centric Approach</div>
-              <div class="feature-desc">
-                24/7 support, real-time project dashboards & dedicated
-                relationship managers for
-                <strong>complete satisfaction</strong>.
-              </div>
-            </div>
-
-            <!-- 7. Professional Guidance -->
-            <div class="feature-card">
-              <img
-                class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                alt="professional guidance"
-                loading="lazy"
-              />
-              <div class="feature-title">Professional Guidance</div>
-              <div class="feature-desc">
-                Legal experts, home loan assistance & end-to-end advisory from
-                site visit to <strong>smooth registration</strong>.
-              </div>
-            </div>
-
-            <!-- 8. Quality Construction -->
-            <div class="feature-card">
-              <img
-                class="feature-icon"
-                src="https://cdn-icons-png.flaticon.com/512/2860/2860419.png"
-                alt="quality construction"
-                loading="lazy"
-              />
-              <div class="feature-title">Quality Construction</div>
-              <div class="feature-desc">
-                Earthquake-resistant RCC, premium materials, waterproofing &
-                <strong>5-year structural warranty</strong>.
-              </div>
-            </div>
-          </div>
-
-          <!-- additional trust badges to reinforce reliability -->
-          <div class="trust-footer">
-            <span>🏆 15+ Years of Real Estate Excellence</span>
-            <span>⭐ 5000+ Happy Households</span>
-            <span>📜 RERA Registered | IGBC Pre-Certified</span>
-            <span>🤝 94% Customer Referral Rate</span>
-          </div>
-        </div>
+        <a href="#" class="story-btn">READ MORE</a>
       </div>
-    </div>
+    </section>
   </body>
 </html>
