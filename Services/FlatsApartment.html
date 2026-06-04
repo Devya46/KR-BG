@@ -1,3 +1,4 @@
+<!-- -----header--------- -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,8 +35,8 @@
 
       /* Luxury Color Palette - Gold & Charcoal */
       :root {
-        --gold: #c5a267;
-        --gold-dark: #a0824a;
+        --gold: #dca341;
+        --gold-dark: #c08517;
         --gold-light: #e8dcc4;
         --gold-glow: rgba(197, 162, 103, 0.25);
         --dark-charcoal: #1e2a2f;
@@ -52,8 +53,9 @@
         top: 0;
         left: 0;
         width: 100%;
-        background: linear-gradient(135deg, #ffffff 0%, #f5d090 100%);
-        backdrop-filter: blur(12px);
+        background: #00000038;
+        color: white;
+        backdrop-filter: blur(2px);
         z-index: 1000;
         transition: var(--transition-smooth);
         border-bottom: 1px solid rgba(197, 162, 103, 0.2);
@@ -61,8 +63,10 @@
 
       /* Compact on scroll */
       .header.compact {
-        padding-block: 6px;
-        background-color: rgba(253, 252, 248, 1);
+        padding-block: 0px;
+        background: #00000092;
+        color: white;
+        backdrop-filter: blur(2px);
         box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
         border-bottom-color: var(--gold-light);
       }
@@ -74,6 +78,9 @@
 
       .header.compact .header-logo-text {
         font-size: 1.3rem;
+      }
+      .header.compact .nav-links a {
+        font-size: 14px;
       }
 
       .nav-container {
@@ -119,10 +126,15 @@
 
       .header-logo-text {
         font-family: "Cormorant Garamond", serif;
-        font-size: 1.6rem;
-        font-weight: 600;
+        font-size: 30px;
+        font-weight: 900;
         letter-spacing: -0.2px;
-        background: linear-gradient(135deg, #1e2a2f 30%, #a67c45 80%);
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f5e7d3 40%,
+          #ff9a00 100%
+        );
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
@@ -152,7 +164,7 @@
         font-weight: 500;
         font-size: 0.95rem;
         letter-spacing: 0.3px;
-        color: #2c3a3f;
+        color: #f0f0f0;
         transition: var(--transition-luxury);
         display: flex;
         align-items: center;
@@ -225,7 +237,7 @@
 
       .contact-btn a {
         text-decoration: none;
-        color: var(--dark-charcoal);
+        color: rgb(232, 232, 232);
         display: flex;
         align-items: center;
         gap: 8px;
@@ -382,7 +394,7 @@
       }
 
       .service-item:hover {
-        transform: translateX(8px) translateY(-2px);
+        /* transform: translateX(8px) translateY(-2px); */
         background: rgba(197, 162, 103, 0.06);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
       }
@@ -563,7 +575,7 @@
         justify-content: center;
       }
 
-      /* Hero Section */
+      /* Hero Section
       .hero-section {
         margin-top: 100px;
         height: 85vh;
@@ -592,7 +604,7 @@
         padding: 4rem 2rem;
         max-width: 1200px;
         margin: 0 auto;
-      }
+      } */
 
       /* Responsive */
       @media (max-width: 1024px) {
@@ -641,8 +653,8 @@
 
         <!-- Desktop Navigation -->
         <ul class="nav-links">
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">ABOUT US</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="About.html">ABOUT US</a></li>
           <li class="dropdown">
             <a href="#"
               >SERVICES
@@ -726,7 +738,7 @@
               </div>
             </div>
           </li>
-          <li><a href="#contact">CONTACT US</a></li>
+          <li><a href="Contact.html">CONTACT US</a></li>
           <li class="contact-btn">
             <a href="#contact"><i class="fas fa-phone-alt"></i> Get in Touch</a>
           </li>
@@ -747,10 +759,10 @@
       </div>
       <ul class="mobile-nav-list">
         <li>
-          <a href="#home"><i class="fas fa-home"></i> HOME</a>
+          <a href="index.html"><i class="fas fa-home"></i> HOME</a>
         </li>
         <li>
-          <a href="#about"><i class="fas fa-users"></i> ABOUT US</a>
+          <a href="About.html"><i class="fas fa-users"></i> ABOUT US</a>
         </li>
         <li class="mobile-dropdown" id="mobileServicesDropdown">
           <div class="mobile-dropdown-toggle">
@@ -941,5 +953,375 @@
         }
       });
     </script>
+  </body>
+</html>
+
+<!-- -----footer------  -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Kirti Realty | Luxury Real Estate</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* ===== BETTER FOOTER - LOGO, SOCIAL ICONS, PAGES, LEGAL, CREDIT ===== */
+      .footer {
+        background: #06080c;
+        border-top: 1px solid rgba(228, 179, 99, 0.25);
+        padding: 3rem 2rem 2rem;
+        margin-top: auto;
+      }
+      .footer-container {
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .footer-brand {
+        flex: 1.2;
+        min-width: 220px;
+      }
+      .footer-logo-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1rem;
+      }
+      .footer-logo-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1.5px solid #e4b363;
+      }
+      .footer-logo-text {
+        font-size: 1.6rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #fff6e0, #ebcb8b);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .footer-tagline {
+        color: #aaa;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-top: 0.6rem;
+        max-width: 280px;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.4rem;
+      }
+      .social-icon {
+        color: #e4b363;
+        font-size: 1.4rem;
+        transition: all 0.25s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(228, 179, 99, 0.12);
+        transition: 0.25s;
+      }
+      .social-icon:hover {
+        background: #e4b363;
+        color: #0a0c10;
+        transform: translateY(-3px);
+      }
+      .footer-links {
+        flex: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: flex-end;
+      }
+      .link-column {
+        min-width: 140px;
+      }
+      .link-column h4 {
+        color: #f5d78c;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.5px;
+      }
+      .link-column ul {
+        list-style: none;
+      }
+      .link-column ul li {
+        margin-bottom: 0.7rem;
+      }
+      .link-column ul li a {
+        text-decoration: none;
+        color: #bcb7ab;
+        font-size: 0.85rem;
+        transition: 0.2s;
+      }
+      .link-column ul li a:hover {
+        color: #f5d78c;
+        padding-left: 5px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(228, 179, 99, 0.2);
+        padding-top: 1.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.8rem;
+        color: #8e8c86;
+      }
+      .legal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .legal-links a {
+        text-decoration: none;
+        color: #bcb7ab;
+        transition: 0.2s;
+      }
+      .legal-links a:hover {
+        color: #f5d78c;
+      }
+      .made-with {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
+      }
+      .made-with i {
+        color: #e4b363;
+      }
+      .made-with a {
+        color: #e4b363;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px dotted #e4b363;
+      }
+      .made-with a:hover {
+        color: #f5d78c;
+      }
+      @media (max-width: 780px) {
+        .footer-grid {
+          flex-direction: column;
+        }
+        .footer-links {
+          justify-content: flex-start;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+        .legal-links {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NEW BETTER FOOTER: Logo, social icons, pages, legal, made with love -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Left brand area: logo + socials -->
+          <div class="footer-brand">
+            <div class="footer-logo-wrap">
+              <img
+                class="footer-logo-img"
+                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bG9nb3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="Kirti Realty"
+              />
+              <span class="footer-logo-text">KIRTI REALTY</span>
+            </div>
+            <p class="footer-tagline">
+              Curated estates, bespoke residences & iconic developments with
+              uncompromised excellence.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="X Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Right side: page links columns -->
+          <div class="footer-links">
+            <div class="link-column">
+              <h4>EXPLORE</h4>
+              <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">CONTACT US</a></li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <h4>SERVICES</h4>
+              <ul>
+                <li><a href="#">Residential Plotting</a></li>
+                <li><a href="#">Villas & Estates</a></li>
+                <li><a href="#">Flats & Apartments</a></li>
+                <li><a href="#">Property Investment</a></li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <h4>LEGAL</h4>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Legal</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">© 2026 Kirti Realty. All rights reserved.</div>
+          <!-- <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Careers</a>
+            <a href="#">Legal</a>
+          </div> -->
+          <div class="made-with">
+            Made with <i class="fas fa-heart" style="color: #e4b363"></i>
+            by
+            <a
+              href="https://skilled-va.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Skilled VA</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- <script>
+      (function () {
+        const header = document.getElementById("mainHeader");
+        const hamburger = document.getElementById("hamburgerBtn");
+        const navMenu = document.getElementById("navMenu");
+        const servicesDropdownItem = document.getElementById(
+          "servicesDropdownItem",
+        );
+        const servicesLink = document.getElementById("servicesLink");
+
+        function handleScroll() {
+          if (window.scrollY > 30) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        }
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        function toggleMobileMenu(forceState) {
+          if (forceState === true) {
+            navMenu.classList.add("active");
+          } else if (forceState === false) {
+            navMenu.classList.remove("active");
+          } else {
+            navMenu.classList.toggle("active");
+          }
+          document.body.style.overflow = navMenu.classList.contains("active")
+            ? "hidden"
+            : "";
+        }
+
+        hamburger.addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggleMobileMenu();
+        });
+
+        if (servicesLink) {
+          servicesLink.addEventListener("click", (e) => {
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+              e.stopPropagation();
+              servicesDropdownItem.classList.toggle("open-dropdown");
+            } else {
+              e.preventDefault();
+            }
+          });
+        }
+
+        const allLinks = document.querySelectorAll(
+          ".nav-link, .dropdown-item, .footer a",
+        );
+        allLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            if (link.getAttribute("href") === "#") {
+              e.preventDefault();
+            }
+            if (
+              window.innerWidth <= 992 &&
+              (link.classList.contains("nav-link") ||
+                link.classList.contains("dropdown-item")) &&
+              link !== servicesLink
+            ) {
+              if (navMenu.classList.contains("active")) toggleMobileMenu(false);
+            }
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            window.innerWidth <= 992 &&
+            navMenu.classList.contains("active")
+          ) {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+              toggleMobileMenu(false);
+            }
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 992) {
+            if (navMenu.classList.contains("active")) toggleMobileMenu(false);
+            if (servicesDropdownItem)
+              servicesDropdownItem.classList.remove("open-dropdown");
+            document.body.style.overflow = "";
+          }
+        });
+      })();
+    </script> -->
   </body>
 </html>

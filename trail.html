@@ -366,6 +366,63 @@
       .slide:nth-child(4) {
         background-position: center 40%;
       }
+
+      .story-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+
+        padding: 18px 36px;
+        border: 1.5px solid #e4c580;
+        border-radius: 50px;
+
+        color: #f9efd7;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        background: transparent;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        transition: all 0.4s ease;
+      }
+
+      .story-btn i {
+        transition: transform 0.3s ease;
+      }
+
+      /* Gold layer hidden outside */
+      .story-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        left: -100%;
+
+        background: linear-gradient(90deg, #e4c580, #c7a15e);
+
+        transition: left 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        z-index: -1;
+      }
+
+      /* Slide gold fill */
+      .story-btn:hover::before {
+        left: 0;
+      }
+
+      /* Text color change */
+      .story-btn:hover {
+        color: #0f1a1f;
+        border-color: transparent;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Arrow movement */
+      .story-btn:hover i {
+        transform: translateX(6px);
+      }
     </style>
   </head>
   <body>
@@ -413,6 +470,10 @@
         <p class="hero-subheading">
           Premium Real Estate Solutions for Modern Living & Smart Investments
         </p>
+        <a href="#" class="story-btn">
+          <span>Discover The Story</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
         <div class="button-group">
           <a href="#" class="btn btn-primary" id="exploreBtn"
             >Explore Projects</a
