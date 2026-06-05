@@ -4,942 +4,9 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <title>
-      Braj Greens | About Kriti Realty & Braj Greens — Timeless Elegance
-    </title>
-
-    <!-- Google Fonts: elegant serif + modern sans -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Font Awesome 6 (free icons) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-
-    <!-- AOS (Animate on Scroll) Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background: #ffffff;
-        /* font-family: "Inter", sans-serif; */
-        color: #1a1e24;
-        overflow-x: hidden;
-      }
-
-      /* luxury scrollbar */
-      /* ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1efea;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #c6a15b;
-        border-radius: 8px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #a07e44;
-      } */
-
-      /* ---------- ABOUT US HEADER (enhanced) ---------- */
-      .about-header {
-        width: 100%;
-        height: 500px;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        isolation: isolate;
-      }
-
-      .bg-image {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center 35%;
-        filter: brightness(0.88) contrast(1.05);
-        z-index: 0;
-        transition: transform 8s ease-out;
-      }
-
-      .about-header:hover .bg-image {
-        transform: scale(1.08);
-      }
-
-      .about-header::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          circle at 20% 30%,
-          rgba(0, 0, 0, 0.5) 0%,
-          rgba(0, 0, 0, 0.65) 90%
-        );
-        z-index: 1;
-      }
-
-      .about-header::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: repeating-linear-gradient(
-          45deg,
-          rgba(228, 197, 128, 0.03) 0px,
-          rgba(228, 197, 128, 0.03) 2px,
-          transparent 2px,
-          transparent 8px
-        );
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      #gold-particles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 2;
-      }
-
-      .about-content {
-        position: relative;
-        z-index: 5;
-        max-width: 700px;
-        width: 38%;
-        margin-left: 11%;
-        background: rgba(10, 14, 19, 0.6);
-        backdrop-filter: blur(18px) saturate(200%);
-        border-radius: 32px;
-        border: 1px solid rgba(228, 197, 128, 0.6);
-        border-right-width: 2px;
-        border-bottom-width: 2px;
-        padding: 42px 50px;
-        box-shadow: 0 40px 60px -20px rgba(0, 0, 0, 0.5);
-        transition:
-          transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1),
-          box-shadow 0.5s;
-        animation: floatGlow 6s infinite ease-in-out;
-      }
-
-      @keyframes floatGlow {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-6px);
-          box-shadow:
-            0 50px 70px -15px rgba(0, 0, 0, 0.6),
-            0 0 0 1px rgba(228, 197, 128, 0.3);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-
-      .about-content h1 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 4.8rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #f8f0df, #e9dbbc);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        margin-bottom: 0.8rem;
-        line-height: 1.1;
-        position: relative;
-        display: inline-block;
-      }
-
-      .about-content h1::after {
-        content: "";
-        position: absolute;
-        bottom: -12px;
-        left: 0;
-        width: 90px;
-        height: 3px;
-        background: linear-gradient(90deg, #e4c580, #f3e1b3, #e4c580);
-        border-radius: 4px;
-        animation: shimmer 2s infinite;
-      }
-
-      @keyframes shimmer {
-        0% {
-          opacity: 0.6;
-          width: 70px;
-        }
-        50% {
-          opacity: 1;
-          width: 110px;
-        }
-        100% {
-          opacity: 0.6;
-          width: 70px;
-        }
-      }
-
-      .about-sub {
-        font-family: "Inter", sans-serif;
-        font-size: 1.4rem;
-        font-weight: 500;
-        margin: 32px 0 14px 0;
-        color: #eadfbf;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .about-sub i {
-        font-size: 1.6rem;
-        color: #e4c580;
-        filter: drop-shadow(0 0 4px rgba(228, 197, 128, 0.5));
-      }
-
-      .luxury-emblem {
-        position: absolute;
-        bottom: 30px;
-        right: 40px;
-        z-index: 3;
-        opacity: 0.6;
-        font-size: 3.2rem;
-        color: #e4c580;
-        pointer-events: none;
-        animation: pulseGold 3s infinite;
-      }
-
-      @keyframes pulseGold {
-        0% {
-          opacity: 0.4;
-          text-shadow: 0 0 0px gold;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.9;
-          text-shadow: 0 0 10px rgba(228, 197, 128, 0.8);
-          transform: scale(1.05);
-        }
-        100% {
-          opacity: 0.4;
-          text-shadow: 0 0 0px gold;
-          transform: scale(1);
-        }
-      }
-
-      /* ---------- LUXURY SECTIONS ---------- */
-      .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 6%;
-      }
-
-      .section-luxury {
-        padding: 100px 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
-
-      .luxury-grid {
-        display: flex;
-        align-items: center;
-        gap: 80px;
-        flex-wrap: wrap;
-      }
-
-      .luxury-grid.reverse {
-        flex-direction: row-reverse;
-      }
-
-      /* standard image styling for Kriti Realty */
-      .grid-image {
-        flex: 1.1;
-        min-width: 280px;
-        border-radius: 32px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.25);
-        transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        cursor: pointer;
-      }
-
-      .grid-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-
-      /* --- SPECIAL STYLES FOR BRAJ GREENS IMAGE: ROTATE 90deg & FULL HEIGHT (preserving proportions) --- */
-      .braj-image-wrapper {
-        flex: 1.1;
-        min-width: 280px;
-        position: relative;
-        border-radius: 32px;
-        overflow: hidden;
-        box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.3);
-        transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        cursor: pointer;
-        /* Fixed height for full-height effect: ensures rotated image fills vertical space */
-        height: 585px;
-        /* background: #0f1a17; */
-      }
-
-      /* container that holds the rotated img */
-      .braj-rotate-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .braj-rotate-container img {
-        /* rotate image by 90 degrees */
-        transform: rotate(90deg) scale(1.4);
-        width: auto;
-        height: 51%;
-        min-width: 64%;
-        object-fit: cover;
-        transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        display: block;
-      }
-
-      .braj-image-wrapper:hover .braj-rotate-container img {
-        transform: rotate(90deg) scale(1.5);
-      }
-
-      .braj-image-wrapper:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 45px 65px -18px rgba(0, 0, 0, 0.35);
-      }
-
-      /* overlay effect for rotated image */
-      .braj-image-wrapper::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          rgba(228, 197, 128, 0.08),
-          transparent 70%
-        );
-        pointer-events: none;
-        z-index: 2;
-        border-radius: 32px;
-      }
-
-      .grid-content {
-        flex: 1;
-      }
-
-      .pre-title {
-        font-size: 0.85rem;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        color: #aa7c4c;
-        font-weight: 700;
-        margin-bottom: 1.2rem;
-        display: inline-block;
-        background: linear-gradient(
-          135deg,
-          rgba(170, 124, 76, 0.1),
-          rgba(170, 124, 76, 0.03)
-        );
-        padding: 8px 20px;
-        border-radius: 60px;
-        border-left: 2px solid #c6a15b;
-      }
-
-      .grid-content h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 3.8rem;
-        font-weight: 700;
-        background: linear-gradient(145deg, #1e2f2a, #2f453b);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        margin-bottom: 1.6rem;
-        letter-spacing: -0.5px;
-        line-height: 1.2;
-        position: relative;
-        display: inline-block;
-      }
-
-      .grid-content h2:after {
-        content: "";
-        position: absolute;
-        bottom: -16px;
-        left: 0;
-        width: 80px;
-        height: 3px;
-        background: linear-gradient(90deg, #d4af37, #b28b5e);
-        border-radius: 3px;
-        transition: width 0.4s ease;
-      }
-
-      .grid-content:hover h2:after {
-        width: 130px;
-      }
-
-      .lead-text {
-        font-size: 1.35rem;
-        font-weight: 500;
-        color: #2c5a4b;
-        margin: 32px 0 18px 0;
-        line-height: 1.45;
-        border-left: 3px solid #e4c580;
-        padding-left: 20px;
-      }
-
-      .description-text {
-        font-size: 1rem;
-        line-height: 1.75;
-        color: #3a4050;
-        margin-bottom: 28px;
-      }
-
-      .feature-list {
-        list-style: none;
-        margin-top: 24px;
-      }
-
-      .feature-list li {
-        margin-bottom: 18px;
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 1rem;
-        font-weight: 500;
-        color: #2a2e38;
-        opacity: 0;
-        transform: translateX(-12px);
-        animation: slideFadeIn 0.5s forwards;
-      }
-
-      .feature-list li:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .feature-list li:nth-child(2) {
-        animation-delay: 0.25s;
-      }
-      .feature-list li:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-
-      @keyframes slideFadeIn {
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      .feature-list li i {
-        color: #d4af37;
-        font-size: 1.3rem;
-        width: 32px;
-        transition: transform 0.3s;
-      }
-
-      .feature-list li:hover i {
-        transform: scale(1.15);
-      }
-
-      .luxury-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        color: #b57c1c;
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 2px;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        margin-top: 25px;
-        transition: all 0.4s;
-        border-bottom: 1.5px solid rgba(181, 124, 28, 0.3);
-        padding-bottom: 6px;
-      }
-
-      .luxury-link i {
-        transition: transform 0.4s;
-      }
-
-      .luxury-link:hover {
-        gap: 20px;
-        color: #8b5e2e;
-        border-bottom-color: #d4af37;
-        letter-spacing: 3px;
-      }
-
-      .luxury-link:hover i {
-        transform: translateX(8px);
-      }
-
-      /* responsiveness */
-      @media (max-width: 1024px) {
-        .about-content {
-          width: 50%;
-          margin-left: 8%;
-          padding: 32px 36px;
-        }
-        .about-content h1 {
-          font-size: 3.8rem;
-        }
-        .grid-content h2 {
-          font-size: 3rem;
-        }
-        .lead-text {
-          font-size: 1.2rem;
-        }
-        .section-luxury {
-          padding: 70px 0;
-        }
-        .braj-image-wrapper {
-          height: 480px;
-        }
-      }
-
-      @media (max-width: 868px) {
-        .about-content {
-          width: 80%;
-          margin: 0 auto;
-          left: 0;
-          text-align: center;
-        }
-        .about-content h1::after {
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        .luxury-grid,
-        .luxury-grid.reverse {
-          flex-direction: column;
-          gap: 45px;
-        }
-        .grid-content h2 {
-          font-size: 2.6rem;
-        }
-        .braj-image-wrapper {
-          height: 420px;
-          width: 100%;
-        }
-        .section-luxury {
-          padding: 55px 0;
-        }
-      }
-
-      @media (max-width: 550px) {
-        .about-content {
-          width: 90%;
-          padding: 24px 28px;
-        }
-        .about-content h1 {
-          font-size: 2.8rem;
-        }
-        .about-sub {
-          font-size: 1rem;
-        }
-        .braj-image-wrapper {
-          height: 360px;
-        }
-        .grid-content h2 {
-          font-size: 2.2rem;
-        }
-        .lead-text {
-          font-size: 1rem;
-        }
-      }
-
-      .gold-spark {
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        background: radial-gradient(circle, #ffdfa5, transparent);
-        border-radius: 50%;
-        opacity: 0;
-        animation: sparkFade 0.8s ease-out forwards;
-      }
-
-      @keyframes sparkFade {
-        0% {
-          opacity: 0.8;
-          transform: scale(0.2);
-        }
-        100% {
-          opacity: 0;
-          transform: scale(1.5);
-        }
-      }
-
-      /* force image cache prevention: add a timestamp to query strings ensures fresh load each session? but we also want reliability */
-      /* but we ensure images always appear by using robust onerror and dynamic parameters */
-    </style>
-  </head>
-  <body>
-    <section class="about-header">
-      <canvas id="gold-particles"></canvas>
-      <img
-        class="bg-image"
-        src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop&t=20260604"
-        alt="Braj Greens luxury about us"
-        onerror="
-          this.src =
-            'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&auto=format&t=20260604'
-        "
-      />
-      <div
-        class="about-content"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="100"
-      >
-        <h1>ABOUT US</h1>
-        <div class="about-sub">
-          <i class="fas fa-leaf"></i>
-          <span>Braj Greens | Kriti Realty</span>
-        </div>
-      </div>
-      <div class="luxury-emblem">
-        <i class="fas fa-crown"></i>
-      </div>
-    </section>
-
-    <div class="container">
-      <!-- Section 1: Kriti Realty (standard image) -->
-      <div
-        class="section-luxury"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-offset="100"
-      >
-        <div class="luxury-grid">
-          <div class="grid-image" data-aos="zoom-in" data-aos-duration="900">
-            <img
-              src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop&t=20260604"
-              alt="Kriti Realty premium architecture"
-              onerror="
-                this.src =
-                  'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&auto=format&t=20260604'
-              "
-            />
-          </div>
-          <div class="grid-content">
-            <span class="pre-title"
-              ><i class="fas fa-building"></i> TRUST • EXCELLENCE • VISION</span
-            >
-            <h2>About Kriti Realty</h2>
-            <div class="lead-text">
-              Crafting landmarks with integrity & timeless design.
-            </div>
-            <div class="description-text">
-              For over two decades, Kriti Realty has been synonymous with
-              uncompromising quality, innovation, and customer-centric values.
-              We don't just build homes — we sculpt legacies. Every project
-              reflects deep understanding of luxury, sustainability, and
-              architectural poetry. From premium residential estates to
-              mixed-use landmarks, Kriti Realty elevates the standard of modern
-              living.
-            </div>
-            <ul class="feature-list">
-              <li>
-                <i class="fas fa-medal"></i> 20+ years of excellence & 5000+
-                happy families
-              </li>
-              <li>
-                <i class="fas fa-award"></i> Award-winning sustainable
-                developments
-              </li>
-              <li>
-                <i class="fas fa-handshake"></i> Transparent processes & global
-                design standards
-              </li>
-            </ul>
-            <a href="#" class="luxury-link"
-              >Explore our journey <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 2: Braj Greens with rotated 90deg image & full height wrapper -->
-      <div
-        class="section-luxury"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-offset="100"
-        data-aos-delay="100"
-      >
-        <div class="luxury-grid reverse">
-          <!-- Special image container with rotation 90deg and full height -->
-          <div
-            class="braj-image-wrapper"
-            data-aos="zoom-in"
-            data-aos-duration="900"
-            data-aos-delay="150"
-          >
-            <div class="braj-rotate-container">
-              <img
-                src="Images/Full Plot.jpeg"
-                alt="Braj Greens luxury living greens"
-                onerror="
-                  this.src =
-                    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&t=20260604'
-                "
-              />
-            </div>
-          </div>
-          <div class="grid-content">
-            <span class="pre-title"
-              ><i class="fas fa-tree"></i> SERENE • SOPHISTICATED •
-              SUSTAINABLE</span
-            >
-            <h2>About Braj Greens</h2>
-            <div class="lead-text">
-              Where nature’s tranquility meets contemporary grandeur.
-            </div>
-            <div class="description-text">
-              Braj Greens is not just a residence — it is a mindful escape from
-              the ordinary. Nestled amidst lush landscapes, the development
-              offers sprawling gardens, state-of-the-art amenities, and
-              thoughtfully crafted residences that breathe elegance. Every
-              corner is designed to inspire peace, connection, and a life
-              well-lived. Experience the harmony of Vastu-inspired architecture,
-              world-class clubhouses, and panoramic views — a sanctuary for
-              connoisseurs of refined living.
-            </div>
-            <ul class="feature-list">
-              <li>
-                <i class="fas fa-water"></i> 70% open greenscapes & natural
-                water features
-              </li>
-              <li>
-                <i class="fas fa-dumbbell"></i> Sky lounge, infinity pool & spa
-                sanctuary
-              </li>
-              <li>
-                <i class="fas fa-shield-alt"></i> 24/7 concierge & smart home
-                integration
-              </li>
-            </ul>
-            <a href="#" class="luxury-link"
-              >Discover Braj Greens <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      (function () {
-        // Initialize AOS
-        AOS.init({
-          once: false,
-          mirror: false,
-          duration: 900,
-          easing: "ease-out-cubic",
-        });
-
-        // GOLD PARTICLES on header
-        const canvas = document.getElementById("gold-particles");
-        if (canvas) {
-          const ctx = canvas.getContext("2d");
-          let width = window.innerWidth;
-          let height = document.querySelector(".about-header").offsetHeight;
-          canvas.width = width;
-          canvas.height = height;
-
-          let particles = [];
-          const PARTICLE_COUNT = 50;
-
-          class GoldParticle {
-            constructor() {
-              this.x = Math.random() * width;
-              this.y = Math.random() * height;
-              this.size = Math.random() * 3 + 1.2;
-              this.speedX = (Math.random() - 0.5) * 0.35;
-              this.speedY = (Math.random() - 0.5) * 0.2 + 0.1;
-              this.opacity = Math.random() * 0.6 + 0.2;
-            }
-            update() {
-              this.x += this.speedX;
-              this.y += this.speedY;
-              if (this.x < -20) this.x = width + 20;
-              if (this.x > width + 20) this.x = -20;
-              if (this.y < -20) this.y = height + 20;
-              if (this.y > height + 20) this.y = -20;
-            }
-            draw() {
-              if (!ctx) return;
-              ctx.beginPath();
-              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(228, 197, 128, ${this.opacity + Math.sin(Date.now() * 0.002 + this.x) * 0.1})`;
-              ctx.shadowBlur = 8;
-              ctx.shadowColor = "#e4c580";
-              ctx.fill();
-              ctx.shadowBlur = 0;
-            }
-          }
-
-          function initParticles() {
-            particles = [];
-            for (let i = 0; i < PARTICLE_COUNT; i++) {
-              particles.push(new GoldParticle());
-            }
-          }
-
-          function animateParticles() {
-            if (!ctx) return;
-            ctx.clearRect(0, 0, width, height);
-            for (let p of particles) {
-              p.update();
-              p.draw();
-            }
-            requestAnimationFrame(animateParticles);
-          }
-
-          function resizeCanvas() {
-            const newHeight =
-              document.querySelector(".about-header").offsetHeight;
-            width = window.innerWidth;
-            height = newHeight;
-            canvas.width = width;
-            canvas.height = height;
-            initParticles();
-          }
-
-          window.addEventListener("resize", () => resizeCanvas());
-          resizeCanvas();
-          animateParticles();
-        }
-
-        // Parallax for header background
-        const header = document.querySelector(".about-header");
-        const bgImgHeader = document.querySelector(".bg-image");
-        if (header && bgImgHeader) {
-          header.addEventListener("mousemove", (e) => {
-            const rect = header.getBoundingClientRect();
-            const xPercent = (e.clientX - rect.left) / rect.width;
-            const yPercent = (e.clientY - rect.top) / rect.height;
-            const moveX = (xPercent - 0.5) * 18;
-            const moveY = (yPercent - 0.5) * 12;
-            bgImgHeader.style.transform = `scale(1.07) translate(${moveX * 0.5}px, ${moveY * 0.3}px)`;
-          });
-          header.addEventListener("mouseleave", () => {
-            bgImgHeader.style.transform = "scale(1) translate(0px, 0px)";
-          });
-        }
-
-        // Spark effect for luxury links
-        function createSparkle(e) {
-          const spark = document.createElement("div");
-          spark.classList.add("gold-spark");
-          spark.style.left = e.clientX + "px";
-          spark.style.top = e.clientY + "px";
-          spark.style.width = "20px";
-          spark.style.height = "20px";
-          document.body.appendChild(spark);
-          setTimeout(() => spark.remove(), 800);
-        }
-
-        const links = document.querySelectorAll(".luxury-link");
-        links.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            e.preventDefault();
-            createSparkle(e);
-          });
-          link.addEventListener("mouseenter", (e) => {
-            const icon = link.querySelector("i");
-            if (icon) icon.style.transform = "translateX(4px)";
-          });
-          link.addEventListener("mouseleave", (e) => {
-            const icon = link.querySelector("i");
-            if (icon) icon.style.transform = "translateX(0px)";
-          });
-        });
-
-        // Shine effect on standard grid images
-        const standardImages = document.querySelectorAll(".grid-image");
-        standardImages.forEach((box) => {
-          box.addEventListener("mousemove", (e) => {
-            const rect = box.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width;
-            const y = (e.clientY - rect.top) / rect.height;
-            box.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(228,197,128,0.12), transparent 70%)`;
-          });
-          box.addEventListener("mouseleave", () => {
-            box.style.background = "";
-          });
-        });
-
-        // rotate container shine as well
-        const brajWrap = document.querySelector(".braj-image-wrapper");
-        if (brajWrap) {
-          brajWrap.addEventListener("mousemove", (e) => {
-            const rect = brajWrap.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width;
-            const y = (e.clientY - rect.top) / rect.height;
-            brajWrap.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(228,197,128,0.15), transparent 70%)`;
-          });
-          brajWrap.addEventListener("mouseleave", () => {
-            brajWrap.style.background = "";
-          });
-        }
-
-        // Force images to be visible: preload and prevent stale caching, but using timestamp in query already ensures fresh load each session (not only on refresh but every load)
-        // Also ensure braj image rotates correctly and is full height even after window resize
-        const fixBrajHeight = () => {
-          const wrap = document.querySelector(".braj-image-wrapper");
-          if (wrap) {
-            const container = wrap.querySelector(".braj-rotate-container");
-            if (container && container.querySelector("img")) {
-              // force image to maintain full height of container
-              const img = container.querySelector("img");
-              if (img.complete) {
-                // ensure rotation scaling looks pristine
-                img.style.objectFit = "cover";
-              }
-            }
-          }
-        };
-        window.addEventListener("load", fixBrajHeight);
-        window.addEventListener("resize", fixBrajHeight);
-        fixBrajHeight();
-      })();
-    </script>
-  </body>
-</html>
-
-<!-- -------why choose us-----  -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-    <title>Kirti Realty | Why Choose Us — Premium Slidable Cards</title>
+    <title>Kirti Realty | Why Choose Us — Refined Edition</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
       rel="stylesheet"
@@ -951,14 +18,22 @@
         box-sizing: border-box;
       }
 
-      /* FULL WIDTH SECTION with VIDEO BACKGROUND */
+      body {
+        /* background: #0a0705; */
+        font-family: "Inter", sans-serif;
+      }
+
+      /* SECTION — reduced vertical footprint, same immersive video */
       .kirti-hero-video {
         position: relative;
         width: 100%;
         overflow: hidden;
+        background: #000000;
+        /* LESS HEIGHT: compact but luxurious */
+        min-height: 0;
       }
 
-      /* Background video element */
+      /* Background video - unified cinematic presence */
       .bg-video {
         position: absolute;
         top: 0;
@@ -967,9 +42,10 @@
         height: 100%;
         object-fit: cover;
         z-index: 0;
+        filter: brightness(0.72) contrast(1.08) saturate(1.12);
       }
 
-      /* semi-transparent overlay for better text contrast */
+      /* overlay refined */
       .video-overlay {
         position: absolute;
         top: 0;
@@ -977,253 +53,299 @@
         width: 100%;
         height: 100%;
         background: radial-gradient(
-          circle at 20% 30%,
-          rgba(20, 18, 15, 0),
-          rgba(0, 0, 0, 0)
+          circle at 20% 40%,
+          rgba(0, 0, 0, 0.25) 0%,
+          rgba(10, 7, 5, 0.7) 95%
         );
         z-index: 1;
         pointer-events: none;
       }
 
-      /* content wrapper (relative) */
+      /* content wrapper - reduced padding to lower height significantly */
       .content-wrapper {
         position: relative;
         z-index: 2;
         width: 100%;
-        padding: 4rem 2rem;
+        padding: 2.2rem 2rem 2rem 2rem;
       }
 
       .fullwidth-inner {
-        max-width: 1400px;
+        max-width: 1440px;
         margin: 0 auto;
         width: 100%;
       }
 
-      /* header styles */
+      /* compact but striking header */
       .section-head {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 1.8rem;
       }
 
       .section-head h2 {
-        font-size: 3rem;
+        font-size: 2.4rem;
         font-weight: 800;
         letter-spacing: -0.02em;
         background: linear-gradient(
           135deg,
-          #ffffff 0%,
-          #ffcb82 40%,
-          #ff9a00 100%
+          #fff6e8 0%,
+          #ffd29a 40%,
+          #ffb347 100%
         );
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
       }
 
       .section-head .tagline {
-        font-size: 1.1rem;
-        color: #ffffff;
-        background: #f5f5dc24;
-        margin-top: 0.7rem;
+        font-size: 0.85rem;
+        color: #fff2df;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(5px);
+        margin-top: 0.45rem;
         font-weight: 500;
-        border-bottom: 1.5px solid rgba(255, 170, 50, 0.7);
+        border-bottom: 1.5px solid #ffb347;
         display: inline-block;
-        padding-bottom: 0.5rem;
-        backdrop-filter: blur(2px);
+        padding: 0.25rem 1.4rem;
+        border-radius: 40px;
+        letter-spacing: 0.2px;
       }
 
-      /* DESKTOP: 4x2 GRID — exactly 2 rows, 4 columns (no change) */
+      /* 4x2 GRID — tighter card design less height */
       .grid-4x2 {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.8rem;
+        gap: 1.2rem;
       }
 
-      /* Modern card design – glassmorphism */
-      .feature-card {
-        background: rgba(18, 16, 14, 0.65);
-        backdrop-filter: blur(8px);
-        border-radius: 1.75rem;
-        padding: 1.6rem 1.3rem;
+      /* compact card: less padding, smaller margins -> lower vertical space */
+      .features-cards {
+        background: rgba(20, 17, 14, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 1.5rem;
+        padding: 1rem 1rem 1rem 1rem;
         transition: all 0.3s ease;
-        border: 1px solid rgba(255, 180, 80, 0.35);
-        box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 180, 80, 0.4);
+        box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.4);
         height: 100%;
       }
 
-      .feature-card:hover {
-        background: rgba(30, 26, 22, 0.8);
-        border-color: #ff9a00;
-        transform: translateY(-5px);
-        box-shadow: 0 22px 28px -14px black;
+      .features-cards:hover {
+        background: rgba(35, 28, 22, 0.85);
+        border-color: #ffa433;
+        transform: translateY(-4px);
       }
 
-      /* SVG icons styling - clean vector icons (no emojis) */
+      /* icon slightly smaller to reduce card height */
       .feature-icon {
-        width: 54px;
-        height: 54px;
-        margin-bottom: 1.2rem;
+        width: 44px;
+        height: 44px;
+        margin-bottom: 0.7rem;
         display: block;
-        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
-        transition: transform 0.2s;
-      }
-
-      .feature-card:hover .feature-icon {
-        transform: scale(1.02);
+        filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.4));
       }
 
       .feature-title {
-        font-size: 1.35rem;
+        font-size: 1.1rem;
         font-weight: 700;
-        color: #ffe1b0;
-        margin-bottom: 0.65rem;
+        color: #ffdfb3;
+        margin-bottom: 0.4rem;
         letter-spacing: -0.2px;
       }
 
       .feature-desc {
-        font-size: 0.88rem;
-        line-height: 1.45;
-        color: rgba(252, 242, 220, 0.85);
+        font-size: 0.78rem;
+        line-height: 1.4;
+        color: rgba(255, 245, 225, 0.88);
         font-weight: 400;
       }
 
       .feature-desc strong {
-        color: #ffbc5e;
-        font-weight: 600;
+        color: #ffc46b;
+        font-weight: 700;
       }
 
-      /* trust-building footer with SVG icons instead of emojis */
+      /* trust footer - minimal but elegant */
       .trust-footer {
-        margin-top: 3.2rem;
+        margin-top: 2rem;
         text-align: center;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(255, 154, 0, 0.5);
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 170, 60, 0.5);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem;
-        font-size: 0.85rem;
+        gap: 1.2rem;
+        font-size: 0.7rem;
         font-weight: 500;
-        color: #fae9ce;
-        backdrop-filter: blur(2px);
+        color: #fff0da;
       }
 
       .trust-item {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
         background: rgba(0, 0, 0, 0.5);
-        padding: 0.3rem 0.9rem;
+        backdrop-filter: blur(4px);
+        padding: 0.2rem 1rem;
         border-radius: 40px;
         letter-spacing: 0.2px;
       }
 
       .trust-icon-svg {
-        width: 20px;
-        height: 20px;
-        filter: brightness(0) invert(0.9);
+        width: 14px;
+        height: 14px;
+        filter: brightness(0) invert(0.85) sepia(1) hue-rotate(320deg);
       }
 
+      /* tablet: 2-col grid, less height remains */
       @media (max-width: 1100px) and (min-width: 681px) {
-        /* tablet: standard 2-column grid, no slidable, just responsive grid */
         .grid-4x2 {
           grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem;
+          gap: 1.2rem;
         }
         .content-wrapper {
-          padding: 3rem 1.8rem;
+          padding: 1.8rem 1.5rem;
         }
         .section-head h2 {
-          font-size: 2.5rem;
+          font-size: 2rem;
+        }
+        .features-cards {
+          padding: 0.9rem 1rem;
+        }
+        .feature-title {
+          font-size: 1rem;
+        }
+        .feature-desc {
+          font-size: 0.75rem;
         }
       }
 
-      /* MOBILE: cards become slidable (horizontal swipe) NOT in column */
+      /* MOBILE: horizontal slidable with same reduced height philosophy */
       @media (max-width: 680px) {
-        /* Override grid behaviour: use flex overflow for horizontal scroll */
         .grid-4x2 {
           display: flex;
           flex-flow: row nowrap;
           overflow-x: auto;
-          overflow-y: hidden;
-          gap: 1.2rem;
+          gap: 1rem;
           scroll-snap-type: x mandatory;
-          padding-bottom: 1rem;
-          /* hide scrollbar but keep functionality on most browsers for cleaner look, but still scrollable */
+          padding-bottom: 0.5rem;
           scrollbar-width: thin;
-          scrollbar-color: #ff9a00 #2a2a2a;
+          scrollbar-color: #ffb347 #2e241e;
           -webkit-overflow-scrolling: touch;
         }
-
         .grid-4x2::-webkit-scrollbar {
-          height: 5px;
+          height: 3px;
         }
         .grid-4x2::-webkit-scrollbar-track {
-          background: #1e1e1e;
+          background: #1e1915;
           border-radius: 10px;
         }
         .grid-4x2::-webkit-scrollbar-thumb {
-          background: #ff9a00;
+          background: #ffa635;
           border-radius: 10px;
         }
-
-        .feature-card {
-          flex: 0 0 85%;
+        .features-cards {
+          flex: 0 0 78%;
           scroll-snap-align: start;
-          min-width: 260px;
-          max-width: 320px;
-          margin-right: 0;
+          min-width: 250px;
+          max-width: 300px;
+          padding: 0.9rem 0.9rem;
         }
-
         .content-wrapper {
-          padding: 2.2rem 1.2rem;
+          padding: 1.2rem 1rem 1.5rem;
         }
-
-        .feature-title {
-          font-size: 1.25rem;
-        }
-
         .feature-icon {
-          width: 46px;
-          height: 46px;
+          width: 40px;
+          height: 40px;
+          margin-bottom: 0.6rem;
         }
-
+        .feature-title {
+          font-size: 1rem;
+        }
+        .feature-desc {
+          font-size: 0.72rem;
+        }
         .section-head h2 {
-          font-size: 2rem;
+          font-size: 1.8rem;
         }
-
-        /* trust footer adjust spacing */
+        .tagline {
+          font-size: 0.7rem;
+          padding: 0.2rem 1rem;
+        }
         .trust-footer {
-          gap: 0.9rem;
-          flex-wrap: wrap;
+          gap: 0.7rem;
+          margin-top: 1.2rem;
         }
         .trust-item {
-          font-size: 0.7rem;
-          padding: 0.2rem 0.7rem;
+          font-size: 0.6rem;
+          padding: 0.15rem 0.8rem;
         }
         .trust-icon-svg {
-          width: 16px;
-          height: 16px;
+          width: 12px;
+          height: 12px;
         }
       }
 
       @media (min-width: 1400px) {
         .grid-4x2 {
-          gap: 2rem;
+          gap: 1.5rem;
+          padding: 2rem 10rem;
         }
-        .feature-card {
-          padding: 1.8rem 1.5rem;
+        .features-cards {
+          padding: 20px 26px;
         }
         .feature-title {
-          font-size: 1.45rem;
+          font-size: 21px;
         }
+        .feature-desc {
+          font-size: 14px;
+          margin-top: 17px;
+        }
+      }
+
+      /* subtle card animation */
+      .features-cards {
+        animation: cardFade 0.4s ease-out backwards;
+      }
+      @keyframes cardFade {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .features-cards:nth-child(1) {
+        animation-delay: 0.01s;
+      }
+      .features-cards:nth-child(2) {
+        animation-delay: 0.04s;
+      }
+      .features-cards:nth-child(3) {
+        animation-delay: 0.07s;
+      }
+      .features-cards:nth-child(4) {
+        animation-delay: 0.1s;
+      }
+      .features-cards:nth-child(5) {
+        animation-delay: 0.13s;
+      }
+      .features-cards:nth-child(6) {
+        animation-delay: 0.16s;
+      }
+      .features-cards:nth-child(7) {
+        animation-delay: 0.19s;
+      }
+      .features-cards:nth-child(8) {
+        animation-delay: 0.22s;
       }
     </style>
   </head>
   <body>
     <div class="kirti-hero-video">
-      <!-- Background video element: cinematic neutral aerial cityscape (placeholder) -->
+      <!-- same video background for consistency -->
       <video
         class="bg-video"
         autoplay
@@ -1233,7 +355,6 @@
         disablePictureInPicture
       >
         <source src="Images/video-proxy.mp4" type="video/mp4" />
-        <!-- fallback message only if needed -->
       </video>
       <div class="video-overlay"></div>
 
@@ -1246,10 +367,10 @@
             </div>
           </div>
 
-          <!-- 4x2 GRID / but on mobile transforms into HORIZONTAL SLIDABLE container -->
+          <!-- 8 premium cards, lower height profile, grid 4x2 -> mobile slidable -->
           <div class="grid-4x2">
             <!-- Card 1: Trusted & Transparent Deals -->
-            <div class="feature-card">
+            <div class="features-cards">
               <svg
                 class="feature-icon"
                 viewBox="0 0 24 24"
@@ -1272,14 +393,13 @@
               </svg>
               <div class="feature-title">Trusted & Transparent Deals</div>
               <div class="feature-desc">
-                RERA-registered projects, clear documentation, and
-                <strong>zero hidden charges</strong>. 2500+ families trust our
-                integrity.
+                RERA-registered, clear docs &
+                <strong>zero hidden charges</strong>. 2500+ families trust us.
               </div>
             </div>
 
             <!-- Card 2: Prime Locations -->
-            <div class="feature-card">
+            <div class="features-cards">
               <svg
                 class="feature-icon"
                 viewBox="0 0 24 24"
@@ -1309,14 +429,14 @@
               </svg>
               <div class="feature-title">Prime Locations</div>
               <div class="feature-desc">
-                Strategic land parcels near metro stations, IT hubs & schools.
+                Near metro, IT hubs & schools.
                 <strong>High growth corridors</strong> with excellent social
                 infra.
               </div>
             </div>
 
             <!-- Card 3: Modern Infrastructure -->
-            <div class="feature-card">
+            <div class="features-cards">
               <svg
                 class="feature-icon"
                 viewBox="0 0 24 24"
@@ -1349,13 +469,13 @@
               </svg>
               <div class="feature-title">Modern Infrastructure</div>
               <div class="feature-desc">
-                Smart-home ready, energy-efficient designs, EV charging,
-                clubhouse, gym & <strong>world-class amenities</strong>.
+                Smart-ready, EV charging, clubhouse, gym &
+                <strong>world-class amenities</strong>.
               </div>
             </div>
 
             <!-- Card 4: Timely Project Delivery -->
-            <div class="feature-card">
+            <div class="features-cards">
               <svg
                 class="feature-icon"
                 viewBox="0 0 24 24"
@@ -1386,13 +506,13 @@
               </svg>
               <div class="feature-title">Timely Project Delivery</div>
               <div class="feature-desc">
-                Strict RERA compliance, milestone tracking &
-                <strong>98% on-time possession</strong>. Zero delay guarantee.
+                RERA compliance, milestone tracking &
+                <strong>98% on-time possession</strong>.
               </div>
             </div>
 
             <!-- Card 5: Investment Growth Potential -->
-            <div class="feature-card">
+            <div class="features-cards">
               <svg
                 class="feature-icon"
                 viewBox="0 0 24 24"
@@ -1424,15 +544,15 @@
                   rx="1"
                 />
               </svg>
-              <div class="feature-title">Investment Growth Potential</div>
+              <div class="feature-title">Investment Growth</div>
               <div class="feature-desc">
-                High appreciation zones & strategic planning.
-                <strong>YOY returns up to 18%</strong> – ideal wealth creation.
+                High appreciation zones &
+                <strong>YOY returns up to 18%</strong> – wealth creation.
               </div>
             </div>
 
             <!-- Card 6: Customer-Centric Approach -->
-            <div class="feature-card">
+            <div class="features-cards">
               <svg
                 class="feature-icon"
                 viewBox="0 0 24 24"
@@ -1460,16 +580,15 @@
                   fill="none"
                 />
               </svg>
-              <div class="feature-title">Customer-Centric Approach</div>
+              <div class="feature-title">Customer-Centric</div>
               <div class="feature-desc">
-                24/7 support, real-time project dashboards & dedicated
-                relationship managers for
+                24/7 support, real-time dashboards & dedicated managers for
                 <strong>complete satisfaction</strong>.
               </div>
             </div>
 
             <!-- Card 7: Professional Guidance -->
-            <div class="feature-card">
+            <div class="features-cards">
               <svg
                 class="feature-icon"
                 viewBox="0 0 24 24"
@@ -1492,13 +611,13 @@
               </svg>
               <div class="feature-title">Professional Guidance</div>
               <div class="feature-desc">
-                Legal experts, home loan assistance & end-to-end advisory from
-                site visit to <strong>smooth registration</strong>.
+                Legal experts, home loan assistance, end-to-end advisory to
+                <strong>smooth registration</strong>.
               </div>
             </div>
 
             <!-- Card 8: Quality Construction -->
-            <div class="feature-card">
+            <div class="features-cards">
               <svg
                 class="feature-icon"
                 viewBox="0 0 24 24"
@@ -1540,13 +659,13 @@
               </svg>
               <div class="feature-title">Quality Construction</div>
               <div class="feature-desc">
-                Earthquake-resistant RCC, premium materials, waterproofing &
+                Earthquake-resistant, premium materials &
                 <strong>5-year structural warranty</strong>.
               </div>
             </div>
           </div>
 
-          <!-- trust badges with SVG icons (no emojis) -->
+          <!-- trust badges - compact and elegant -->
           <div class="trust-footer">
             <div class="trust-item">
               <svg
@@ -1560,7 +679,7 @@
                   fill="#FFB347"
                 />
               </svg>
-              <span>15+ Years of Real Estate Excellence</span>
+              <span>15+ Years Excellence</span>
             </div>
             <div class="trust-item">
               <svg
@@ -1574,7 +693,7 @@
                   fill="#FFB347"
                 />
               </svg>
-              <span>5000+ Happy Households</span>
+              <span>5000+ Happy Homes</span>
             </div>
             <div class="trust-item">
               <svg
@@ -1599,7 +718,7 @@
                   stroke-width="1.2"
                 />
               </svg>
-              <span>RERA Registered | IGBC Pre-Certified</span>
+              <span>RERA | IGBC Pre-Certified</span>
             </div>
             <div class="trust-item">
               <svg
@@ -1613,2256 +732,56 @@
                   fill="#FFB347"
                 />
               </svg>
-              <span>94% Customer Referral Rate</span>
+              <span>94% Referral Rate</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-</html>
 
-<!-- =====Gallery============  -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <title>
-      LUXURY REALTY GALLERY | Prestige Estates — Cinematic Collection
-    </title>
-    <!-- Google Fonts: Playfair Display + Inter (Luxury Typography) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome 6 (Premium Icons) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        /* font-family: "Inter", sans-serif; */
-        background: #ffffff;
-        color: #1a2a3a;
-        scroll-behavior: smooth;
-      }
-
-      :root {
-        --gold: #c8a45e;
-        --gold-dark: #9e7b48;
-        --gold-light: #f3e8d2;
-        --charcoal: #1f2e3a;
-        --soft-mist: #faf9f7;
-        --shadow-luxury: 0 35px 55px -20px rgba(0, 0, 0, 0.25);
-        --shadow-glow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-      }
-
-      .gallery-container {
-        max-width: 1600px;
-        margin: 0 auto;
-        padding: 6rem 5rem 5rem;
-        background: #ffffff;
-      }
-
-      /* header with elegance */
-      .section-header {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-
-      .section-header h2 {
-        font-family: "Cormorant Garamond", serif !important;
-        font-size: 3.2rem;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-        background: linear-gradient(135deg, #ab8a45, #dbb86b, #c9a457);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-      }
-
-      .section-header .underline {
-        width: 120px;
-        height: 2px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          var(--gold),
-          var(--gold-light),
-          transparent
-        );
-        margin: 0.7rem auto 0.6rem;
-        border-radius: 3px;
-      }
-
-      .section-header p {
-        color: #7d8a9b;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-weight: 500;
-      }
-
-      /* luxury tabs with shimmer */
-      .gallery-tabs {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.7rem;
-        margin-bottom: 2.5rem;
-        background: #ffffff;
-        border-radius: 100px;
-        padding: 0.4rem;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow:
-          0 5px 20px rgba(0, 0, 0, 0.02),
-          0 0 0 1px #edece5;
-      }
-
-      .tab-btn {
-        background: transparent;
-        border: none;
-        font-size: 0.95rem;
-        font-weight: 600;
-        padding: 0.75rem 1.9rem;
-        cursor: pointer;
-        border-radius: 60px;
-        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-        /* font-family: "Inter", sans-serif; */
-        color: #4a5a6e;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        letter-spacing: 0.2px;
-      }
-
-      .tab-btn i {
-        color: var(--gold);
-        font-size: 1rem;
-        transition: 0.2s;
-      }
-
-      .tab-btn.active {
-        background: #1f2e3a;
-        color: #fff9ef;
-        box-shadow: 0 10px 22px -6px rgba(0, 0, 0, 0.15);
-      }
-
-      .tab-btn.active i {
-        color: var(--gold-light);
-      }
-
-      .tab-btn:hover:not(.active) {
-        background: #fef5e8;
-        color: var(--gold-dark);
-        transform: translateY(-2px);
-      }
-
-      /* panels animation */
-      .gallery-panel {
-        display: none;
-        animation: fadeRise 0.55s cubic-bezier(0.2, 0.9, 0.4, 1) forwards;
-      }
-
-      .gallery-panel.active-panel {
-        display: block;
-      }
-
-      @keyframes fadeRise {
-        0% {
-          opacity: 0;
-          transform: translateY(18px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* ========== DUAL SLIDER ROWS: 2-3 IMAGES VISIBLE & SMALLER HEIGHT ========== */
-      .dual-row-slider {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        border-radius: 32px;
-        background: #fefcf8;
-        box-shadow: var(--shadow-luxury);
-        padding: 1rem 0;
-      }
-
-      .slider-track {
-        display: flex;
-        gap: 1.2rem;
-        transition: transform 0.7s cubic-bezier(0.25, 0.92, 0.4, 1.05);
-        will-change: transform;
-      }
-
-      .slide-card {
-        flex: 0 0 calc(33.333% - 0.8rem);
-        border-radius: 1.8rem;
-        overflow: hidden;
-        background: #fff;
-        box-shadow: 0 15px 25px -12px rgba(0, 0, 0, 0.08);
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.4s;
-        cursor: pointer;
-      }
-
-      .slide-card:hover {
-        transform: translateY(-6px) scale(1.01);
-        box-shadow: 0 28px 38px -16px rgba(0, 0, 0, 0.2);
-      }
-
-      .slide-card img {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.8s ease;
-      }
-
-      .slide-card:hover img {
-        transform: scale(1.03);
-      }
-
-      .card-caption {
-        padding: 0.8rem 1rem;
-        background: linear-gradient(to top, #ffffff, #fefaf2);
-        font-weight: 500;
-        font-size: 0.85rem;
-        color: #2c3e44;
-        text-align: center;
-        border-top: 1px solid rgba(200, 164, 94, 0.25);
-      }
-
-      .card-caption i {
-        color: var(--gold);
-        margin-right: 6px;
-      }
-
-      /* navigation for dual sliders */
-      .slider-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(30, 30, 35, 0.75);
-        backdrop-filter: blur(12px);
-        width: 44px;
-        height: 44px;
-        border-radius: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.3rem;
-        cursor: pointer;
-        z-index: 15;
-        transition: all 0.25s;
-        border: 1px solid rgba(200, 164, 94, 0.5);
-      }
-
-      .slider-nav:hover {
-        background: var(--gold);
-        color: #1a2a3a;
-        transform: translateY(-50%) scale(1.08);
-      }
-
-      .nav-left-dual {
-        left: 15px;
-      }
-      .nav-right-dual {
-        right: 15px;
-      }
-
-      /* dot indicators luxury */
-      .slider-dots {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 1.5rem;
-      }
-      .dot-indicator {
-        width: 8px;
-        height: 8px;
-        background: #cdd1d6;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
-      .dot-indicator.active-dot {
-        width: 36px;
-        background: var(--gold);
-        box-shadow: 0 0 8px rgba(200, 164, 94, 0.6);
-      }
-
-      /* Prestigious project card — immersive landscape */
-      .prestigious-card {
-        background: #fffefb;
-        border-radius: 40px;
-        overflow: hidden;
-        box-shadow: 0 30px 45px -18px rgba(0, 0, 0, 0.18);
-        border: 1px solid #f0e7da;
-        transition: all 0.5s;
-      }
-      .prestigious-card:hover {
-        transform: translateY(-8px);
-      }
-      .prestigious-img {
-        width: 100%;
-        object-fit: cover;
-        display: block;
-        max-height: 580px;
-        width: 100%;
-        transition: transform 1s ease;
-      }
-      .prestigious-card:hover .prestigious-img {
-        transform: scale(1.02);
-      }
-      .prestigious-info {
-        padding: 1.8rem 2rem;
-        text-align: center;
-        background: linear-gradient(145deg, #ffffff, #fdf8ef);
-      }
-      .prestigious-info h3 {
-        /* font-family: "Playfair Display", serif; */
-        font-size: 2.2rem;
-        font-weight: 600;
-      }
-      .prestigious-info p {
-        color: #657b8c;
-        margin-top: 0.5rem;
-        letter-spacing: 0.4px;
-      }
-
-      /* construction update luxury */
-      .coming-soon-card {
-        background: #fefaf4;
-        border-radius: 48px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 3.5rem 2rem;
-        min-height: 420px;
-        border: 1px solid #eee6db;
-        transition: all 0.4s;
-      }
-      .clock-icon {
-        font-size: 3rem;
-        background: #f2e9dd;
-        width: 130px;
-        height: 130px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100px;
-        color: var(--gold);
-        margin-bottom: 1.6rem;
-        gap: 10px;
-      }
-      .coming-soon-card h3 {
-        font-family: "Cormorant Garamond", serif !important;
-        font-size: 2rem;
-        color: #1e2a32;
-      }
-      .update-badge {
-        background: #efe2cf;
-        padding: 0.7rem 2rem;
-        border-radius: 60px;
-        font-size: 0.85rem;
-        color: #8b6f3c;
-        font-weight: 600;
-        margin-top: 1rem;
-      }
-
-      /* responsive adjustments */
-      @media (max-width: 1024px) {
-        .slide-card {
-          flex: 0 0 calc(50% - 0.6rem);
-        }
-        .gallery-container {
-          padding: 1.5rem;
-        }
-        .section-header h2 {
-          font-size: 2.5rem;
-        }
-      }
-      @media (max-width: 768px) {
-        .slide-card {
-          flex: 0 0 calc(100% - 0rem);
-        }
-        .slider-track {
-          gap: 0.8rem;
-        }
-        .tab-btn {
-          padding: 0.55rem 1.1rem;
-          font-size: 0.75rem;
-        }
-        .prestigious-info h3 {
-          font-size: 1.5rem;
-        }
-        .clock-icon {
-          width: 90px;
-          height: 90px;
-        }
-        .coming-soon-card h3 {
-          font-size: 1.4rem;
-        }
-      }
-
-      /* small shimmer on active dot */
-      @keyframes glowPulse {
-        0% {
-          opacity: 0.6;
-        }
-        100% {
-          opacity: 1;
-          box-shadow: 0 0 6px #dbb86b;
-        }
-      }
-      .dot-indicator.active-dot {
-        animation: glowPulse 1.2s infinite alternate;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="gallery-container">
-      <div class="section-header">
-        <h2>THE REALTY GALLERY</h2>
-        <div class="underline"></div>
-        <p>WHERE ARCHITECTURE BECOMES LEGACY</p>
-      </div>
-
-      <!-- TABS : 4 exclusive experiences -->
-      <div class="gallery-tabs">
-        <button class="tab-btn active" data-tab="exterior">
-          <i class="fas fa-building"></i> Exterior
-        </button>
-        <button class="tab-btn" data-tab="interior">
-          <i class="fas fa-couch"></i> Interior
-        </button>
-        <button class="tab-btn" data-tab="prestigious">
-          <i class="fas fa-crown"></i> Prestigious Project
-        </button>
-        <button class="tab-btn" data-tab="construction">
-          <i class="fas fa-helmet-safety"></i> Construction Update
-        </button>
-      </div>
-
-      <!-- EXTERIOR PANEL: Dual row slider (2-3 images visible, smaller height) -->
-      <div id="exterior" class="gallery-panel active-panel">
-        <div class="dual-row-slider" id="exteriorDualSlider">
-          <div class="slider-track" id="exteriorTrack"></div>
-          <div class="slider-nav nav-left-dual" id="exteriorPrevBtn">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <div class="slider-nav nav-right-dual" id="exteriorNextBtn">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </div>
-        <div class="slider-dots" id="exteriorDotsContainer"></div>
-        <p
-          style="
-            text-align: center;
-            font-size: 0.7rem;
-            margin-top: 1rem;
-            color: #b38f48;
-            letter-spacing: 0.8px;
-          "
-        >
-          <i class="fas fa-meteor"></i> 360° Exterior Vision • Coastal & Skyline
-          Modernism
-        </p>
-      </div>
-
-      <!-- INTERIOR PANEL: Dual row slider with same luxury -->
-      <div id="interior" class="gallery-panel">
-        <div class="dual-row-slider" id="interiorDualSlider">
-          <div class="slider-track" id="interiorTrack"></div>
-          <div class="slider-nav nav-left-dual" id="interiorPrevBtn">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <div class="slider-nav nav-right-dual" id="interiorNextBtn">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </div>
-        <div class="slider-dots" id="interiorDotsContainer"></div>
-        <p
-          style="
-            text-align: center;
-            font-size: 0.7rem;
-            margin-top: 1rem;
-            color: #b38f48;
-          "
-        >
-          <i class="fas fa-couch"></i> Bespoke Interiors — Marble, Light &
-          Sculptural Elegance
-        </p>
-      </div>
-
-      <!-- PRESTIGIOUS PROJECT: full immersive -->
-      <div id="prestigious" class="gallery-panel">
-        <div class="prestigious-card">
-          <img
-            class="prestigious-img"
-            id="prestigiousLandscape"
-            src="Images/Full Plot.jpeg"
-            alt="The Royal Seaview Estate"
-            loading="eager"
-          />
-          <div class="prestigious-info">
-            <h3><i class="fas fa-gem"></i> THE ROYAL SEAVIEW ESTATE</h3>
-            <p>
-              Iconic landmark • Panoramic oceanfront • Award-winning
-              architectural masterpiece
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONSTRUCTION UPDATE -->
-      <div id="construction" class="gallery-panel">
-        <div class="coming-soon-card">
-          <div class="clock-icon">
-            <i class="fas fa-ruler-combined"></i
-            ><i class="fas fa-chart-line"></i>
-          </div>
-          <h3>Construction Milestones</h3>
-          <p>
-            Luxury tower phase II, AI-integrated smart homes, Mediterranean
-            finishes.<br />Exclusive unveiling 2026.
-          </p>
-          <div class="update-badge">
-            <i class="far fa-calendar-alt"></i> Coming 2026 · Prestige
-            Collection
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <!-- script for smooth video autoplay + optional mobile swipe enhancement (non-intrusive) -->
     <script>
-      // ---------- HIGH-RES LUXURY IMAGE SETS (exactly links similar but premium) ----------
-      const exteriorImages = [
-        "https://images.unsplash.com/photo-1565402170291-8491f14678db?w=1200&auto=format&fit=crop&q=85",
-        "https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=1200&auto=format&fit=crop&q=85",
-        "https://images.unsplash.com/photo-1565953522043-baea26b83b7e?w=1200&auto=format&fit=crop&q=85",
-        "https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=1200&auto=format&fit=crop&q=85",
-        "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&auto=format&fit=crop&q=85",
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=85",
-      ];
-
-      const interiorImages = [
-        "https://images.unsplash.com/photo-1663811397219-c572550dffc5?w=1200&auto=format&fit=crop&q=85",
-        "https://images.unsplash.com/photo-1682184805271-11671b7ecf4c?w=1200&auto=format&fit=crop&q=85",
-        "https://images.unsplash.com/photo-1724582586458-a51791349977?w=1200&auto=format&fit=crop&q=85",
-        "https://plus.unsplash.com/premium_photo-1661925668034-7019cd82306e?w=1200&auto=format&fit=crop&q=85",
-        "https://images.unsplash.com/photo-1629079447777-1e605162dc8d?w=1200&auto=format&fit=crop&q=85",
-        "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&auto=format&fit=crop&q=85",
-      ];
-
-      // Captions for each image (luxury detail)
-      const exteriorCaptions = [
-        "Seaside Modern Villa",
-        "Golden Hour Penthouse",
-        "Azure Reflection",
-        "Contemporary Minimalism",
-        "Coastal Haven",
-        "Mediterranean Courtyard",
-      ];
-      const interiorCaptions = [
-        "Sculptural Staircase",
-        "Marble Grand Hall",
-        "Infinity Lounge",
-        "Ambient Bedchamber",
-        "Private Study",
-        "Panoramic Atrium",
-      ];
-
-      // ---------- DUAL ROW SLIDER CLASS (visible 2-3 cards, auto sliding + animation) ----------
-      class DualRowSlider {
-        constructor(
-          trackId,
-          imagesArray,
-          captionsArray,
-          prevBtnId,
-          nextBtnId,
-          dotsContainerId,
-          autoInterval = 3800,
-        ) {
-          this.track = document.getElementById(trackId);
-          this.images = imagesArray;
-          this.captions = captionsArray;
-          this.prevBtn = document.getElementById(prevBtnId);
-          this.nextBtn = document.getElementById(nextBtnId);
-          this.dotsContainer = document.getElementById(dotsContainerId);
-          this.autoIntervalTime = autoInterval;
-          this.currentIndex = 0;
-          this.slidesPerView = this.getSlidesPerView();
-          this.totalSlides = this.images.length;
-          this.maxIndex = Math.max(0, this.totalSlides - this.slidesPerView);
-          this.autoTimer = null;
-          this.isHovering = false;
-          this.init();
-          this.bindEvents();
-          this.startAutoSlide();
-          window.addEventListener("resize", () => this.handleResize());
+      (function () {
+        const videoEl = document.querySelector(".bg-video");
+        if (videoEl) {
+          videoEl.addEventListener("canplaythrough", () => {
+            videoEl
+              .play()
+              .catch((e) => console.log("autoplay restricted, bg visible"));
+          });
+          setTimeout(() => {
+            if (videoEl.paused) videoEl.play().catch(() => {});
+          }, 200);
         }
-
-        getSlidesPerView() {
-          if (window.innerWidth <= 768) return 1;
-          if (window.innerWidth <= 1024) return 2;
-          return 3;
-        }
-
-        init() {
-          this.renderSlides();
-          this.updateDots();
-          this.updateTrackPosition();
-        }
-
-        renderSlides() {
-          this.track.innerHTML = "";
-          this.images.forEach((imgSrc, idx) => {
-            const slideDiv = document.createElement("div");
-            slideDiv.className = "slide-card";
-            const img = document.createElement("img");
-            img.src = imgSrc;
-            img.alt = `Luxury ${idx + 1}`;
-            img.loading = "eager";
-            const captionSpan = document.createElement("div");
-            captionSpan.className = "card-caption";
-            captionSpan.innerHTML = `<i class="fas fa-star-of-life"></i> ${this.captions[idx] || "Elite Design"}`;
-            slideDiv.appendChild(img);
-            slideDiv.appendChild(captionSpan);
-            this.track.appendChild(slideDiv);
+        // For mobile horizontal snap + grab cursor enhancement (optional)
+        const scrollGrid = document.querySelector(".grid-4x2");
+        if (scrollGrid && window.innerWidth <= 680) {
+          let isDown = false;
+          let startX, scrollLeft;
+          scrollGrid.style.cursor = "grab";
+          scrollGrid.addEventListener("mousedown", (e) => {
+            isDown = true;
+            startX = e.pageX - scrollGrid.offsetLeft;
+            scrollLeft = scrollGrid.scrollLeft;
+            scrollGrid.style.cursor = "grabbing";
+          });
+          scrollGrid.addEventListener("mouseleave", () => {
+            isDown = false;
+            scrollGrid.style.cursor = "grab";
+          });
+          scrollGrid.addEventListener("mouseup", () => {
+            isDown = false;
+            scrollGrid.style.cursor = "grab";
+          });
+          scrollGrid.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollGrid.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            scrollGrid.scrollLeft = scrollLeft - walk;
           });
         }
-
-        updateDots() {
-          if (!this.dotsContainer) return;
-          const dotsCount = Math.ceil(this.totalSlides / this.slidesPerView);
-          this.dotsContainer.innerHTML = "";
-          for (let i = 0; i < dotsCount; i++) {
-            const dot = document.createElement("div");
-            dot.classList.add("dot-indicator");
-            if (i === this.currentIndex) dot.classList.add("active-dot");
-            dot.addEventListener("click", () => {
-              this.goToSlide(i);
-              this.resetAutoTimer();
-            });
-            this.dotsContainer.appendChild(dot);
-          }
-        }
-
-        updateTrackPosition() {
-          const slideWidth = this.track.children[0]?.offsetWidth || 0;
-          const gap = 20; // match gap 1.2rem = 19.2px approx
-          const offset = this.currentIndex * (slideWidth + gap);
-          this.track.style.transform = `translateX(-${offset}px)`;
-          this.track.style.transition =
-            "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)";
-        }
-
-        goToSlide(pageIndex) {
-          const maxPage = Math.ceil(this.totalSlides / this.slidesPerView) - 1;
-          let newIdx = Math.min(maxPage, Math.max(0, pageIndex));
-          this.currentIndex = newIdx;
-          this.updateTrackPosition();
-          this.updateActiveDot();
-        }
-
-        updateActiveDot() {
-          if (!this.dotsContainer) return;
-          const dots = this.dotsContainer.children;
-          for (let i = 0; i < dots.length; i++) {
-            if (i === this.currentIndex) dots[i].classList.add("active-dot");
-            else dots[i].classList.remove("active-dot");
-          }
-        }
-
-        nextSlide() {
-          const maxPage = Math.ceil(this.totalSlides / this.slidesPerView) - 1;
-          if (this.currentIndex + 1 <= maxPage) {
-            this.goToSlide(this.currentIndex + 1);
-          } else {
-            this.goToSlide(0);
-          }
-        }
-
-        prevSlide() {
-          if (this.currentIndex - 1 >= 0) {
-            this.goToSlide(this.currentIndex - 1);
-          } else {
-            const maxPage =
-              Math.ceil(this.totalSlides / this.slidesPerView) - 1;
-            this.goToSlide(maxPage);
-          }
-        }
-
-        startAutoSlide() {
-          if (this.autoTimer) clearInterval(this.autoTimer);
-          this.autoTimer = setInterval(() => {
-            if (!this.isHovering && document.visibilityState !== "hidden") {
-              this.nextSlide();
-            }
-          }, this.autoIntervalTime);
-        }
-
-        resetAutoTimer() {
-          if (this.autoTimer) clearInterval(this.autoTimer);
-          this.startAutoSlide();
-        }
-
-        pauseAuto() {
-          if (this.autoTimer) {
-            clearInterval(this.autoTimer);
-            this.autoTimer = null;
-          }
-        }
-
-        handleResize() {
-          const newPerView = this.getSlidesPerView();
-          if (newPerView !== this.slidesPerView) {
-            this.slidesPerView = newPerView;
-            this.maxIndex = Math.max(0, this.totalSlides - this.slidesPerView);
-            this.currentIndex = Math.min(
-              this.currentIndex,
-              Math.ceil(this.totalSlides / this.slidesPerView) - 1,
-            );
-            if (this.currentIndex < 0) this.currentIndex = 0;
-            this.updateDots();
-            this.updateTrackPosition();
-          } else {
-            this.updateTrackPosition();
-          }
-        }
-
-        bindEvents() {
-          this.prevBtn.addEventListener("click", () => {
-            this.prevSlide();
-            this.resetAutoTimer();
-          });
-          this.nextBtn.addEventListener("click", () => {
-            this.nextSlide();
-            this.resetAutoTimer();
-          });
-          const sliderElement = this.track.closest(".dual-row-slider");
-          if (sliderElement) {
-            sliderElement.addEventListener("mouseenter", () => {
-              this.isHovering = true;
-              this.pauseAuto();
-            });
-            sliderElement.addEventListener("mouseleave", () => {
-              this.isHovering = false;
-              this.startAutoSlide();
-            });
-          }
-          // touch swipe support for mobile
-          let touchStartX = 0;
-          sliderElement?.addEventListener("touchstart", (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            this.pauseAuto();
-          });
-          sliderElement?.addEventListener("touchend", (e) => {
-            let endX = e.changedTouches[0].screenX;
-            if (endX < touchStartX - 45) this.nextSlide();
-            if (endX > touchStartX + 45) this.prevSlide();
-            this.startAutoSlide();
-            this.resetAutoTimer();
-          });
-        }
-      }
-
-      // instantiate both sliders (visible 2-3 images, compact height)
-      const exteriorSlider = new DualRowSlider(
-        "exteriorTrack",
-        exteriorImages,
-        exteriorCaptions,
-        "exteriorPrevBtn",
-        "exteriorNextBtn",
-        "exteriorDotsContainer",
-        3900,
-      );
-      const interiorSlider = new DualRowSlider(
-        "interiorTrack",
-        interiorImages,
-        interiorCaptions,
-        "interiorPrevBtn",
-        "interiorNextBtn",
-        "interiorDotsContainer",
-        3900,
-      );
-
-      // Prestigious image fallback
-      const prestigiousImg = document.getElementById("prestigiousLandscape");
-      if (prestigiousImg) {
-        prestigiousImg.onerror = function () {
-          this.onerror = null;
-          this.src =
-            "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1600&auto=format&fit=crop&q=85";
-          this.alt = "Prestigious oceanfront landmark";
-        };
-      }
-
-      // ---------- TABS MANAGEMENT (preserve active sliders) ----------
-      const tabBtns = document.querySelectorAll(".tab-btn");
-      const panels = document.querySelectorAll(".gallery-panel");
-      function switchTab(tabId) {
-        panels.forEach((panel) => {
-          panel.classList.remove("active-panel");
-          if (panel.id === tabId) panel.classList.add("active-panel");
-        });
-        tabBtns.forEach((btn) => {
-          const val = btn.getAttribute("data-tab");
-          if (val === tabId) btn.classList.add("active");
-          else btn.classList.remove("active");
-        });
-        // reset timers for visible sliders (Exterior or Interior)
-        if (tabId === "exterior") {
-          exteriorSlider.resetAutoTimer();
-        } else if (tabId === "interior") {
-          interiorSlider.resetAutoTimer();
-        }
-      }
-
-      tabBtns.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          const tabId = btn.getAttribute("data-tab");
-          switchTab(tabId);
-        });
-      });
-
-      // ensure sliders reposition after tab display (chrome fix)
-      window.addEventListener("resize", () => {
-        exteriorSlider.handleResize();
-        interiorSlider.handleResize();
-      });
+      })();
     </script>
-  </body>
-</html>
-
-<!-- ---------services--------------  -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <title>Kriti Realty | Full-Spectrum Elite Services</title>
-    <!-- Google Fonts: Refined Serif + Modern Sans -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome 6 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <!-- SwiperJS (modern sliding library) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background: #f9f7f3;
-        /* font-family: "Inter", sans-serif; */
-        color: #1f1b16;
-        overflow-x: hidden;
-      }
-
-      .services-luxury-container {
-        max-width: 1600px;
-        margin: 0 auto;
-        padding: 5rem 2rem;
-      }
-      .services-luxury-container > h2 {
-        font-size: 2.8rem;
-        font-weight: 700;
-        background: linear-gradient(
-          135deg,
-          #494646 0%,
-          #554c40 40%,
-          #ff9a00 100%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .split-layout {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      /* LEFT SIDE: elegant brand block with refined messaging */
-      .left-brand-block {
-        flex: 1.1;
-        min-width: 280px;
-        background: linear-gradient(135deg, #ffffff 0%, #f5d090 100%);
-        border-radius: 2.5rem;
-        padding: 2.8rem 2rem;
-        box-shadow:
-          0 20px 35px -12px rgba(0, 0, 0, 0.05),
-          0 1px 3px rgba(0, 0, 0, 0.02);
-        border: 1px solid rgba(200, 170, 110, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      .krita-badge {
-        display: inline-block;
-        background: rgba(180, 140, 72, 0.12);
-        padding: 0.3rem 1rem;
-        border-radius: 40px;
-        font-size: 0.7rem;
-        letter-spacing: 0.2em;
-        font-weight: 600;
-        color: #aa7c48;
-        text-transform: uppercase;
-        margin-bottom: 1.5rem;
-      }
-
-      .left-brand-block h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 3.4rem;
-        font-weight: 600;
-        line-height: 1.2;
-        margin-bottom: 1.2rem;
-        color: #2c241a;
-      }
-
-      .left-brand-block h2 .highlight-brand {
-        background: linear-gradient(130deg, #b48c48, #dfb872);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        font-weight: 700;
-      }
-
-      .tagline {
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #5c5548;
-        margin-bottom: 2rem;
-        border-left: 3px solid #dfb872;
-        padding-left: 1.2rem;
-        font-weight: 400;
-      }
-
-      .service-highlight-list {
-        margin-top: 2rem;
-      }
-
-      .service-highlight-list .highlight-item {
-        display: flex;
-        align-items: center;
-        gap: 0.9rem;
-        margin-bottom: 1.3rem;
-      }
-
-      .highlight-item i {
-        width: 32px;
-        color: #b48c48;
-        font-size: 1.3rem;
-      }
-
-      .highlight-item span {
-        font-weight: 500;
-        font-size: 1rem;
-        color: #342d24;
-      }
-
-      .gold-separator {
-        width: 60px;
-        height: 2px;
-        background: #e3cda5;
-        margin: 2rem 0 1rem;
-      }
-
-      .luxury-note {
-        font-size: 0.85rem;
-        color: #8f7e68;
-        font-style: italic;
-      }
-
-      /* RIGHT SIDE: slider container — background images fully visible */
-      .right-slider-block {
-        flex: 2;
-        min-width: 0;
-        position: relative;
-      }
-
-      .swiper {
-        width: 100%;
-        overflow: hidden;
-        padding: 0.5rem 0 2rem;
-        border-radius: 2rem;
-      }
-
-      .swiper-slide {
-        height: auto;
-        border-radius: 2rem;
-        transition: transform 0.3s ease;
-      }
-
-      /* SERVICE CARD: BG images made fully visible and richer */
-      .service-card-slide {
-        position: relative;
-        border-radius: 2rem;
-        overflow: hidden;
-        background-color: #fff;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 18px 35px -12px rgba(0, 0, 0, 0.12);
-        transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      }
-
-      .service-card-slide:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 28px 40px -14px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Background image with perfect visibility */
-      .card-bg-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0.85;
-        transition:
-          opacity 0.5s ease,
-          transform 0.7s ease;
-        z-index: 0;
-        filter: brightness(0.92) contrast(1.05);
-      }
-
-      .service-card-slide:hover .card-bg-img {
-        opacity: 1;
-        transform: scale(1.03);
-      }
-
-      /* Glass-content: dark elegant overlay to make text pop, but background remains vivid */
-      .card-content-inner {
-        position: relative;
-        z-index: 2;
-        padding: 2rem 1.8rem 2rem 1.8rem;
-        background: linear-gradient(
-          145deg,
-          rgba(20, 18, 16, 0.72),
-          rgba(10, 8, 6, 0.68)
-        );
-        backdrop-filter: blur(5px);
-        border-radius: 2rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 380px;
-        transition: background 0.2s;
-      }
-
-      .service-card-slide:hover .card-content-inner {
-        background: linear-gradient(
-          145deg,
-          rgba(0, 0, 0, 0.75),
-          rgba(25, 20, 15, 0.7)
-        );
-      }
-
-      .card-icon-large {
-        font-size: 2.3rem;
-        color: #e9cd9c;
-        margin-bottom: 1.2rem;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      }
-
-      .service-card-slide h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.95rem;
-        font-weight: 700;
-        margin-bottom: 0.9rem;
-        color: #fef7e6;
-        letter-spacing: -0.3px;
-      }
-
-      .service-desc-short {
-        font-size: 0.92rem;
-        line-height: 1.48;
-        color: #f0ede8;
-        margin-bottom: 1.8rem;
-        flex: 1;
-        font-weight: 400;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-      }
-
-      .know-more-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(255, 250, 240, 0.15);
-        border: 1.5px solid #e9cd9c;
-        padding: 0.7rem 1.4rem;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.8rem;
-        letter-spacing: 0.5px;
-        color: #ffefcf;
-        cursor: pointer;
-        transition: all 0.25s;
-        width: fit-content;
-        backdrop-filter: blur(3px);
-      }
-
-      .know-more-btn i {
-        transition: transform 0.2s;
-        font-size: 0.75rem;
-      }
-
-      .know-more-btn:hover {
-        background: #c6a15b;
-        border-color: #c6a15b;
-        color: #1f1b16;
-        gap: 12px;
-      }
-
-      .know-more-btn:hover i {
-        transform: translateX(4px);
-        color: #1f1b16;
-      }
-
-      /* Swiper navigation refined */
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #e9cd9c;
-        background: rgba(30, 25, 20, 0.7);
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        backdrop-filter: blur(8px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.2s;
-      }
-      .swiper-button-next:after,
-      .swiper-button-prev:after {
-        font-size: 1.2rem;
-        font-weight: bold;
-      }
-      .swiper-button-next:hover,
-      .swiper-button-prev:hover {
-        background: #c6a15b;
-        color: #1f1b16;
-      }
-
-      .swiper-pagination-bullet {
-        background: #e9cd9c;
-        opacity: 0.6;
-      }
-      .swiper-pagination-bullet-active {
-        background: #f5d78c;
-        opacity: 1;
-        transform: scale(1.2);
-      }
-
-      /* ============================================ */
-      /* RESPONSIVE: DESKTOP LOOK UNCHANGED ABOVE 1100px */
-      /* IMPROVED for small spaces with perfect adaptability */
-      /* ============================================ */
-
-      @media (max-width: 1200px) {
-        .split-layout {
-          gap: 2rem;
-        }
-        .left-brand-block h2 {
-          font-size: 2.8rem;
-        }
-        .card-content-inner {
-          min-height: 360px;
-        }
-      }
-
-      @media (max-width: 1100px) {
-        .services-luxury-container {
-          padding: 4rem 1.8rem;
-        }
-        .split-layout {
-          gap: 2rem;
-        }
-        .left-brand-block {
-          padding: 2.2rem 1.8rem;
-        }
-        .left-brand-block h2 {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 992px) {
-        .split-layout {
-          flex-direction: column;
-          gap: 2rem;
-        }
-        .left-brand-block {
-          text-align: center;
-          width: 100%;
-        }
-        .left-brand-block h2 {
-          font-size: 2.4rem;
-        }
-        .tagline {
-          border-left: none;
-          padding-left: 0;
-          text-align: center;
-        }
-        .service-highlight-list .highlight-item {
-          justify-content: center;
-        }
-        .gold-separator {
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .right-slider-block {
-          width: 100%;
-        }
-        .card-content-inner {
-          min-height: 340px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .services-luxury-container {
-          padding: 3rem 1.2rem;
-        }
-        .services-luxury-container > h2 {
-          font-size: 2.2rem;
-          margin-bottom: 2rem;
-        }
-        .left-brand-block {
-          padding: 1.8rem 1.4rem;
-          border-radius: 2rem;
-        }
-        .left-brand-block h2 {
-          font-size: 2rem;
-        }
-        .krita-badge {
-          font-size: 0.65rem;
-          margin-bottom: 1rem;
-        }
-        .tagline {
-          font-size: 0.9rem;
-          margin-bottom: 1.2rem;
-        }
-        .gold-separator {
-          margin: 1.5rem auto 0.5rem;
-        }
-        .card-content-inner {
-          padding: 1.5rem 1.3rem;
-          min-height: 310px;
-        }
-        .service-card-slide h3 {
-          font-size: 1.7rem;
-        }
-        .service-desc-short {
-          font-size: 0.85rem;
-          margin-bottom: 1.2rem;
-        }
-        .know-more-btn {
-          padding: 0.6rem 1.2rem;
-          font-size: 0.75rem;
-        }
-        .swiper-button-next,
-        .swiper-button-prev {
-          display: none;
-        }
-        .swiper-pagination {
-          bottom: 0px;
-        }
-        .swiper {
-          padding-bottom: 2rem;
-        }
-      }
-
-      @media (max-width: 550px) {
-        .services-luxury-container {
-          padding: 2rem 1rem;
-        }
-        .services-luxury-container > h2 {
-          font-size: 1.8rem;
-          margin-bottom: 1.5rem;
-        }
-        .left-brand-block {
-          padding: 1.4rem 1rem;
-          border-radius: 1.5rem;
-        }
-        .left-brand-block h2 {
-          font-size: 1.6rem;
-        }
-        .krita-badge {
-          font-size: 0.6rem;
-          padding: 0.2rem 0.8rem;
-        }
-        .tagline {
-          font-size: 0.85rem;
-        }
-        .card-content-inner {
-          padding: 1.2rem 1rem;
-          min-height: 280px;
-        }
-        .service-card-slide h3 {
-          font-size: 1.5rem;
-        }
-        .card-icon-large {
-          font-size: 1.8rem;
-          margin-bottom: 0.8rem;
-        }
-        .service-desc-short {
-          font-size: 0.8rem;
-          line-height: 1.4;
-        }
-        .know-more-btn {
-          padding: 0.5rem 1rem;
-          font-size: 0.7rem;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .services-luxury-container {
-          padding: 1.8rem 0.8rem;
-        }
-        .services-luxury-container > h2 {
-          font-size: 1.6rem;
-        }
-        .left-brand-block h2 {
-          font-size: 1.4rem;
-        }
-        .card-content-inner {
-          min-height: 260px;
-        }
-        .service-card-slide h3 {
-          font-size: 1.35rem;
-        }
-        .service-desc-short {
-          font-size: 0.75rem;
-        }
-      }
-
-      /* Maintain hover effects only on devices that support hover */
-      @media (hover: hover) {
-        .service-card-slide:hover {
-          transform: translateY(-8px);
-        }
-      }
-
-      /* Touch-friendly adjustments */
-      @media (max-width: 768px) {
-        .know-more-btn {
-          cursor: pointer;
-          -webkit-tap-highlight-color: transparent;
-        }
-        .service-card-slide {
-          cursor: pointer;
-        }
-      }
-
-      .bg-accent-leaf {
-        background: #ffebc57d;
-        border-top: 2px solid #e5c165;
-        border-bottom: 2px solid #e5c165;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="services-luxury-container bg-accent-leaf">
-      <h2>Our Premium Services</h2>
-      <div class="split-layout">
-        <!-- LEFT BLOCK: Brand & core services preview -->
-        <div class="left-brand-block">
-          <div class="krita-badge">
-            <i class="fas fa-crown" style="margin-right: 6px"></i> EST. 1998
-          </div>
-          <h2>
-            <span class="highlight-brand">Kriti Realty</span> also offers a wide
-            range of real estate services, including:
-          </h2>
-          <div class="tagline">
-            Beyond conventional — a full‑spectrum real estate powerhouse
-            delivering white-glove execution across asset classes.
-          </div>
-          <div class="gold-separator"></div>
-        </div>
-
-        <!-- RIGHT SLIDER: AUTO SLIDE + STOP ON HOVER -->
-        <div class="right-slider-block">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <!-- Service Card 1 - Residential Plotting -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1974&auto=format&quot;);
-                      background-position: center 35%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-draw-polygon"></i>
-                      </div>
-                      <h3>Residential Plotting</h3>
-                      <div class="service-desc-short">
-                        Prime land parcels, smart segmentation and future-value
-                        mapping. Tailored for boutique communities & luxury
-                        compounds.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="knowMoreAlert('Residential Plotting')"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 2 - Villas -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1524613032530-449a5d94c285?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dnJpbmRhdmFuJTJDJTIwaW5kaWF8ZW58MHx8MHx8fDA%3D&quot;);
-                      background-position: center 25%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-home"></i>
-                      </div>
-                      <h3>Villas</h3>
-                      <div class="service-desc-short">
-                        Architectural sanctuaries, private infinity pools, and
-                        landscape integration. Discover signature estates with
-                        timeless value.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="knowMoreAlert('Villas')"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 3 - Flats & Apartments -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2069&auto=format&quot;);
-                      background-position: center 40%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-building"></i>
-                      </div>
-                      <h3>Flats & Apartments</h3>
-                      <div class="service-desc-short">
-                        Panoramic penthouses, bespoke interiors & concierge
-                        lifestyle. Live at the apex of urban luxury.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="knowMoreAlert('Flats & Apartments')"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 4 - Big Land Deals -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&quot;);
-                      background-position: center 28%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-globe-americas"></i>
-                      </div>
-                      <h3>Big Land Deals</h3>
-                      <div class="service-desc-short">
-                        Strategic mega-transactions, institutional portfolios &
-                        legacy acreage. Absolute discretion with unmatched
-                        negotiation power.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="knowMoreAlert('Big Land Deals')"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 5 - Real Estate Development -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&quot;);
-                      background-position: center 30%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-hard-hat"></i>
-                      </div>
-                      <h3>Real Estate Development</h3>
-                      <div class="service-desc-short">
-                        End-to-end creation: master planning, permits,
-                        construction to go-to-market. Turning raw land into
-                        iconic addresses.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="knowMoreAlert('Real Estate Development')"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 6 - Property Investment Solutions -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1974&auto=format&quot;);
-                      background-position: center 22%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-chart-pie"></i>
-                      </div>
-                      <h3>Property Investment Solutions</h3>
-                      <div class="service-desc-short">
-                        Yield-optimized strategies, tax-efficient structures &
-                        portfolio diversification. Maximize alpha with
-                        data-driven decisions.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="knowMoreAlert('Property Investment Solutions')"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 7 - Property Consultation -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&quot;);
-                      background-position: center 35%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-user-tie"></i>
-                      </div>
-                      <h3>Property Consultation</h3>
-                      <div class="service-desc-short">
-                        Private office advisory: due diligence, negotiation,
-                        bespoke sourcing & legacy planning. Your real estate
-                        counsel.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="knowMoreAlert('Property Consultation')"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- navigation & pagination -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      // Initialize Swiper with optimal settings for both desktop and mobile
-      const swiperInstance = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 24,
-        loop: true,
-        autoplay: {
-          delay: 3200,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          dynamicBullets: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1.2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 24,
-          },
-          1100: {
-            slidesPerView: 2.4,
-            spaceBetween: 28,
-          },
-          1400: {
-            slidesPerView: 3,
-            spaceBetween: 28,
-          },
-        },
-        grabCursor: true,
-        effect: "slide",
-        speed: 600,
-        autoHeight: false,
-      });
-
-      // Hover stop/start for autoplay
-      const sliderBlock = document.querySelector(".right-slider-block");
-      if (sliderBlock && swiperInstance.autoplay) {
-        sliderBlock.addEventListener("mouseenter", () => {
-          swiperInstance.autoplay.stop();
-        });
-        sliderBlock.addEventListener("mouseleave", () => {
-          swiperInstance.autoplay.start();
-        });
-      }
-
-      // Global function for button alerts
-      window.knowMoreAlert = function (serviceName) {
-        alert(
-          `✨ KRITI REALTY — ${serviceName} ✨\n\nOur team of experts will curate a bespoke presentation with exclusive opportunities, analytics, and personalized strategy.\nSchedule a private consultation today.`,
-        );
-      };
-
-      // Handle window resize to update swiper
-      window.addEventListener("resize", () => {
-        if (swiperInstance && swiperInstance.update) swiperInstance.update();
-      });
-    </script>
-  </body>
-</html>
-<!-- ----banner------ -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <title>About Us | Luxury Flag Banner — Vision & Excellence</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      .body-banner {
-        background: white;
-        min-height: 50vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem;
-      }
-
-      /* ----- FLAG BANNER (smaller height, elegant flag shape) ----- */
-      .flag-invest-card {
-        position: relative;
-        width: 100%;
-        max-width: 1280px;
-        /* compact height as requested — elegant but not oversized */
-        height: 420px;
-
-        /* DYNAMIC FLAG SHAPE with soft waves — premium & modern */
-        clip-path: path(
-          "M 0 42 
-         C 85 18, 170 8, 265 28 
-         C 375 52, 495 78, 620 52 
-         C 755 24, 870 14, 1010 38 
-         C 1105 54, 1175 68, 1280 42 
-         L 1280 378 
-         C 1175 408, 1085 432, 975 412 
-         C 840 386, 710 362, 580 388 
-         C 450 414, 320 440, 185 422 
-         C 95 408, 38 394, 0 378 
-         Z"
-        );
-        border-radius: 28px 28px 32px 32px;
-        box-shadow:
-          0 30px 55px -18px rgba(0, 0, 0, 0.7),
-          0 0 0 1px rgba(230, 195, 110, 0.25) inset;
-        transition:
-          box-shadow 0.35s ease,
-          transform 0.2s ease;
-        overflow: hidden;
-        isolation: isolate;
-      }
-
-      .flag-invest-card:hover {
-        box-shadow:
-          0 38px 70px -18px rgba(0, 0, 0, 0.85),
-          0 0 0 1.5px rgba(240, 200, 100, 0.45) inset;
-      }
-
-      /* Background image layer — high-end property (About Us: team & vision) */
-      .flag-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 1.1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        will-change: transform;
-      }
-
-      .flag-invest-card:hover .flag-image {
-        transform: scale(1.06);
-      }
-
-      /* Overlay with deep luxurious gradient */
-      .flag-overlay-gradient {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          98deg,
-          rgba(0, 0, 0, 0.82) 0%,
-          rgba(0, 0, 0, 0.58) 35%,
-          rgba(0, 0, 0, 0.38) 65%,
-          rgba(0, 0, 0, 0.5) 100%
-        );
-        z-index: 2;
-        pointer-events: none;
-        border-radius: inherit;
-      }
-
-      /* Gold shimmer animation — subtle luxury movement */
-      .gold-shimmer {
-        position: absolute;
-        inset: 0;
-        z-index: 3;
-        overflow: hidden;
-        border-radius: inherit;
-        pointer-events: none;
-      }
-
-      .gold-shimmer::before {
-        content: "";
-        position: absolute;
-        top: -30%;
-        left: -50%;
-        width: 200%;
-        height: 150%;
-        background: linear-gradient(
-          125deg,
-          rgba(255, 240, 170, 0) 5%,
-          rgba(230, 200, 95, 0.08) 28%,
-          rgba(250, 225, 130, 0.16) 48%,
-          rgba(255, 245, 190, 0.05) 70%,
-          transparent 88%
-        );
-        transform: rotate(18deg);
-        animation: luxurySheen 10s linear infinite;
-        filter: blur(4px);
-      }
-
-      @keyframes luxurySheen {
-        0% {
-          transform: translateX(-90%) rotate(18deg);
-        }
-        50% {
-          transform: translateX(15%) rotate(18deg);
-        }
-        100% {
-          transform: translateX(150%) rotate(18deg);
-        }
-      }
-
-      /* ----- CONTENT SECTION (headline + desc + button) : About Us theme ----- */
-      .heroo-content {
-        position: absolute;
-        z-index: 12;
-        left: 6%;
-        top: 50%;
-        transform: translateY(-50%);
-        max-width: 540px;
-        width: 88%;
-        color: #ffffff;
-        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
-        pointer-events: auto;
-      }
-
-      /* Micro badge (elegant) - refined for about */
-      .micro-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(20, 20, 30, 0.48);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(230, 190, 105, 0.55);
-        padding: 0.5rem 1.4rem;
-        border-radius: 40px;
-        font-size: 0.7rem;
-        letter-spacing: 1.2px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-bottom: 1.3rem;
-        color: #f8e5bf;
-        width: fit-content;
-      }
-
-      .micro-badge::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        background: #eac477;
-        border-radius: 50%;
-        box-shadow: 0 0 8px #f5cf8a;
-        animation: gentlePulse 1.8s infinite;
-      }
-
-      @keyframes gentlePulse {
-        0% {
-          opacity: 0.7;
-          transform: scale(0.9);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1.2);
-        }
-      }
-
-      /* Main headline - About us storytelling */
-      .main-headline {
-        font-size: clamp(2rem, 6vw, 3.8rem);
-        font-weight: 600;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        /* font-family: "Playfair Display", Georgia, "Times New Roman", serif; */
-        margin-bottom: 0.9rem;
-      }
-
-      .gold-span {
-        color: #f2cf8c;
-        font-style: italic;
-        font-weight: 600;
-        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-      }
-
-      /* description text - authentic about us narrative */
-      .property-desc {
-        font-size: clamp(0.9rem, 2.8vw, 1rem);
-        line-height: 1.55;
-        color: rgba(255, 250, 235, 0.92);
-        margin-bottom: 1.8rem;
-        max-width: 480px;
-        font-weight: 450;
-        letter-spacing: 0.2px;
-      }
-
-      /* CTA Button — Meet The Team / Learn More (about us aligned) */
-      .btn-consult {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        background: #ffffff;
-        padding: 0.85rem 2rem 0.85rem 2.2rem;
-        border-radius: 60px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 0.95rem;
-        color: #121212;
-        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        box-shadow: 0 12px 18px -12px rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(230, 195, 110, 0.8);
-        backdrop-filter: blur(2px);
-      }
-
-      .btn-consult:hover {
-        background: #fffaf0;
-        gap: 18px;
-        box-shadow: 0 20px 28px -14px rgba(0, 0, 0, 0.45);
-        border-color: #eac16e;
-      }
-
-      .btn-icon {
-        background: #101012;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.2s;
-        color: #eac47c;
-        font-size: 1.2rem;
-        font-weight: 500;
-      }
-
-      .btn-consult:hover .btn-icon {
-        background: #eac47c;
-        color: #0f0f12;
-      }
-
-      /* floating card - values & legacy (instead of investment stat) */
-      .stat-appreciation {
-        position: absolute;
-        z-index: 12;
-        right: 5%;
-        bottom: 12%;
-        width: 240px;
-        background: rgba(12, 14, 18, 0.55);
-        backdrop-filter: blur(18px);
-        border-radius: 1.8rem;
-        padding: 1.2rem 1.5rem;
-        border: 1px solid rgba(220, 180, 90, 0.45);
-        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
-        transition: all 0.25s ease;
-        animation: floatSoft 5s ease-in-out infinite;
-        pointer-events: auto;
-      }
-
-      .stat-appreciation:hover {
-        background: rgba(20, 20, 28, 0.75);
-        border-color: rgba(230, 188, 100, 0.75);
-        animation-play-state: paused;
-      }
-
-      .stat-number {
-        font-size: 2.4rem;
-        font-weight: 800;
-        color: #f4d58c;
-        line-height: 1.2;
-        letter-spacing: -0.5px;
-        /* font-family: "Inter", sans-serif; */
-        margin-bottom: 0.3rem;
-      }
-
-      .stat-text {
-        font-size: 0.7rem;
-        line-height: 1.45;
-        color: rgba(255, 248, 225, 0.85);
-        font-weight: 450;
-        letter-spacing: 0.2px;
-      }
-
-      @keyframes floatSoft {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-
-      /* ========= RESPONSIVE DESIGN (mobile + tablet) ========= */
-      @media (max-width: 1050px) {
-        .flag-invest-card {
-          height: 400px;
-          clip-path: path(
-            "M 0 38 
-           C 80 20, 165 12, 255 30 
-           C 365 52, 495 76, 620 50 
-           C 750 24, 870 16, 1005 36 
-           C 1095 50, 1165 62, 1280 38 
-           L 1280 358 
-           C 1175 386, 1085 408, 975 390 
-           C 840 366, 710 344, 580 368 
-           C 450 392, 320 416, 185 400 
-           C 95 388, 40 376, 0 358 Z"
-          );
-        }
-        .stat-appreciation {
-          right: 3%;
-          bottom: 12%;
-          width: 220px;
-          padding: 1rem 1.3rem;
-        }
-        .heroo-content {
-          left: 5%;
-        }
-      }
-
-      /* Tablet styles (landscape + portrait) */
-      @media (max-width: 880px) {
-        .flag-invest-card {
-          height: 440px;
-          clip-path: none;
-          border-radius: 32px;
-        }
-
-        .heroo-content {
-          position: relative;
-          top: auto;
-          transform: none;
-          left: 0;
-          margin: 0 auto;
-          padding: 2rem 2rem 1rem;
-          width: 100%;
-          max-width: 95%;
-          text-align: left;
-          background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.65),
-            rgba(0, 0, 0, 0.25)
-          );
-          border-radius: 28px;
-          backdrop-filter: blur(2px);
-        }
-
-        .flag-invest-card {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          height: auto;
-          min-height: 480px;
-        }
-
-        .flag-image {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          z-index: 0;
-        }
-
-        .flag-invest-card {
-          position: relative;
-          overflow: hidden;
-        }
-
-        .heroo-content {
-          position: relative;
-          z-index: 15;
-          margin-bottom: 1.5rem;
-          margin-top: 2rem;
-        }
-
-        .stat-appreciation {
-          position: relative;
-          bottom: auto;
-          right: auto;
-          margin: 0.5rem auto 1.8rem auto;
-          width: 85%;
-          max-width: 280px;
-          left: 0;
-          animation: floatSoft 4s infinite;
-        }
-
-        .flag-overlay-gradient {
-          background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.8) 15%,
-            rgba(0, 0, 0, 0.4) 70%
-          );
-        }
-
-        .main-headline {
-          font-size: 2.4rem;
-        }
-
-        .property-desc {
-          font-size: 0.95rem;
-        }
-      }
-
-      /* Mobile (small devices) */
-      @media (max-width: 600px) {
-        .body-banner {
-          padding: 0.9rem;
-        }
-        .flag-invest-card {
-          min-height: 460px;
-          border-radius: 28px;
-        }
-        .heroo-content {
-          padding: 1.5rem 1.3rem 0.8rem;
-        }
-        .main-headline {
-          font-size: 1.9rem;
-          line-height: 1.25;
-        }
-        .property-desc {
-          font-size: 0.85rem;
-          margin-bottom: 1.4rem;
-        }
-        .btn-consult {
-          padding: 0.7rem 1.6rem;
-          font-size: 0.85rem;
-        }
-        .btn-icon {
-          width: 28px;
-          height: 28px;
-          font-size: 1rem;
-        }
-        .micro-badge {
-          padding: 0.4rem 1.1rem;
-          font-size: 0.6rem;
-          margin-bottom: 1rem;
-        }
-        .stat-appreciation {
-          width: 88%;
-          padding: 0.9rem 1.2rem;
-          margin-top: 0rem;
-          margin-bottom: 1.2rem;
-        }
-        .stat-number {
-          font-size: 2rem;
-        }
-        .stat-text {
-          font-size: 0.65rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .flag-invest-card {
-          min-height: 500px;
-        }
-        .main-headline {
-          font-size: 1.7rem;
-        }
-        .heroo-content {
-          padding: 1.2rem 1rem 0.5rem;
-        }
-        .btn-consult {
-          gap: 8px;
-          padding: 0.65rem 1.3rem;
-        }
-      }
-
-      /* ensure container background blends */
-      .flag-image {
-        display: block;
-      }
-
-      /* additional font import */
-      @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap");
-    </style>
-  </head>
-  <body>
-    <section class="body-banner">
-      <div class="flag-invest-card">
-        <!-- NEW IMAGE: About Us — modern collaborative team / architecture + people, conveying luxury values and craftsmanship -->
-        <img
-          class="flag-image"
-          src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
-          alt="Luxury real estate team meeting — about us excellence and passion"
-          loading="eager"
-        />
-
-        <!-- Overlay layers -->
-        <div class="flag-overlay-gradient"></div>
-        <div class="gold-shimmer"></div>
-
-        <!-- Core Text Content: ABOUT US section — vision, heritage and trust -->
-        <div class="heroo-content">
-          <!-- <div class="micro-badge">OUR LEGACY</div> -->
-          <h1 class="main-headline">
-            Crafting <span class="gold-span">Tomorrow's</span><br />
-            Landmarks With Vision
-          </h1>
-          <p class="property-desc">
-            We are a collective of architects, visionaries, and investment
-            strategists dedicated to excellence. For over a decade, we've shaped
-            prestigious destinations that stand for enduring value.
-          </p>
-          <!-- <a href="#" class="btn-consult">
-            Meet The Team
-            <span class="btn-icon">→</span>
-          </a> -->
-        </div>
-
-        <!-- floating stat about values / company milestone — consistent with 'About Us' narrative -->
-        <div class="stat-appreciation">
-          <div class="stat-number">12+ Years</div>
-          <div class="stat-text">
-            Of unrivaled expertise — delivering bespoke luxury real estate &
-            timeless architectural integrity.
-          </div>
-        </div>
-      </div>
-    </section>
   </body>
 </html>
