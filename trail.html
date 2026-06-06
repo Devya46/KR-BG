@@ -6,710 +6,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-    <title>LUXURY ESTATE | Prestigious Real Estate</title>
-    <!-- Google Fonts: Elegant serif + modern sans for luxury vibe -->
+    <title>Braj Greens | Elite Luxury Plots — Full Width Experience</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        overflow-x: hidden;
-        background-color: #0a0a0a;
-      }
-
-      /* Hero Section - Full viewport with refined overlay to let images shine */
-      .hero {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        min-height: 700px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        isolation: isolate;
-      }
-
-      /* ---- LUXURY BACKGROUND SLIDER (cinematic quality) ---- */
-      .swiper-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      .slides-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center 30%;
-        background-repeat: no-repeat;
-        opacity: 0;
-        transition: opacity 1.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        z-index: 1;
-        transform: scale(1);
-      }
-
-      /* subtle ken burns effect on active slide for luxury feel */
-      .slide.active {
-        opacity: 1;
-        z-index: 2;
-        animation: kenBurnsSlow 12s ease-out infinite alternate;
-      }
-
-      @keyframes kenBurnsSlow {
-        0% {
-          transform: scale(1);
-        }
-        100% {
-          transform: scale(1.08);
-        }
-      }
-
-      /* elegant gradient overlay that enhances image depth - more sophisticated for luxury */
-      .hero::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          rgba(10, 10, 20, 0.55) 0%,
-          rgba(0, 0, 0, 0.35) 40%,
-          rgba(0, 0, 0, 0.65) 100%
-        );
-        z-index: 2;
-        pointer-events: none;
-      }
-
-      /* additional soft shadow overlay to make images pop */
-      .hero .gradient-accent {
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          circle at 20% 30%,
-          rgba(255, 215, 150, 0.08) 0%,
-          rgba(0, 0, 0, 0.3) 100%
-        );
-        z-index: 2;
-        pointer-events: none;
-      }
-
-      /* ---- CONTENT (luxury typography + premium spacing) ---- */
-      .hero-content {
-        position: relative;
-        z-index: 15;
-        max-width: 1300px;
-        width: 88%;
-        margin: 0 auto;
-        padding: 2rem 2rem;
-        text-align: center;
-        backdrop-filter: blur(0px);
-        animation: fadeUpLuxury 1s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
-      }
-
-      /* main heading - elegant serif with golden touch */
-      .hero-heading {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(3rem, 9vw, 6rem);
-        font-weight: 600;
-        letter-spacing: -0.01em;
-        line-height: 1.1;
-        margin-bottom: 1.2rem;
-        background: linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #f5e7d3 40%,
-          #e9d4b4 100%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-        position: relative;
-        display: inline-block;
-      }
-
-      /* elegant decorative underline */
-      .hero-heading::after {
-        content: "";
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 110px;
-        height: 2px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          #d4af37,
-          #f9e0a0,
-          #d4af37,
-          transparent
-        );
-        border-radius: 2px;
-      }
-
-      /* subheading with refined spacing */
-      .hero-subheading {
-        font-family: "Inter", sans-serif;
-        font-size: clamp(1rem, 4.5vw, 1.6rem);
-        font-weight: 400;
-        line-height: 1.5;
-        margin-top: 2rem;
-        margin-bottom: 2.8rem;
-        max-width: 780px;
-        margin-left: auto;
-        margin-right: auto;
-        color: rgba(255, 250, 240, 0.92);
-        letter-spacing: 0.3px;
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(2px);
-      }
-
-      /* premium button group */
-      .button-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.8rem;
-        row-gap: 1.2rem;
-        margin-top: 0.5rem;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 1rem 2.6rem;
-        font-weight: 500;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        text-decoration: none;
-        border-radius: 0px;
-        transition: all 0.4s ease;
-        cursor: pointer;
-        text-align: center;
-        font-family: "Inter", sans-serif;
-        text-transform: uppercase;
-        backdrop-filter: blur(0px);
-      }
-
-      .btn-primary {
-        background: rgba(212, 175, 55, 0.92);
-        color: #0a0a0a;
-        border: none;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-        font-weight: 600;
-        letter-spacing: 1.5px;
-      }
-
-      .btn-primary:hover {
-        background: #e5c165;
-        transform: translateY(-4px);
-        box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.4);
-        letter-spacing: 1.8px;
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: #f5f0e6;
-        border: 1.5px solid rgba(212, 175, 55, 0.8);
-        backdrop-filter: blur(6px);
-      }
-
-      .btn-secondary:hover {
-        background: rgba(212, 175, 55, 0.18);
-        border-color: #d4af37;
-        transform: translateY(-4px);
-        backdrop-filter: blur(10px);
-        color: #ffffff;
-      }
-
-      /* elegant slider dots — minimal gold */
-      .slider-controls {
-        position: absolute;
-        bottom: 32px;
-        left: 0;
-        right: 0;
-        z-index: 18;
-        display: flex;
-        justify-content: center;
-        gap: 14px;
-        pointer-events: none;
-      }
-
-      .dot {
-        pointer-events: auto;
-        width: 10px;
-        height: 10px;
-        background-color: rgba(245, 240, 230, 0.5);
-        border-radius: 50%;
-        display: inline-block;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      }
-
-      .dot.active-dot {
-        background-color: #d4af37;
-        width: 28px;
-        border-radius: 14px;
-        transform: scale(1);
-        box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
-      }
-
-      .dot:hover {
-        background-color: #e5c165;
-        transform: scale(1.2);
-      }
-
-      /* minimal slide counter (luxury accent) */
-      .slide-counter {
-        position: absolute;
-        bottom: 32px;
-        right: 40px;
-        z-index: 18;
-        font-family: "Inter", monospace;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        color: rgba(255, 250, 210, 0.8);
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(5px);
-        padding: 6px 14px;
-        border-radius: 30px;
-        font-weight: 300;
-        pointer-events: none;
-      }
-
-      /* Animation for content */
-      @keyframes fadeUpLuxury {
-        0% {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Responsive refinements */
-      @media (max-width: 768px) {
-        .hero-content {
-          width: 92%;
-          padding: 1.5rem 1rem;
-        }
-        .btn {
-          padding: 0.8rem 1.8rem;
-          font-size: 0.85rem;
-        }
-        .button-group {
-          gap: 1rem;
-        }
-        .hero-heading::after {
-          width: 70px;
-          bottom: -8px;
-        }
-        .slide-counter {
-          bottom: 22px;
-          right: 18px;
-          font-size: 0.7rem;
-        }
-        .slider-controls {
-          bottom: 22px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero {
-          min-height: 640px;
-        }
-        .hero-heading::after {
-          width: 55px;
-        }
-        .btn-primary,
-        .btn-secondary {
-          padding: 0.7rem 1.6rem;
-        }
-      }
-
-      /* ensure images pop: background-position fine tuned */
-      .slide:nth-child(1) {
-        background-position: center 25%;
-      }
-      .slide:nth-child(2) {
-        background-position: center 35%;
-      }
-      .slide:nth-child(3) {
-        background-position: center 30%;
-      }
-      .slide:nth-child(4) {
-        background-position: center 40%;
-      }
-
-      .story-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-
-        padding: 18px 36px;
-        border: 1.5px solid #e4c580;
-        border-radius: 50px;
-
-        color: #f9efd7;
-        text-decoration: none;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-
-        background: transparent;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-
-        transition: all 0.4s ease;
-      }
-
-      .story-btn i {
-        transition: transform 0.3s ease;
-      }
-
-      /* Gold layer hidden outside */
-      .story-btn::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        left: -100%;
-
-        background: linear-gradient(90deg, #e4c580, #c7a15e);
-
-        transition: left 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        z-index: -1;
-      }
-
-      /* Slide gold fill */
-      .story-btn:hover::before {
-        left: 0;
-      }
-
-      /* Text color change */
-      .story-btn:hover {
-        color: #0f1a1f;
-        border-color: transparent;
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-      }
-
-      /* Arrow movement */
-      .story-btn:hover i {
-        transform: translateX(6px);
-      }
-    </style>
-  </head>
-  <body>
-    <section class="hero">
-      <!-- Background Swiper Luxury Images (4 high-res unsplash) -->
-      <div class="swiper-bg">
-        <div class="slides-container" id="slidesContainer">
-          <!-- Using the exact images but with higher quality perception, they will shine because of overlay and ken burns -->
-          <div
-            class="slide"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1400&auto=format&fit=crop&q=85&ixlib=rb-4.1.0&quot;);
-            "
-          ></div>
-          <div
-            class="slide"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=1400&auto=format&fit=crop&q=85&ixlib=rb-4.1.0&quot;);
-            "
-          ></div>
-          <div
-            class="slide"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1559171667-74fe3499b5ba?w=1400&auto=format&fit=crop&q=85&ixlib=rb-4.1.0&quot;);
-            "
-          ></div>
-          <div
-            class="slide"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1688653802629-5360086bf632?w=1400&auto=format&fit=crop&q=85&ixlib=rb-4.1.0&quot;);
-            "
-          ></div>
-        </div>
-      </div>
-      <!-- additional soft gradient accent for depth -->
-      <div class="gradient-accent"></div>
-
-      <!-- elegant slide counter and dots -->
-      <div class="slider-controls" id="sliderDots"></div>
-      <div class="slide-counter" id="slideCounter">01 / 04</div>
-
-      <!-- Hero text & premium call to action -->
-      <div class="hero-content">
-        <h1 class="hero-heading">Because Everyone Deserves the Best</h1>
-        <p class="hero-subheading">
-          Premium Real Estate Solutions for Modern Living & Smart Investments
-        </p>
-        <a href="#" class="story-btn">
-          <span>Discover The Story</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-        <div class="button-group">
-          <a href="#" class="btn btn-primary" id="exploreBtn"
-            >Explore Projects</a
-          >
-          <a href="#" class="btn btn-secondary" id="contactBtn">Contact Us</a>
-        </div>
-      </div>
-    </section>
-
-    <script>
-      (function () {
-        // --- LUXURY IMAGE SLIDER with auto transition, touch & mouse swipe, golden dots
-        const slides = document.querySelectorAll(".slide");
-        const dotsContainer = document.getElementById("sliderDots");
-        const counterSpan = document.getElementById("slideCounter");
-        let currentIndex = 0;
-        let slideInterval;
-        const intervalTime = 6000; // 6 seconds for luxury feel
-        let userInteracted = false;
-        let autoSlideTimeoutReset = null;
-
-        // Helper: update slide & dots + counter
-        function showSlide(index) {
-          if (index >= slides.length) index = 0;
-          if (index < 0) index = slides.length - 1;
-
-          slides.forEach((slide, i) => {
-            slide.classList.remove("active");
-            // reset animation by re-adding? we keep class, but need to force reflow to re-trigger ken burns? no needed, continuous
-          });
-          slides[index].classList.add("active");
-
-          // update dots
-          if (dotsContainer) {
-            const dots = dotsContainer.querySelectorAll(".dot");
-            dots.forEach((dot, i) => {
-              if (i === index) dot.classList.add("active-dot");
-              else dot.classList.remove("active-dot");
-            });
-          }
-          // update counter (01/04 style)
-          if (counterSpan) {
-            let currentNumber = (index + 1).toString().padStart(2, "0");
-            let total = slides.length.toString().padStart(2, "0");
-            counterSpan.innerText = `${currentNumber} / ${total}`;
-          }
-          currentIndex = index;
-        }
-
-        function nextSlide() {
-          let newIndex = currentIndex + 1;
-          if (newIndex >= slides.length) newIndex = 0;
-          showSlide(newIndex);
-        }
-
-        function prevSlide() {
-          let newIndex = currentIndex - 1;
-          if (newIndex < 0) newIndex = slides.length - 1;
-          showSlide(newIndex);
-        }
-
-        function startAutoSlide() {
-          if (slideInterval) clearInterval(slideInterval);
-          slideInterval = setInterval(() => {
-            if (!userInteracted) {
-              nextSlide();
-            }
-          }, intervalTime);
-        }
-
-        function resetAutoSlide() {
-          if (slideInterval) {
-            clearInterval(slideInterval);
-            startAutoSlide();
-          }
-          // reset userInteracted flag after delay (so slideshow continues)
-          if (autoSlideTimeoutReset) clearTimeout(autoSlideTimeoutReset);
-          autoSlideTimeoutReset = setTimeout(() => {
-            userInteracted = false;
-          }, 4000);
-        }
-
-        // create elegant gold dots
-        function createDots() {
-          if (!dotsContainer) return;
-          dotsContainer.innerHTML = "";
-          for (let i = 0; i < slides.length; i++) {
-            const dot = document.createElement("span");
-            dot.classList.add("dot");
-            if (i === currentIndex) dot.classList.add("active-dot");
-            dot.setAttribute("data-index", i);
-            dot.addEventListener("click", (e) => {
-              e.stopPropagation();
-              const idx = parseInt(dot.getAttribute("data-index"), 10);
-              if (!isNaN(idx)) {
-                userInteracted = true;
-                showSlide(idx);
-                resetAutoSlide();
-              }
-            });
-            dotsContainer.appendChild(dot);
-          }
-        }
-
-        // --- TOUCH SWIPE + MOUSE DRAG for premium background interaction
-        const heroSection = document.querySelector(".hero");
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        function onTouchStart(e) {
-          touchStartX = e.changedTouches[0].screenX;
-          userInteracted = true;
-          resetAutoSlide();
-        }
-
-        function onTouchEnd(e) {
-          touchEndX = e.changedTouches[0].screenX;
-          const delta = touchEndX - touchStartX;
-          const threshold = 45;
-          if (delta > threshold) {
-            prevSlide();
-            resetAutoSlide();
-          } else if (delta < -threshold) {
-            nextSlide();
-            resetAutoSlide();
-          }
-          touchStartX = 0;
-          touchEndX = 0;
-        }
-
-        // mouse drag for desktop (like swiping luxury gallery)
-        let mouseDownX = 0;
-        let isDragging = false;
-        function onMouseDown(e) {
-          if (e.button === 0) {
-            isDragging = true;
-            mouseDownX = e.clientX;
-            userInteracted = true;
-            resetAutoSlide();
-            e.preventDefault();
-            heroSection.style.cursor = "grabbing";
-          }
-        }
-
-        function onMouseUp(e) {
-          if (!isDragging) return;
-          isDragging = false;
-          heroSection.style.cursor = "";
-          const mouseUpX = e.clientX;
-          const diff = mouseUpX - mouseDownX;
-          if (Math.abs(diff) > 40) {
-            if (diff > 0) {
-              prevSlide();
-            } else {
-              nextSlide();
-            }
-            resetAutoSlide();
-          }
-          mouseDownX = 0;
-        }
-
-        // optional prevent body scroll when touching inside hero for better UX
-        heroSection.addEventListener("touchstart", onTouchStart, {
-          passive: false,
-        });
-        heroSection.addEventListener("touchend", onTouchEnd);
-        heroSection.addEventListener("mousedown", onMouseDown);
-        window.addEventListener("mouseup", onMouseUp);
-
-        // keyboard arrows luxury support
-        window.addEventListener("keydown", (e) => {
-          if (e.key === "ArrowLeft") {
-            e.preventDefault();
-            userInteracted = true;
-            prevSlide();
-            resetAutoSlide();
-          } else if (e.key === "ArrowRight") {
-            e.preventDefault();
-            userInteracted = true;
-            nextSlide();
-            resetAutoSlide();
-          }
-        });
-
-        // initialize first slide and all states
-        if (slides.length) {
-          slides.forEach((slide, idx) => {
-            if (idx === 0) slide.classList.add("active");
-            else slide.classList.remove("active");
-          });
-          currentIndex = 0;
-          createDots();
-          if (counterSpan)
-            counterSpan.innerText = `01 / ${slides.length.toString().padStart(2, "0")}`;
-        }
-
-        startAutoSlide();
-
-        // Pause auto slide when hovering content (premium user comfort)
-        const heroContent = document.querySelector(".hero-content");
-        if (heroContent) {
-          heroContent.addEventListener("mouseenter", () => {
-            if (slideInterval) clearInterval(slideInterval);
-          });
-          heroContent.addEventListener("mouseleave", () => {
-            if (!userInteracted) {
-              if (slideInterval) clearInterval(slideInterval);
-              startAutoSlide();
-            } else {
-              // if user interacted but left, start again after short delay
-              setTimeout(() => {
-                if (!userInteracted) {
-                  if (slideInterval) clearInterval(slideInterval);
-                  startAutoSlide();
-                }
-              }, 500);
-            }
-          });
-        }
-      })();
-    </script>
-  </body>
-</html>
-<!-- -----about us--------  -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
-    <title>Kirti Realty | About Us - Excellence in Every Detail</title>
-    <!-- Google Fonts + Font Awesome -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
     <link
@@ -724,978 +23,632 @@
       }
 
       body {
+        background: #f3efe8;
         font-family: "Inter", sans-serif;
-        background-color: #fefcf7;
-        color: #1e2a32;
+        color: #2b2a27;
         line-height: 1.5;
       }
-      /* VIDEO SECTION */
-      .full-width-video {
+
+      /* FULL WIDTH SECTION — no container max-width constraints */
+      .luxury-fullwidth {
+        width: 100%;
+        background: #ffffff;
+        padding: 2rem 10rem;
+      }
+
+      /* Hero with background image (full bleed) */
+      .hero-image-section {
         position: relative;
         width: 100%;
-        overflow: hidden;
-        margin-top: -85px;
-        z-index: 1;
-      }
-
-      /* MAIN SOFT FOG */
-      .full-width-video::before {
-        content: "";
-        position: absolute;
-        top: -42px;
-        left: 0;
-        width: 100%;
-        height: 95px;
-        z-index: 5;
-        pointer-events: none;
-
-        background: linear-gradient(
-          to bottom,
-          rgba(248, 245, 240, 0.98) 0%,
-          rgba(248, 245, 240, 0.9) 22%,
-          rgba(248, 245, 240, 0.62) 48%,
-          rgba(248, 245, 240, 0.2) 75%,
-          rgba(248, 245, 240, 0) 100%
-        );
-
-        filter: blur(10px);
-      }
-
-      /* LIGHT GLOW SPREAD */
-      .full-width-video::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: 0;
-        width: 100%;
-        height: 45px;
-        background: rgba(255, 255, 255, 0.18);
-        filter: blur(24px);
-        z-index: 4;
-        pointer-events: none;
-      }
-
-      .full-width-video video {
-        width: 100%;
-        display: block;
-        object-fit: cover;
-        position: relative;
-        z-index: 1;
-      }
-
-      /* stats above fog */
-      .stats-center {
-        position: relative;
-        z-index: 10;
-      }
-
-      .full-width-video video {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-        max-height: 122vh;
-        min-height: 380px;
-        position: relative;
-        z-index: 1;
-      }
-
-      /* FOGGY GRADIENT LAYER: white mist starting from stats bottom area and fading upwards into video */
-      .foggy-transition {
-        position: relative;
-        margin-top: -6px; /* seamless join */
-        background: linear-gradient(
-          to top,
-          #fefcf7 0%,
-          rgba(254, 252, 247, 0.95) 30%,
-          rgba(254, 252, 247, 0.6) 70%,
-          transparent 100%
-        );
-        height: 180px;
-        width: 100%;
-        pointer-events: none;
-        z-index: 5;
-      }
-
-      .fog-bridge {
-        position: relative;
-        width: 100%;
-        height: 90px;
-        background: linear-gradient(
-          to bottom,
-          #fefcf7 0%,
-          rgba(254, 252, 247, 0.92) 40%,
-          rgba(254, 252, 247, 0.4) 80%,
-          transparent 100%
-        );
-        margin-top: -2px;
-        margin-bottom: -2px;
-        z-index: 3;
-        pointer-events: none;
-      }
-
-      /* alternative approach: ensure stats card appears above fog */
-      .about-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 28px 80px;
-        position: relative;
-        z-index: 6;
-        background-color: transparent;
-      }
-
-      /* video container will be under mist */
-      .video-wrapper {
-        position: relative;
-        z-index: 1;
-      }
-
-      /* centered text block */
-      .about-text-center {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .about-heading {
-        font-size: 3.2rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        background: linear-gradient(135deg, #2b5e3b, #c49a2b);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        margin-bottom: 28px;
-        position: relative;
-        display: inline-block;
-      }
-
-      .about-heading:after {
-        content: "";
-        position: absolute;
-        bottom: -14px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90px;
-        height: 4px;
-        background: #c49a2b;
-        border-radius: 4px;
-      }
-
-      .about-text-center p {
-        font-size: 1.05rem;
-        color: #2c3e2f;
-        margin-bottom: 1.2rem;
-        font-weight: 400;
-        line-height: 1.65;
-        max-width: 850px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .read-more-btn {
-        display: inline-flex;
+        height: 20vh;
+        min-height: 220px;
+        background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+        background-size: cover;
+        background-position: center 30%;
+        background-repeat: no-repeat;
+        display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 12px;
-        background: #2b5e3b;
-        color: white;
-        border: none;
-        padding: 14px 40px;
-        font-size: 1rem;
+        justify-content: flex-start;
+        border-radius: 24px;
+      }
+
+      /* dark overlay for luxury text contrast */
+      .hero-image-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.65) 0%,
+          rgba(0, 0, 0, 0.3) 70%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        z-index: 1;
+        border-radius: 24px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem 3rem;
+        max-width: 750px;
+        color: #fff;
+      }
+
+      .hero-content .title-lux {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 4rem;
         font-weight: 600;
-        border-radius: 60px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 20px;
-        box-shadow: 0 8px 18px rgba(43, 94, 59, 0.25);
-        font-family: inherit;
+        letter-spacing: -1px;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
       }
 
-      .read-more-btn i {
-        transition: transform 0.25s;
+      .hero-content .title-lux span {
+        font-weight: 300;
+        font-style: italic;
+        color: #f5deae;
       }
 
-      .read-more-btn:hover {
-        background: #1f452b;
-        transform: scale(1.02);
-        box-shadow: 0 12px 24px rgba(43, 94, 59, 0.35);
-      }
-
-      /* STATS SECTION — UPGRADED DESIGN: modern cards, better visuals */
-      .stats-center {
-        max-width: 1000px;
-        margin: 0 auto 50px;
-        background: #ffffff;
-        border-radius: 48px;
-        box-shadow:
-          0 30px 50px -20px rgba(0, 0, 0, 0.12),
-          0 0 0 1px rgba(196, 154, 43, 0.08);
-        padding: 48px 28px;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-        backdrop-filter: blur(0px);
-      }
-
-      .stats-center:hover {
-        transform: translateY(-6px);
-        box-shadow:
-          0 40px 60px -22px rgba(0, 0, 0, 0.2),
-          0 0 0 1px rgba(196, 154, 43, 0.2);
-      }
-
-      .stats-grid {
+      .hero-tagline {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 2.2rem;
-        text-align: center;
-      }
-
-      .stat-card {
-        flex: 1;
-        min-width: 170px;
-        padding: 0.8rem 0.5rem;
-        background: rgba(249, 245, 236, 0.5);
-        border-radius: 32px;
-        transition: all 0.2s;
-      }
-
-      .stat-card:hover {
-        background: #ffffff;
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
-      }
-
-      .stat-number {
-        font-size: 2.8rem;
-        font-weight: 800;
-        color: #2b5e3b;
-        line-height: 1.2;
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 6px;
-        flex-wrap: wrap;
-      }
-
-      .counter-value {
-        font-size: 3.1rem;
-        letter-spacing: -0.01em;
-        font-weight: 800;
-      }
-
-      .stat-unit {
-        font-size: 1.7rem;
-        font-weight: 700;
-        color: #c49a2b;
-      }
-
-      .stat-label {
-        font-size: 0.85rem;
-        font-weight: 700;
-        color: #4a5b49;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        margin-top: 12px;
-        display: inline-flex;
         align-items: center;
-        gap: 5px;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 0.8rem;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.3);
+        display: inline-flex;
+        padding: 0.5rem 1.2rem;
+        border-radius: 60px;
       }
 
-      .moving-number {
-        transition: all 0.08s linear;
-        display: inline-block;
+      /* stats row full width */
+      .stats-full {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background: #ffffff;
+        padding: 2rem 2rem;
+        border-bottom: 1px solid #ebe2d6;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
 
-      /* extra hidden content */
-      .extra-text {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.6s cubic-bezier(0.33, 1, 0.68, 1);
-        margin-top: 0;
+      .stat-block {
+        flex: 1;
+        min-width: 160px;
+        text-align: center;
+        padding: 0.5rem;
+        border-right: 1px solid #efe3d4;
+      }
+      .stat-block:last-child {
+        border-right: none;
+      }
+      .stat-icon {
+        font-size: 2rem;
+        color: #b88b3a;
+        margin-bottom: 0.5rem;
+      }
+      .stat-number {
+        font-size: 1.9rem;
+        font-weight: 800;
+        color: #2d3e2b;
+        line-height: 1.2;
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #7f6b4a;
+      }
+      .stat-sub {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #b39463;
       }
 
-      .extra-text.show {
-        max-height: 400px;
+      /* core grid : two columns with visual imagery integration */
+      .core-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: #fffdf9;
+      }
+
+      @media (max-width: 900px) {
+        .core-details {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* left side: amenities + lush garden image */
+      .amenities-panel {
+        padding: 2.5rem 2rem;
+        background: #ffffff;
+        border-right: 1px solid #efe2d4;
+      }
+
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #2c3a2b;
+        margin-bottom: 1.8rem;
+        border-left: 5px solid #c6a43b;
+        padding-left: 1.2rem;
+      }
+
+      .amenities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .amenity-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fefaf4;
+        padding: 0.7rem 1rem;
+        border-radius: 50px;
+        transition: all 0.2s ease;
+        border: 1px solid #f1e4d6;
+      }
+
+      .amenity-card i {
+        width: 28px;
+        font-size: 1.2rem;
+        color: #b88b3a;
+      }
+
+      .amenity-card span {
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #343227;
+      }
+
+      .green-zone {
+        background: #edf5e6;
+        border-radius: 1.5rem;
+        padding: 1.2rem 1.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         margin-top: 1.8rem;
       }
 
-      .extra-text p {
-        background: linear-gradient(135deg, #f9f5ec, #fff9ef);
-        padding: 22px 32px;
-        border-radius: 32px;
-        border-left: 6px solid #c49a2b;
-        font-size: 1rem;
-        margin-bottom: 0;
-        font-weight: 500;
-        max-width: 850px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
-      }
-
-      /* responsive design */
-      @media (max-width: 750px) {
-        .stats-grid {
-          flex-direction: column;
-          gap: 1.6rem;
-        }
-        .stat-card {
-          border-bottom: none;
-          padding: 0.8rem;
-        }
-        .about-heading {
-          font-size: 2.4rem;
-        }
-        .counter-value {
-          font-size: 2.5rem;
-        }
-        .stat-unit {
-          font-size: 1.3rem;
-        }
-        .about-container {
-          padding: 0 20px 60px;
-        }
-        .stats-center {
-          padding: 34px 20px;
-          margin-bottom: 40px;
-        }
-        .fog-bridge {
-          height: 60px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .about-heading {
-          font-size: 2rem;
-        }
-        .read-more-btn {
-          width: 100%;
-        }
-        .stat-number {
-          font-size: 2rem;
-        }
-        .counter-value {
-          font-size: 2.2rem;
-        }
-      }
-
-      /* subtle entrance animation */
-      .about-text-center,
-      .stats-center {
-        animation: fadeInUp 0.6s ease-out forwards;
-      }
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* new improved status for moving number glow */
-      .moving-number {
-        background: linear-gradient(145deg, #2b5e3b, #3f884f);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: #2b5e3b;
-        font-weight: 800;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <!-- Main container for all centered content (text & stats) -->
-      <div class="about-container">
-        <!-- Centered text block with read more -->
-        <div class="about-text-center">
-          <h1 class="about-heading">Welcome to Kirti Realty</h1>
-          <p>
-            Welcome to Kirti Realty — a name built on trust, commitment, and
-            excellence in real estate development.
-          </p>
-          <p>
-            At Kirti Realty, we believe real estate is more than just buildings;
-            it is about creating spaces where families grow, businesses thrive,
-            and dreams become reality.
-          </p>
-          <p>
-            With a strong focus on transparency, quality construction, customer
-            satisfaction, and timely delivery, we are committed to developing
-            projects that provide long-term value and reliability.
-          </p>
-          <p>
-            From residential plotting to premium villas and large land deals, we
-            deliver modern developments designed for comfort, investment growth,
-            and future opportunities.
-          </p>
-          <p>
-            Our mission is to build lasting relationships through honesty,
-            professionalism, and trust — helping every client make confident
-            property decisions.
-          </p>
-
-          <!-- Read More button now redirects to About Us page (full navigation) -->
-          <a
-            href="#"
-            id="readMoreLink"
-            class="read-more-btn"
-            style="text-decoration: none"
-          >
-            Read More <i class="fas fa-arrow-right"></i>
-          </a>
-          <!-- Extra hidden content kept optional but we support it; the button goes to about page primarily -->
-          <div id="extraContent" class="extra-text">
-            <p>
-              ✨ <strong>Beyond the foundation:</strong> At Kirti Realty, every
-              project reflects a commitment to sustainable architecture, green
-              landscapes, and future-ready infrastructure. Our decade-spanning
-              journey embodies resilience, innovation, and community-first
-              approach. Whether it's your first plot investment or a luxury
-              villa, we ensure end-to-end guidance and legal clarity. Join our
-              family of thousands of happy homeowners and experience the Kirti
-              difference — where values build value.
-            </p>
-          </div>
-        </div>
-
-        <!-- UPGRADED STATS SECTION (improved design, modern cards) -->
-        <div class="stats-center">
-          <div class="stats-grid">
-            <!-- Stat 1: Projects Completed -->
-            <div class="stat-card">
-              <div class="stat-number">
-                <span class="counter-value" id="projectsCount" data-target="55"
-                  >0</span
-                ><span class="stat-unit">+</span>
-              </div>
-              <div class="stat-label">
-                <i class="fas fa-building" style="color: #c49a2b"></i> Projects
-                Completed
-              </div>
-            </div>
-            <!-- Stat 2: Years of Legacy -->
-            <div class="stat-card">
-              <div class="stat-number">
-                <span class="counter-value" id="yearsCount" data-target="24"
-                  >0</span
-                >
-              </div>
-              <div class="stat-label">
-                <i class="fas fa-calendar-alt"></i> Years of Legacy
-              </div>
-            </div>
-            <!-- Stat 3: Million sq. ft. developed -->
-            <div class="stat-card">
-              <div class="stat-number">
-                <span class="counter-value" id="developedCount" data-target="39"
-                  >0</span
-                ><span class="stat-unit">M</span>
-              </div>
-              <div class="stat-label">
-                <i class="fas fa-ruler-combined"></i> Million sq.ft. developed
-              </div>
-            </div>
-            <!-- Stat 4: Moving number under development -->
-            <div class="stat-card">
-              <div class="stat-number">
-                <span id="movingUnderDev" class="counter-value moving-number"
-                  >41.5</span
-                ><span class="stat-unit">M</span>
-              </div>
-              <div class="stat-label">
-                <i class="fas fa-chart-line" style="color: #c49a2b"></i> Under
-                development
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- FOGGY WHITE GRADIENT: starting from stats bottom to start of the video -->
-      <!-- It sits between stats container bottom area and video top edge for a smooth misty blend -->
-      <div class="fog-bridge" aria-hidden="true"></div>
-
-      <!-- Full-width video section -->
-      <div class="full-width-video">
-        <video autoplay muted loop playsinline poster="images/V2.mp4">
-          <source src="images/V2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </main>
-
-    <script>
-      (function () {
-        // ---------- STATIC COUNTERS (projects, years, developed) ----------
-        const counters = [
-          {
-            element: document.getElementById("projectsCount"),
-            target: 55,
-            isFloat: false,
-            animated: false,
-          },
-          {
-            element: document.getElementById("yearsCount"),
-            target: 24,
-            isFloat: false,
-            animated: false,
-          },
-          {
-            element: document.getElementById("developedCount"),
-            target: 39,
-            isFloat: false,
-            animated: false,
-          },
-        ];
-
-        const movingSpan = document.getElementById("movingUnderDev");
-        let movingInterval = null;
-        let isMovingActive = false;
-        let statsObserver = null;
-        const statsContainer = document.querySelector(".stats-center");
-        let staticCountersTriggered = false;
-
-        // Animate each static counter (smooth count-up)
-        function animateStaticCounter(counterObj) {
-          const el = counterObj.element;
-          if (!el) return;
-          if (el.getAttribute("data-animated") === "true") return;
-          const target = counterObj.target;
-          const duration = 1600;
-          const stepTime = 16;
-          const steps = duration / stepTime;
-          const increment = target / steps;
-          let current = 0;
-          el.setAttribute("data-animated", "true");
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              el.innerText = Math.floor(target);
-              clearInterval(timer);
-            } else {
-              el.innerText = Math.floor(current);
-            }
-          }, stepTime);
-        }
-
-        // Start moving number (dynamic realistic walk: 40.2M - 45.3M range)
-        function startMovingNumber() {
-          if (movingInterval) clearInterval(movingInterval);
-          let currentMoving = 41.5;
-          if (movingSpan) movingSpan.innerText = currentMoving.toFixed(1);
-
-          movingInterval = setInterval(() => {
-            let delta = Math.random() * 1.4 - 0.55; // -0.55 to +0.85
-            let newVal = currentMoving + delta;
-            // realistic floor & ceiling for under development metrics
-            if (newVal < 40.2) newVal = 40.2 + Math.random() * 0.7;
-            if (newVal > 45.4) newVal = 45.0 - Math.random() * 0.6;
-            newVal = parseFloat(newVal.toFixed(1));
-            if (movingSpan) movingSpan.innerText = newVal;
-            currentMoving = newVal;
-          }, 1700);
-        }
-
-        function stopMovingNumber(resetToDefault = true) {
-          if (movingInterval) {
-            clearInterval(movingInterval);
-            movingInterval = null;
-          }
-          if (resetToDefault && movingSpan) movingSpan.innerText = "41.5";
-        }
-
-        // Intersection Observer for stats visibility
-        function handleStatsVisibility(entries) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              if (!isMovingActive) {
-                startMovingNumber();
-                isMovingActive = true;
-              }
-              if (!staticCountersTriggered) {
-                counters.forEach((c) => animateStaticCounter(c));
-                staticCountersTriggered = true;
-              }
-            } else {
-              if (isMovingActive) {
-                stopMovingNumber(true);
-                isMovingActive = false;
-              }
-            }
-          });
-        }
-
-        if (statsContainer) {
-          statsObserver = new IntersectionObserver(handleStatsVisibility, {
-            threshold: 0.4,
-          });
-          statsObserver.observe(statsContainer);
-          // Check initial visibility
-          const rect = statsContainer.getBoundingClientRect();
-          const isVisibleOnLoad =
-            rect.top < window.innerHeight - 80 && rect.bottom > 80;
-          if (isVisibleOnLoad) {
-            if (!staticCountersTriggered) {
-              counters.forEach((c) => animateStaticCounter(c));
-              staticCountersTriggered = true;
-            }
-            if (!isMovingActive) {
-              startMovingNumber();
-              isMovingActive = true;
-            }
-          }
-        } else {
-          startMovingNumber();
-          counters.forEach((c) => animateStaticCounter(c));
-          staticCountersTriggered = true;
-        }
-
-        // READ MORE BUTTON -> Redirect to About Us Page (instead of toggling)
-        // Requirement: "in readmore it will direct to about us page"
-        const readMoreBtn = document.getElementById("readMoreLink");
-        if (readMoreBtn) {
-          readMoreBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            // Navigate to about us page - using current origin relative path
-            // As it's a standalone page, we simulate proper navigation to "about.html" or "#"
-            // For better experience, we redirect to a dedicated about page. Since not provided, we'll open a new modal or same page ?
-            // Implementation: go to a detailed "about" section or page: we create anchor simulation, but real world use a proper URL
-            // For demonstration of a working scenario: we open a new about page placeholder - but since no actual page, we set window.location to "./about.html" but fallback to current page with alert? Better to create clean simulation: show the extra content plus also indicate navigation? The requirement: 'direct to about us page' should redirect.
-            // But actual site navigation: I'll redirect to a mock about page or to the same page hash? To be safe and meet requirement, open a new about-us page (simulated: about.html doesn't exist but in real project it would). For better experience, I will create a modal? no, explicit redirect behavior: window.location.href = "/about-us" but we cannot break demonstration. Better to navigate to an internal anchor? I'll create a fake but functional redirect that shows an alert saying 'Navigating to About Us page (integration ready)'. However user expects real navigation: we open about page in new tab/window? I'll implement redirect to a dummy "about-us" page while preserving demo?
-            // In real scenario, link should point to actual about page. I'll set href to "#" and override window.location to a relative path that doesn't break: but we can redirect to current page with scroll? no, to fulfill spec: direct to "about.html". I'll create a gentle redirect to a new about page (simulated by showing content alert but also toggle? But requirement says "it will direct to about us page". I'll make it open a new page with informative demo/about card? I'll dynamically create an about page simulation inside? Best: I will navigate to './about.html' but since file not present, for testing I will trigger a console message but maintain full redirection simulation via opening modal? Strictly to meet requirement: I'll redirect to a newly created '#about-page' and simulate full page about? Simpler: Use window.location.assign('about.html'); but that might break preview.
-            // Alternative: I'll toggle extra content and also show message "Redirecting to About Us full page..." and then simulate using alert? No, precise: In readmore it will direct to about us page. I'll implement navigation to a dedicated page, but to avoid 404 in sandbox, I'll open a new tab with data url? Instead, I will create an internal 'virtual about page' that appears in lightbox? But user expects actual redirection. For reliability and to deliver spec, I'll change the button behavior: when clicked, we redirect to a new About Us page (this same content but with extra param). Since it's the same origin, I can create a new HTML doc? Not possible. The best approach: use history pushState to create "about" view and change the whole content? That's overkill. I'll set window.location.href = '#about-us-full' and add a full about section triggered? But we need real navigation. Easiest: Provide explicit link that opens a new tab to "/about" and display an overlay if needed. Because we have demo context, I'll embed a custom logic: if user clicks, it will show a full page about modal but also mimic redirect: I prefer to keep clean, I'll generate a redirect to an informative external about page? I'll actually make the button go to an About Us section (anchored) and also scroll to detailed about info plus show extra hidden content permanently? To respect requirement exactly: read more button must navigate to an About Us page. I will make it load a simple about-us overlay but that is not a page. I'll use window.location.hash to display a new "about" modal page? To be correct, I'll change the button's href attribute dynamically and set to "#aboutPageFull" and create a smooth full screen about section? I decide: I'll make the button redirect to a new page that contains a full about details: But since we cannot create new file, I'll output a fullscreen about card with a close action? No.
-            // Correction: I will open a new window with about page content (blob or data). better to avoid. Requirement clarity: I will simulate a valid redirect to an About Us page by changing location to #about-section and opening a built-in dedicated div that looks like separate page. I will create a hidden about-page modal that appears full screen? That is elegant. I'll create a full-page about overlay with navigation. But easier: Because standard practice: The 'read more' should go to /about. I'll open new tab with current URL plus ?about=1 and display about content in different layout. But that could confuse. I'll implement modern way: When clicked, I will toggle extra content but also simulate navigation in same page but using history push? No: I will change the button to anchor link that redirects to a new HTML representation: The spec is clear: direct to about us page. So I will create a separate internal page fragment using history API and replace main content? That's too heavy. I'll implement a redirect to a dedicated about-us subpage: in real project it will work, for demo i set location hash to #about-us-page and show an About panel. Since user needs simple action: I'll show alert('Navigating to About Us page - in production would redirect') and then go to a new page? Not accepted. I decide to build a full about page as separate view? I'll implement actual redirection via link to about.html? For preview, I add dynamic: show "Kirti Realty About - full page" inside a modal but the requirement says 'direct to about us page', I will show a new browser page simulation: I will open a modal that covers whole screen with about details, which acts as a page, and user can close. That satisfies redirect spirit.
-            // Extra: I will open a fullscreen modal with about content and close button. This acts as 'about us page' without leaving page. It's user-friendly and meets feature expectation. I proceed:
-            showAboutPageModal();
-          });
-        }
-
-        // Create a modal about page simulation for robust "direct to about page"
-        function showAboutPageModal() {
-          // if modal already exists, remove
-          const existingModal = document.getElementById("dynamicAboutModal");
-          if (existingModal) existingModal.remove();
-          const modalDiv = document.createElement("div");
-          modalDiv.id = "dynamicAboutModal";
-          modalDiv.style.position = "fixed";
-          modalDiv.style.top = "0";
-          modalDiv.style.left = "0";
-          modalDiv.style.width = "100%";
-          modalDiv.style.height = "100%";
-          modalDiv.style.backgroundColor = "#fefcf7";
-          modalDiv.style.zIndex = "10000";
-          modalDiv.style.overflowY = "auto";
-          modalDiv.style.padding = "2rem";
-          modalDiv.style.fontFamily = "'Inter', sans-serif";
-          modalDiv.innerHTML = `
-        <div style="max-width: 900px; margin: 2rem auto; background: white; border-radius: 48px; padding: 40px; box-shadow: 0 25px 45px rgba(0,0,0,0.1); position:relative;">
-          <button id="closeAboutModalBtn" style="position: absolute; top: 24px; right: 28px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #2b5e3b;"><i class="fas fa-times-circle"></i></button>
-          <h1 style="font-size: 2.8rem; font-weight:800; background: linear-gradient(135deg, #2b5e3b, #c49a2b); background-clip:text; -webkit-background-clip:text; color:transparent;">About Kirti Realty</h1>
-          <p style="margin-top: 24px; line-height:1.6; font-size:1.1rem;">Kirti Realty is a premier real estate developer known for creating iconic residential and commercial spaces. With over two decades of legacy, we combine sustainable practices with innovative design. Our client-first approach ensures every project meets the highest standards of quality and transparency. From plotted developments to luxury villas, we shape the future of living.</p>
-          <p style="margin-top: 20px;">🏆 Award-winning projects | 100% customer satisfaction | 24+ years of trust.</p>
-          <div style="margin-top: 36px; display:flex; gap:16px; justify-content:center;"><button id="closeAboutAction" style="background:#2b5e3b; color:white; border:none; padding:12px 32px; border-radius:60px; font-weight:600; cursor:pointer;">Back to Home</button></div>
-        </div>
-      `;
-          document.body.appendChild(modalDiv);
-          const close1 = document.getElementById("closeAboutModalBtn");
-          const close2 = document.getElementById("closeAboutAction");
-          const closeModal = () => modalDiv.remove();
-          if (close1) close1.addEventListener("click", closeModal);
-          if (close2) close2.addEventListener("click", closeModal);
-        }
-
-        // Video autoplay and smoothness
-        const videoElem = document.querySelector(".full-width-video video");
-        if (videoElem) {
-          videoElem.addEventListener("loadedmetadata", () => {
-            videoElem.play().catch((e) => console.log("autoplay prevented", e));
-          });
-        }
-
-        // scroll & visibility management for moving number
-        let scrollTimer;
-        window.addEventListener("scroll", () => {
-          if (scrollTimer) clearTimeout(scrollTimer);
-          scrollTimer = setTimeout(() => {
-            if (!statsContainer) return;
-            const rect = statsContainer.getBoundingClientRect();
-            const isVisible =
-              rect.top < window.innerHeight - 70 && rect.bottom > 70;
-            if (isVisible && !isMovingActive) {
-              startMovingNumber();
-              isMovingActive = true;
-            } else if (!isVisible && isMovingActive) {
-              stopMovingNumber(true);
-              isMovingActive = false;
-            }
-          }, 110);
-        });
-
-        document.addEventListener("visibilitychange", () => {
-          if (document.hidden) {
-            if (movingInterval) clearInterval(movingInterval);
-          } else {
-            if (statsContainer && !isMovingActive) {
-              const rect = statsContainer.getBoundingClientRect();
-              const visible =
-                rect.top < window.innerHeight - 80 && rect.bottom > 80;
-              if (visible && !movingInterval) {
-                startMovingNumber();
-                isMovingActive = true;
-              }
-            }
-          }
-        });
-      })();
-    </script>
-  </body>
-</html>
-<!-- -------------braj greens start---------- -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Kolkata Layout</title>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background: white;
-        /* font-family: Arial, Helvetica, sans-serif; */
-        overflow-x: hidden;
-      }
-
-      .section-start {
-        width: 100%;
-        padding: 40px 50px 120px;
+      /* right panel: payment + approvals + imagery blend */
+      .right-panel {
+        padding: 2.5rem 2rem;
+        background: #fefaf5;
         position: relative;
       }
 
-      /* LOGO */
-      .logo {
-        width: 98%;
+      .image-gallery-mini {
         display: flex;
-        justify-content: center;
-        margin-bottom: -68px;
-        z-index: 10;
-        position: relative;
-      }
-
-      .logo img {
-        width: 385px;
-        object-fit: contain;
-      }
-
-      /* MAIN LAYOUT */
-      .gallery-layout {
-        position: relative;
-        width: 100%;
-        min-height: 750px;
-      }
-
-      /* COMMON IMAGE STYLE */
-      .img-box {
+        gap: 12px;
+        margin-bottom: 2rem;
+        border-radius: 28px;
         overflow: hidden;
-        position: absolute;
-        background: #ddd;
       }
 
-      .img-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: 0.5s;
-        /* border: 7px solid white; */
+      .mini-img {
+        flex: 1;
+        height: 110px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+        transition: transform 0.2s;
+        box-shadow: 0 8px 14px rgba(0, 0, 0, 0.05);
       }
 
-      .img-box:hover img {
-        transform: scale(1.05);
+      .mini-img:hover {
+        transform: scale(1.02);
       }
 
-      /* LEFT BIG IMAGE */
-      .img1 {
-        width: 67%;
-        height: 490px;
-        left: 0;
-        top: 80px;
-        z-index: 1;
+      .badge-exclusive {
+        background: #2b3a27;
+        display: inline-block;
+        padding: 0.3rem 1.2rem;
+        border-radius: 40px;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #eedba7;
+        margin-bottom: 1rem;
       }
 
-      /* RIGHT TOP IMAGE */
-      .img2 {
-        width: 37%;
-        height: 480px;
-        right: 0;
-        top: 10px;
-        z-index: 2;
-        border: 6px solid #eaeaea;
+      .payment-card {
+        background: #ffffff;
+        border-radius: 1.2rem;
+        padding: 1.3rem 1.5rem;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+        border: 1px solid #ede0d0;
+        margin: 1rem 0 1.2rem;
       }
 
-      /* BOTTOM CENTER IMAGE */
-      .img3 {
-        width: 42%;
-        height: 270px;
-        left: 18%;
-        bottom: 0;
-        z-index: 3;
-        border: 7px solid #ffffff;
-      }
-
-      /* BLUE BOX */
-      .blue-box {
-        width: 38%;
-        height: 320px;
-        background: #013860;
-        position: absolute;
-        right: 2%;
-        bottom: 26px;
-        z-index: 4;
+      .flexible-title {
+        font-weight: 700;
+        font-size: 1.2rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        border: 5px solid #eaeaea;
-        flex-direction: column;
-        padding: 40px;
-      }
-      .blue-box h3 {
-        color: #d0d0d0;
-        font-size: 18px;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-        text-align: left;
+        gap: 10px;
+        color: #2b4025;
+        margin-bottom: 0.6rem;
       }
 
-      .blue-box h2 {
-        color: #fff;
-        font-size: 58px;
-        font-weight: 300;
-        letter-spacing: 2px;
+      .status-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        padding: 0.7rem 0;
+        border-bottom: 1px dashed #e7dacb;
       }
-      .blue-box p {
-        color: #000000;
-        font-size: 20px;
-        margin-top: 20px;
-        text-align: initial;
+
+      .status-label {
         font-weight: 600;
-        background: #ffffff8f;
-        padding: 5px 10px;
-        border-radius: 11px;
+        color: #5f4e32;
       }
 
-      /* RESPONSIVE */
-      @media (max-width: 1100px) {
-        .gallery-layout {
-          display: flex;
+      .status-badge {
+        background: #f6ede2;
+        padding: 0.2rem 1rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .status-badge.inprogress {
+        background: #fff0e0;
+        color: #bc7e2c;
+      }
+
+      .btn-gold {
+        background: transparent;
+        border: 1.5px solid #c6a43b;
+        padding: 0.8rem 2rem;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: #8f6f3a;
+        cursor: pointer;
+        transition: 0.25s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 1.2rem;
+      }
+
+      .btn-gold:hover {
+        background: #c6a43b;
+        color: #fff;
+        border-color: #c6a43b;
+      }
+
+      /* responsive finesse */
+      @media (max-width: 640px) {
+        .hero-content .title-lux {
+          font-size: 2.5rem;
+        }
+        .hero-image-section {
+          min-height: 380px;
+        }
+        .stats-full {
           flex-direction: column;
-          gap: 20px;
-          min-height: auto;
+          gap: 1rem;
+          text-align: center;
         }
-
-        .img-box,
-        .blue-box {
-          position: relative;
-          width: 100%;
-          left: auto;
-          right: auto;
-          top: auto;
-          bottom: auto;
+        .stat-block {
+          border-right: none;
+          border-bottom: 1px solid #eee3d7;
+          padding-bottom: 0.8rem;
         }
-
-        .img1,
-        .img2 {
-          height: 350px;
+        .stat-block:last-child {
+          border-bottom: none;
         }
-
-        .img3 {
-          height: 260px;
+        .amenities-grid {
+          grid-template-columns: 1fr;
         }
-
-        .blue-box {
-          height: 180px;
-        }
-
-        .blue-box h2 {
-          font-size: 40px;
+        .hero-content {
+          padding: 1.5rem;
         }
       }
 
-      @media (max-width: 768px) {
-        .section {
-          padding: 20px 20px 80px;
-        }
+      /* extra elegance */
+      .footnote {
+        background: #f4efe8;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.7rem;
+        color: #9a8668;
+        border-top: 1px solid #e6d9cc;
+      }
+      i.fa,
+      i.fas,
+      i.far {
+        margin-right: 2px;
+      }
+      .landscape-text {
+        font-weight: 500;
+      }
 
-        .logo img {
-          width: 220px;
-        }
-
-        .img1,
-        .img2,
-        .img3 {
-          height: 240px;
-        }
-
-        .blue-box {
-          height: 140px;
-        }
-
-        .blue-box h2 {
-          font-size: 28px;
-        }
+      /* custom image for second row */
+      .botanical-note {
+        margin-top: 1rem;
+        background: #f9f3ea;
+        border-radius: 18px;
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
     </style>
   </head>
-
   <body>
-    <section class="section-start">
-      <!-- LOGO -->
-      <div class="logo">
-        <img src="images/vrindavan.jpg" alt="" />
+    <section class="luxury-fullwidth">
+      <!-- HERO IMAGE full width -->
+      <div class="hero-image-section">
+        <div class="hero-content">
+          <div class="title-lux">About Braj <span>Greens</span></div>
+          <!-- <div class="hero-tagline">
+            <i class="fas fa-leaf"></i> 5 acres of serene luxury · 70 exclusive
+            plots only
+            <i class="fas fa-circle" style="font-size: 0.3rem"></i> 120–160 sq
+            yrds
+          </div> -->
+        </div>
       </div>
 
-      <!-- GALLERY -->
-      <div class="gallery-layout">
-        <!-- IMAGE 1 -->
-        <div class="img-box img1">
-          <img
-            src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1600&auto=format&fit=crop"
-            alt=""
-          />
+      <!-- STATS full width strip -->
+      <div class="stats-full">
+        <div class="stat-block">
+          <div class="stat-icon"><i class="fas fa-expand-alt"></i></div>
+          <div class="stat-number">
+            5 <span style="font-size: 1.2rem">Acres</span>
+          </div>
+          <div class="stat-label">Total Land</div>
+          <div class="stat-sub">Pristine landscape</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-icon"><i class="fas fa-border-all"></i></div>
+          <div class="stat-number">70</div>
+          <div class="stat-label">Plots Only</div>
+          <div class="stat-sub">Exclusive enclave</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-icon"><i class="fas fa-vector-square"></i></div>
+          <div class="stat-number">120–160</div>
+          <div class="stat-label">Sq. Yrds</div>
+          <div class="stat-sub">Premium dimensions</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <div class="stat-number">Flexible</div>
+          <div class="stat-label">Payment Plan</div>
+          <div class="stat-sub">Tailored milestones</div>
+        </div>
+      </div>
+
+      <!-- MAIN TWO COLUMN CONTENT with integrated imagery -->
+      <div class="core-details">
+        <!-- LEFT: Amenities & landscape visuals -->
+        <div class="amenities-panel">
+          <div class="section-title">Estate of Character</div>
+          <div class="amenities-grid">
+            <div class="amenity-card">
+              <i class="fas fa-building"></i> <span>Modern Clubhouse</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-spa"></i> <span>Social & wellness hub</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-shield-alt"></i> <span>24x7 Security</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-camera"></i> <span>CCTV 360° surveillance</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-microchip"></i> <span>Smart monitoring</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-tree"></i> <span>Lush Green Park</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-wind"></i> <span>Breathing greenspace</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-draw-polygon"></i>
+              <span>Well Planned Landscape</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-leaf"></i> <span>Curated botanical design</span>
+            </div>
+            <div class="amenity-card">
+              <i class="fas fa-lock"></i>
+              <span>Elite perimeter protection</span>
+            </div>
+          </div>
+
+          <!-- visual lush green image (inline picture + description) -->
+          <div class="green-zone">
+            <div style="display: flex; gap: 12px; align-items: center">
+              <i
+                class="fas fa-seedling"
+                style="font-size: 2rem; color: #578b34"
+              ></i>
+              <div>
+                <strong>Lush Green Park</strong><br /><span
+                  style="font-size: 0.8rem"
+                  >Breathing greenspace & curated botanical design</span
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: url(&quot;https://images.unsplash.com/photo-1563127673-b35a42ef206c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZsb3dlciUyMGdhcmRlbnxlbnwwfHwwfHx8MA%3D%3D&quot;)
+                  center/cover;
+                width: 100px;
+                height: 70px;
+                border-radius: 20px;
+              "
+            ></div>
+          </div>
+          <div class="botanical-note">
+            <i class="fas fa-pagelines" style="color: #af8a46"></i> Well-Planned
+            Landscape + Smart perimeter protection · 360° CCTV
+          </div>
         </div>
 
-        <!-- IMAGE 2 -->
-        <div class="img-box img2">
-          <img
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"
-            alt=""
-          />
-        </div>
+        <!-- RIGHT: Payment + approvals + imagettes & MVDA status -->
+        <div class="right-panel">
+          <div class="badge-exclusive">
+            <i class="fas fa-gem"></i> LIMITED COLLECTION — 70 PLOTS ONLY
+          </div>
 
-        <!-- IMAGE 3 -->
-        <div class="img-box img3">
-          <img
-            src="https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWx0eXxlbnwwfHwwfHx8MA%3D%3D"
-            alt=""
-          />
-        </div>
+          <!-- mini gallery of luxury imagery (clubhouse / security / garden) -->
+          <div class="image-gallery-mini">
+            <div
+              class="mini-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlsbGF8ZW58MHx8MHx8fDA%3D&quot;);
+              "
+            ></div>
+            <div
+              class="mini-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHZpbGxhfGVufDB8fDB8fHww&quot;);
+              "
+            ></div>
+            <div
+              class="mini-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1627764940620-90393d0e8c34?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2lkcyUyMHBhcmt8ZW58MHx8MHx8fDA%3D&quot;);
+              "
+            ></div>
+          </div>
 
-        <!-- BLUE BOX -->
-        <div class="blue-box">
-          <h3>Kriti Realty Presents</h3>
-          <h2>BRAJ GREENS</h2>
-          <p>In India's Fastest-Growing Investment HUB</p>
+          <!-- Flexible payment plan card -->
+          <div class="payment-card">
+            <div class="flexible-title">
+              <i class="fas fa-coins"></i> Flexible Payment Plan
+            </div>
+            <p
+              style="font-size: 0.85rem; color: #5c4f38; margin-bottom: 0.6rem"
+            >
+              Customizable installments, deferred payment options, and
+              early-bird advantages. Designed for effortless luxury investment.
+            </p>
+            <div>
+              <span
+                class="badge-exclusive"
+                style="background: #e9dccd; color: #7f6236"
+                ><i class="fas fa-check-circle"></i> Tailored milestones</span
+              >
+            </div>
+          </div>
+
+          <!-- Approval status + Elite compliance -->
+          <div style="margin: 1rem 0 0.8rem 0">
+            <div class="status-row">
+              <span class="status-label"
+                ><i class="fas fa-building"></i> MVDA Approval</span
+              >
+              <span class="status-badge inprogress"
+                ><i class="fas fa-hourglass-half"></i> In progress</span
+              >
+            </div>
+            <div class="status-row">
+              <span class="status-label"
+                ><i class="fas fa-certificate"></i> Elite compliance</span
+              >
+              <span class="status-badge inprogress"
+                ><i class="fas fa-chart-line"></i> Approval underway</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 0.7rem;
+                color: #a3865a;
+                margin-top: 12px;
+                display: flex;
+                gap: 8px;
+              "
+            >
+              <i class="fas fa-clock"></i> Statutory approvals under fast-track
+              · RERA aligned
+            </div>
+          </div>
+
+          <!-- Additional elite protection / clubhouse text -->
+          <div
+            style="
+              background: #ffffffc9;
+              border-radius: 28px;
+              padding: 0.7rem 1rem;
+              margin-top: 0.8rem;
+              border: 1px solid #f2e4d4;
+            "
+          >
+            <i class="fas fa-shield-virus" style="color: #b88b3a"></i> Elite
+            perimeter protection & 360° smart monitoring <br />
+            <span style="font-size: 0.7rem"
+              >24x7 security + CCTV surveillance with AI analytics</span
+            >
+          </div>
+
+          <!-- <button
+            class="btn-gold"
+            onclick="
+              alert(
+                'Schedule a site visit to Braj Greens — Limited plots remaining. Flexible payment options available.',
+              )
+            "
+          >
+            <i class="fas fa-calendar-alt"></i> Discover Luxe Living
+          </button> -->
+          <div style="margin-top: 12px; font-size: 0.7rem; color: #b39463">
+            <i class="fas fa-phone-alt"></i> +91 998877 6655 |
+            hello@brajgreens.in
+          </div>
         </div>
+      </div>
+
+      <!-- Extra full width lush landscape banner + MVDA update -->
+      <div
+        style="
+          background: linear-gradient(100deg, #fef8ef, #fcf5e8);
+          width: 100%;
+          padding: 1.2rem 2rem;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 1px solid #eee2d4;
+        "
+      >
+        <div
+          style="background: #fff1e2; border-radius: 60px; padding: 5px 15px"
+        >
+          <i class="fas fa-check-double"></i> MVDA Approval: In progress · Elite
+          compliance: Approval underway
+        </div>
+      </div>
+
+      <div class="footnote">
+        <i class="fas fa-crown"></i> Braj Greens — where luxury meets nature. 70
+        plots only, each between 120–160 sq yrds. Modern Clubhouse, wellness
+        hub, elite security. Flexible payment plans tailored for you.
       </div>
     </section>
   </body>
